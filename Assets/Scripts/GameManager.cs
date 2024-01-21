@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    [SerializeField] private Player player;
+    private Player _player;
     private void Awake()
     {
         if (Instance == null)
@@ -17,10 +18,37 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
     private void Initialize()
     {
-        if (player != null)
-            player.Initialize();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        int sceneBuildIndex = scene.buildIndex;
+        switch (sceneBuildIndex)
+        {
+            case 0:
+                LoadMainMenu();
+                break;
+            case 1:
+                LoadGame();
+                break;
+        }
+    }
+    
+    private void LoadGame()
+    {
+        Debug.Log("Game is loading");
+        
+        _player = FindObjectOfType<Player>();
+        if (_player != null)
+            _player.Initialize();
+    }
+
+    private void LoadMainMenu()
+    {
+        Debug.Log("Main menu is loading");
     }
 }
