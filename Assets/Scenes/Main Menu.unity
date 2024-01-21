@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 800403576}
   - component: {fileID: 800403575}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Game Made by : ...'
+  m_text: "Credits : Joan IARIA, Bastien OKONSKI, Lo\xEFc THIBAUT & Martin VALLEIX"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -924,6 +924,18 @@ MonoBehaviour:
     Ordinal: 4
     Priority: 0
     IconType: 150000
+    IconTexture: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 0
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 0
+    Name: 
+    GameObject: {fileID: 770882895}
+    Ordinal: 5
+    Priority: 0
+    IconType: 169520
     IconTexture: {fileID: 0}
     IsIconRecursive: 0
     BackgroundType: 0
