@@ -14,9 +14,7 @@ public class GameManager : MonoBehaviour
             Initialize();
         }
         else
-        {
             Destroy(gameObject);
-        }
     }
 
     private void Initialize()

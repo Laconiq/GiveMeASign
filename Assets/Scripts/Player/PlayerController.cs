@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private float _jumpForce;
     private float _currentSpeed;
     private Vector2 _moveInput;
+    private bool _isGrounded;
     
     public void Initialize()
     {
@@ -45,6 +46,15 @@ public class PlayerController : MonoBehaviour
     
     private void Jump()
     {
+        if (!_isGrounded) 
+            return;
         _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+        _isGrounded = false;
+    }
+    
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+            _isGrounded = true;
     }
 }
