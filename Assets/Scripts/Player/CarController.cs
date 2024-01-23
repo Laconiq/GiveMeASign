@@ -69,13 +69,21 @@ public class CarController : MonoBehaviour
         float wheelTurnAngle = _turnInput * maxWheelTurnAngle;
         leftFrontWheel.localRotation = Quaternion.Euler(0f, wheelTurnAngle, 0f);
         rightFrontWheel.localRotation = Quaternion.Euler(0f, wheelTurnAngle, 0f);
+
         Vector3 forwardMovement = transform.forward * (_currentSpeed * Time.fixedDeltaTime);
         _rb.MovePosition(_rb.position + forwardMovement);
-        if (_turnInput == 0) 
-            return;
-        Quaternion turnRotation = Quaternion.Euler(0f, wheelTurnAngle * Time.fixedDeltaTime, 0f);
-        _rb.MoveRotation(_rb.rotation * turnRotation);
+
+        if (_turnInput != 0) 
+        {
+            Quaternion turnRotation = Quaternion.Euler(0f, wheelTurnAngle * Time.fixedDeltaTime, 0f);
+            _rb.MoveRotation(_rb.rotation * turnRotation);
+        }
+
+        // Reset Z rotation
+        Vector3 currentRotation = _rb.rotation.eulerAngles;
+        _rb.rotation = Quaternion.Euler(currentRotation.x, currentRotation.y, 0);
     }
+
     
     private void SpeedUp()
     {
