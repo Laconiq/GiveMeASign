@@ -3,16 +3,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Title("Controls")]
-    public float basicSpeed;
-    public float jumpForce;
-    
     [Title("Data")]
-    [SerializeField] private PlayerController playerController;
-    public Rigidbody playerRigidbody;
+    [SerializeField] private CarController carController;
+    public Rigidbody playerRigidBody;
     
     public void Initialize()
     {
-        playerController.Initialize();
+        carController.Initialize();
     }
 }
