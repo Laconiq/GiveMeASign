@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private Player _player;
+    private Timer _timer;
     private void Awake()
     {
         if (Instance == null)
@@ -38,15 +39,19 @@ public class GameManager : MonoBehaviour
     
     private void LoadGame()
     {
-        Debug.Log("Game is loading");
+        Debug.Log("Game is loading...");
         
         _player = FindObjectOfType<Player>();
         if (_player != null)
             _player.Initialize();
+        
+        _timer = FindObjectOfType<Timer>();
+        if (_timer != null)
+            _timer.StartTimer();
     }
 
     private void LoadMainMenu()
     {
-        Debug.Log("Main menu is loading");
+        Debug.Log("Main menu is loading...");
     }
 }
