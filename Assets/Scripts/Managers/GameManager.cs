@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    private Player _player;
     private void Awake()
     {
         if (Instance == null)
@@ -39,10 +38,6 @@ public class GameManager : MonoBehaviour
     private void LoadGame()
     {
         Debug.Log("Game is loading");
-        
-        _player = FindObjectOfType<Player>();
-        if (_player != null)
-            _player.Initialize();
     }
 
     private void LoadMainMenu()
