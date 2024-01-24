@@ -16,10 +16,13 @@ public class PlayerController : MonoBehaviour
     private CharacterController _controller;
     private PlayerFeedbacks _feedbacks;
     private Vector3 _playerVelocity;
-    private CinemachineVirtualCamera _cinemachineVirtualCamera;
     private bool _isGrounded;
     private Transform _cameraTransform;
     private Interactable _nearbyInteractable;
+    
+    [Title("Camera Settings")]
+    [SerializeField] private CinemachineVirtualCamera cineMachineVirtualCamera;
+    [SerializeField] private CinemachineVirtualCamera cineMachineVirtualCameraDialogue;
 
     private Controls _controls;
     private Vector2 _moveInput;
@@ -36,7 +39,6 @@ public class PlayerController : MonoBehaviour
     {
         _feedbacks = GetComponent<PlayerFeedbacks>();
         _controller = GetComponent<CharacterController>();
-        _cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
         if (Camera.main != null) _cameraTransform = Camera.main.transform;
         _currentSpeed = movementSpeed;
 
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour
         _controls.Player.Interact.performed += _ => TryToInteract();
         
         EnableControls();
+        SetFPSCamera();
     }
 
     private void FixedUpdate()
@@ -129,7 +132,7 @@ public class PlayerController : MonoBehaviour
     
     public void DisableControls()
     {
-        var povComponent = _cinemachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
+        var povComponent = cineMachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
         povComponent.m_HorizontalAxis.m_MaxSpeed = 0;
         povComponent.m_VerticalAxis.m_MaxSpeed = 0;
         _controls.Disable();
@@ -139,11 +142,31 @@ public class PlayerController : MonoBehaviour
     
     public void EnableControls()
     {
-        var povComponent = _cinemachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
+        var povComponent = cineMachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
         povComponent.m_HorizontalAxis.m_MaxSpeed = 300;
         povComponent.m_VerticalAxis.m_MaxSpeed = 300;
         _controls.Enable();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    //Camera
+    
+    public void SetDialogueCamera()
+    {
+        cineMachineVirtualCamera.Priority = 9;
+        cineMachineVirtualCameraDialogue.Priority = 11;
+    }
+    
+    public void SetFPSCamera()
+    {
+        cineMachineVirtualCamera.Priority = 11;
+        cineMachineVirtualCameraDialogue.Priority = 9;
+    }
+    
+    public void LookAtTarget(Transform target)
+    {
+        cineMachineVirtualCameraDialogue.LookAt = target;
+    }
+    
 }

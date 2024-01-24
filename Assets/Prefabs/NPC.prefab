@@ -149,5 +149,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionType: 1
-  dialogueScriptableObject: {fileID: 11400000, guid: c812a19b571d8614ba946d9d67f2f430,
-    type: 2}
+  dialogueScriptableObject: []

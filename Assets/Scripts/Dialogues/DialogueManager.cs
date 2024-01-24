@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TMP_Text npcDialogueText;
     [SerializeField] private GameObject playerResponsesParent;
     [SerializeField] private GameObject playerResponsePrefab;
+    [SerializeField] private MMF_Player textRevealFeedback;
+    private MMF_TMPTextReveal _textRevealFeedback;
     private DialogueScriptableObject _currentDialogueScriptableObject;
     private int _currentDialogueIndex;
     private int _totalDialogueItems;
@@ -17,6 +20,13 @@ public class DialogueManager : MonoBehaviour
     {
         npcDialogueText.text = "";
         _playerController = FindObjectOfType<PlayerController>();
+        _textRevealFeedback = textRevealFeedback.GetFeedbackOfType<MMF_TMPTextReveal>();
+    }
+
+    private void RevealText(string str)
+    {
+        _textRevealFeedback.NewText = str;
+        textRevealFeedback.PlayFeedbacks();
     }
     
     public void StartDialogue(DialogueScriptableObject dialogueScriptableObject)
@@ -25,7 +35,11 @@ public class DialogueManager : MonoBehaviour
         LoadCurrentDialogueIndex();
         _totalDialogueItems = _currentDialogueScriptableObject.dialogueItems.Count;
         DisplayCurrentDialogue();
+
         _playerController.DisableControls();
+        _playerController.SetDialogueCamera();
+        if (_currentDialogueScriptableObject.lookAtTarget != null)
+            _playerController.LookAtTarget(_currentDialogueScriptableObject.lookAtTarget);
     }
 
     private void LoadCurrentDialogueIndex()
@@ -40,7 +54,7 @@ public class DialogueManager : MonoBehaviour
     {
         DestroyPlayerResponses();
         DialogueItem currentDialogueItem = _currentDialogueScriptableObject.dialogueItems[_currentDialogueIndex];
-        npcDialogueText.text = currentDialogueItem.npcDialogue;
+        RevealText(currentDialogueItem.npcDialogue);
         foreach (string playerResponse in currentDialogueItem.playerResponses)
         {
             GameObject playerResponseGameObject = Instantiate(playerResponsePrefab, playerResponsesParent.transform);
@@ -64,6 +78,7 @@ public class DialogueManager : MonoBehaviour
         npcDialogueText.text = "";
         DestroyPlayerResponses();
         _playerController.EnableControls();
+        _playerController.SetFPSCamera();
         _currentDialogueScriptableObject.isDialogueFinished = true;
         _currentDialogueScriptableObject.UnlockProgression();
     }

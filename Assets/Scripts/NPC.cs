@@ -5,8 +5,10 @@ public class Npc : Interactable
 {
     [SerializeField] private List<DialogueScriptableObject> dialogueScriptableObject;
     private int _currentDialogueIndex;
+    private DialogueManager _dialogueManager;
     private void Awake()
     {
+        _dialogueManager = FindObjectOfType<DialogueManager>();
         ResetDialogue();
     }
 
@@ -19,7 +21,7 @@ public class Npc : Interactable
     {
         base.OnPlayerInteract();
         _currentDialogueIndex = ResearchDialogue();
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogueScriptableObject[_currentDialogueIndex]);
+        _dialogueManager.StartDialogue(dialogueScriptableObject[_currentDialogueIndex]);
     }
     
     private int ResearchDialogue()
