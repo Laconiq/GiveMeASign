@@ -65,6 +65,7 @@ public class DialogueManager : MonoBehaviour
         DestroyPlayerResponses();
         _playerController.EnableControls();
         _currentDialogueScriptableObject.isDialogueFinished = true;
+        _currentDialogueScriptableObject.UnlockProgression();
     }
     
     private void DestroyPlayerResponses()

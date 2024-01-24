@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fb5fbe21b1bd6944b46bcb554e260b7, type: 3}
-  m_Name: NewDialogue
+  m_Name: NewDialogue 1
   m_EditorClassIdentifier: 
   dialogueItems:
-  - npcDialogue: "Salut \xE7a va ?"
+  - npcDialogue: "Je suis le 2\xE8me dialogue qui se lance si la conditon est remplie"
     playerResponses:
     - Oui
     - Non
-  - npcDialogue: Je m'en fou
+  - npcDialogue: "Merci d'avoir jou\xE9"
     playerResponses:
     - Tant pis
-  isDialogueFinished: 1
-  unlockProgressionOnDialogueFinish: 1
-  progressionsToUnlock:
+  isDialogueFinished: 0
+  unlockProgressionOnDialogueFinish: 0
+  progressionsToUnlock: []
+  requireProgressionToStart: 1
+  progressionToStart:
   - {fileID: 11400000, guid: 5babc245e5dede647a6d9d185eb25c6e, type: 2}
-  requireProgressionToStart: 0
-  progressionToStart: {fileID: 0}
