@@ -7,9 +7,11 @@ public class DialogueManager : MonoBehaviour
 {
     [Title("Data")]
     [SerializeField] private TMP_Text npcDialogueText;
+    [SerializeField] private TMP_Text npcNameText;
     [SerializeField] private GameObject playerResponsesParent;
     [SerializeField] private GameObject playerResponsePrefab;
     [SerializeField] private MMF_Player textRevealFeedback;
+    [SerializeField] private GameObject dialogueContainer;
     private MMF_TMPTextReveal _textRevealFeedback;
     private DialogueScriptableObject _currentDialogueScriptableObject;
     private int _currentDialogueIndex;
@@ -21,6 +23,7 @@ public class DialogueManager : MonoBehaviour
         npcDialogueText.text = "";
         _playerController = FindObjectOfType<PlayerController>();
         _textRevealFeedback = textRevealFeedback.GetFeedbackOfType<MMF_TMPTextReveal>();
+        dialogueContainer.SetActive(false);
     }
 
     private void RevealText(string str)
@@ -29,8 +32,10 @@ public class DialogueManager : MonoBehaviour
         textRevealFeedback.PlayFeedbacks();
     }
     
-    public void StartDialogue(DialogueScriptableObject dialogueScriptableObject)
+    public void StartDialogue(DialogueScriptableObject dialogueScriptableObject, string npcName)
     {
+        dialogueContainer.SetActive(true);
+        npcNameText.text = npcName;
         _currentDialogueScriptableObject = dialogueScriptableObject;
         LoadCurrentDialogueIndex();
         _totalDialogueItems = _currentDialogueScriptableObject.dialogueItems.Count;
@@ -81,6 +86,7 @@ public class DialogueManager : MonoBehaviour
         _playerController.SetFPSCamera();
         _currentDialogueScriptableObject.isDialogueFinished = true;
         _currentDialogueScriptableObject.UnlockProgression();
+        dialogueContainer.SetActive(false);
     }
     
     private void DestroyPlayerResponses()
