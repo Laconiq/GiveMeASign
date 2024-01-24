@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
         _controls.Player.Jump.canceled += _ => _jumpInput = false;
         _controls.Player.Crouch.performed += _ => TryCrouch();
         _controls.Player.Interact.performed += _ => TryToInteract();
+        _controls.Player.HoldObject.performed += _ => HoldObject();
         
         EnableControls();
         SetFPSCamera();
@@ -59,6 +60,12 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         HandleJumpAndGravity();
     }
+    
+    private void LateUpdate()
+    {
+        UpdateHoldPosition();
+    }
+
     
     private void TryCrouch()
     {
@@ -169,4 +176,46 @@ public class PlayerController : MonoBehaviour
         cineMachineVirtualCameraDialogue.LookAt = target;
     }
     
+    //Physics Objects
+    [Title("Physics Objects")]
+    [SerializeField] private Transform holdPosition;
+    [SerializeField] private float throwForce = 10.0f;
+    private GameObject _heldObject;
+
+    private void HoldObject()
+    {
+        if (_heldObject == null)
+        {
+            if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out var hit, 2f)) 
+                return;
+            if (hit.collider.GetComponent<GrabbableObject>() == null || !hit.collider.GetComponent<GrabbableObject>().isGrabbable) 
+                return;
+            _heldObject = hit.collider.gameObject;
+            _heldObject.GetComponent<Rigidbody>().isKinematic = true;
+            _heldObject.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.Interpolate;
+            _heldObject.transform.position = holdPosition.position;
+            _heldObject.transform.parent = holdPosition;
+            _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(true);
+        }
+        else if (_heldObject != null)
+        {
+            Rigidbody rb = _heldObject.GetComponent<Rigidbody>();
+            rb.isKinematic = false;
+            _heldObject.transform.parent = null;
+            rb.AddForce(_cameraTransform.forward * throwForce, ForceMode.VelocityChange);
+            _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(false);
+            _heldObject = null;
+        }
+
+    }
+    
+    private void UpdateHoldPosition()
+    {
+        if (_heldObject != null)
+        {
+            Vector3 targetPosition = _cameraTransform.position + _cameraTransform.forward * 1.5f; // Ajustez la distance si nécessaire
+            _heldObject.transform.position = Vector3.Lerp(_heldObject.transform.position, targetPosition, Time.deltaTime * 10); // Ajustez la vitesse si nécessaire
+        }
+    }
+
 }

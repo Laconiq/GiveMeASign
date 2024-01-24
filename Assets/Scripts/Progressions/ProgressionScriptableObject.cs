@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewProgression", menuName = "Dialogue System/Progression")]
 public class ProgressionScriptableObject : ScriptableObject
 {
-    public bool _isProgressionFinished;
+    [HideInInspector] public bool _isProgressionFinished;
     
     public bool IsProgressionFinished
     {

@@ -21,8 +21,8 @@ MonoBehaviour:
   - npcDialogue: Je m'en fou
     playerResponses:
     - Tant pis
-  isDialogueFinished: 1
-  unlockProgressionOnDialogueFinish: 1
+  isDialogueFinished: 0
+  unlockProgressionOnDialogueFinish: 0
   progressionsToUnlock:
   - {fileID: 11400000, guid: 5babc245e5dede647a6d9d185eb25c6e, type: 2}
   requireProgressionToStart: 0

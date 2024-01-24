@@ -10,20 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fb5fbe21b1bd6944b46bcb554e260b7, type: 3}
-  m_Name: NewDialogue 1
+  m_Name: Dialogue Martin
   m_EditorClassIdentifier: 
   lookAtTarget: {fileID: 0}
   dialogueItems:
-  - npcDialogue: "Je suis le 2\xE8me dialogue qui se lance si la conditon est remplie"
-    playerResponses:
-    - Oui
-    - Non
-  - npcDialogue: "Merci d'avoir jou\xE9"
-    playerResponses:
-    - Tant pis
+  - npcDialogue: 
+    playerResponses: []
   isDialogueFinished: 0
   unlockProgressionOnDialogueFinish: 0
   progressionsToUnlock: []
-  requireProgressionToStart: 1
-  progressionsToStart:
-  - {fileID: 11400000, guid: 5babc245e5dede647a6d9d185eb25c6e, type: 2}
+  requireProgressionToStart: 0
+  progressionsToStart: []
