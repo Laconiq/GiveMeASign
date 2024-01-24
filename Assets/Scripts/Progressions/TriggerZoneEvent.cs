@@ -9,9 +9,6 @@ public class TriggerZoneEvent : MonoBehaviour
         if (!other.CompareTag("Player")) 
             return;
         foreach (ProgressionScriptableObject progression in progressionsToUnlock)
-        {
             progression.IsProgressionFinished = true;
-            Debug.Log("Progression " + progression.name + " unlocked");
-        }
     }
 }

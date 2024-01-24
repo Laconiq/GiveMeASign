@@ -21,7 +21,11 @@ MonoBehaviour:
   - npcDialogue: "Merci d'avoir jou\xE9"
     playerResponses:
     - Tant pis
-  isDialogueFinished: 0
+  isDialogueFinished: 1
+  repeatDialogueItem:
+    npcDialogue: Loop2
+    playerResponses:
+    - Loop2
   unlockProgressionOnDialogueFinish: 0
   progressionsToUnlock: []
   requireProgressionToStart: 1

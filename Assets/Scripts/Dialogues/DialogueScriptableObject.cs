@@ -9,6 +9,7 @@ public class DialogueScriptableObject : ScriptableObject
     
     public List<DialogueItem> dialogueItems;
     [HideInInspector] public bool isDialogueFinished;
+    public DialogueItem repeatDialogueItem;
     
     [Title("Progression Settings")]
     public bool unlockProgressionOnDialogueFinish;

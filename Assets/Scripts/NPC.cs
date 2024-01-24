@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Npc : Interactable
 {
-    [SerializeField] private List<DialogueScriptableObject> dialogueScriptableObject;
     [SerializeField] private string npcName;
+    [SerializeField] private List<DialogueScriptableObject> dialogueScriptableObject;
     private int _currentDialogueIndex;
     private DialogueManager _dialogueManager;
     private void Awake()

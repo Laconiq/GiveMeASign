@@ -21,7 +21,11 @@ MonoBehaviour:
   - npcDialogue: Je m'en fou
     playerResponses:
     - Tant pis
-  isDialogueFinished: 0
+  isDialogueFinished: 1
+  repeatDialogueItem:
+    npcDialogue: Loop
+    playerResponses:
+    - Loop
   unlockProgressionOnDialogueFinish: 0
   progressionsToUnlock:
   - {fileID: 11400000, guid: 5babc245e5dede647a6d9d185eb25c6e, type: 2}

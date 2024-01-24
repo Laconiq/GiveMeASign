@@ -169,6 +169,7 @@ public class PlayerController : MonoBehaviour
     {
         cineMachineVirtualCamera.Priority = 11;
         cineMachineVirtualCameraDialogue.Priority = 9;
+        cineMachineVirtualCameraDialogue.LookAt = null;
     }
     
     public void LookAtTarget(Transform target)

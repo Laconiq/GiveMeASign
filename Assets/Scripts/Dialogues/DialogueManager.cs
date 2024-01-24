@@ -39,12 +39,14 @@ public class DialogueManager : MonoBehaviour
         _currentDialogueScriptableObject = dialogueScriptableObject;
         LoadCurrentDialogueIndex();
         _totalDialogueItems = _currentDialogueScriptableObject.dialogueItems.Count;
-        DisplayCurrentDialogue();
-
+        
         _playerController.DisableControls();
         _playerController.SetDialogueCamera();
         if (_currentDialogueScriptableObject.lookAtTarget != null)
             _playerController.LookAtTarget(_currentDialogueScriptableObject.lookAtTarget);
+        
+        DialogueItem dialogueItemToLoad = _currentDialogueScriptableObject.isDialogueFinished ? _currentDialogueScriptableObject.repeatDialogueItem : _currentDialogueScriptableObject.dialogueItems[_currentDialogueIndex];
+        DisplayCurrentDialogue(dialogueItemToLoad);
     }
 
     private void LoadCurrentDialogueIndex()
@@ -55,12 +57,11 @@ public class DialogueManager : MonoBehaviour
             _currentDialogueIndex = 0;
     }
 
-    private void DisplayCurrentDialogue()
+    private void DisplayCurrentDialogue(DialogueItem dialogueItem)
     {
         DestroyPlayerResponses();
-        DialogueItem currentDialogueItem = _currentDialogueScriptableObject.dialogueItems[_currentDialogueIndex];
-        RevealText(currentDialogueItem.npcDialogue);
-        foreach (string playerResponse in currentDialogueItem.playerResponses)
+        RevealText(dialogueItem.npcDialogue);
+        foreach (string playerResponse in dialogueItem.playerResponses)
         {
             GameObject playerResponseGameObject = Instantiate(playerResponsePrefab, playerResponsesParent.transform);
             playerResponseGameObject.GetComponentInChildren<TMP_Text>().text = playerResponse;
@@ -72,7 +73,7 @@ public class DialogueManager : MonoBehaviour
         if (_currentDialogueIndex < _totalDialogueItems - 1)
         {
             _currentDialogueIndex++;
-            DisplayCurrentDialogue();
+            DisplayCurrentDialogue(_currentDialogueScriptableObject.dialogueItems[_currentDialogueIndex]);
         }
         else
             CloseDialogue();
