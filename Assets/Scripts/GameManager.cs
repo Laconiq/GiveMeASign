@@ -25,15 +25,10 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         int sceneBuildIndex = scene.buildIndex;
-        switch (sceneBuildIndex)
-        {
-            case 0:
-                LoadMainMenu();
-                break;
-            case 1:
-                LoadGame();
-                break;
-        }
+        if (sceneBuildIndex == 0)
+            LoadMainMenu();
+        else
+            LoadGame();
     }
     
     private void LoadGame()

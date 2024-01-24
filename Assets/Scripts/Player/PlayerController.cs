@@ -49,7 +49,8 @@ public class PlayerController : MonoBehaviour
         _controls.Player.Jump.canceled += _ => _jumpInput = false;
         _controls.Player.Crouch.performed += _ => TryCrouch();
         _controls.Player.Interact.performed += _ => TryToInteract();
-        _controls.Player.HoldObject.performed += _ => HoldObject();
+        _controls.Player.HoldObject.performed += _ => HoldObject(throwForce);
+        _controls.Player.DropObject.performed += _ => HoldObject(dropForce);
         
         EnableControls();
         SetFPSCamera();
@@ -66,7 +67,6 @@ public class PlayerController : MonoBehaviour
         UpdateHoldPosition();
     }
 
-    
     private void TryCrouch()
     {
         if (_isCrouching)
@@ -181,9 +181,10 @@ public class PlayerController : MonoBehaviour
     [Title("Physics Objects")]
     [SerializeField] private Transform holdPosition;
     [SerializeField] private float throwForce = 10.0f;
+    [SerializeField] private float dropForce = 2.0f;
     private GameObject _heldObject;
 
-    private void HoldObject()
+    private void HoldObject(float force)
     {
         if (_heldObject == null)
         {
@@ -203,7 +204,7 @@ public class PlayerController : MonoBehaviour
             Rigidbody rb = _heldObject.GetComponent<Rigidbody>();
             rb.isKinematic = false;
             _heldObject.transform.parent = null;
-            rb.AddForce(_cameraTransform.forward * throwForce, ForceMode.VelocityChange);
+            rb.AddForce(_cameraTransform.forward * force, ForceMode.VelocityChange);
             _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(false);
             _heldObject = null;
         }

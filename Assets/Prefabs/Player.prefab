@@ -159,6 +159,7 @@ MonoBehaviour:
   cineMachineVirtualCameraDialogue: {fileID: 8003961603710254541}
   holdPosition: {fileID: 2974816291339248530}
   throwForce: 10
+  dropForce: 1.5
 --- !u!114 &5726164883160824361
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ MonoBehaviour:
   - npcDialogue: "Merci d'avoir jou\xE9"
     playerResponses:
     - Tant pis
-  isDialogueFinished: 1
+  isDialogueFinished: 0
   repeatDialogueItem:
     npcDialogue: Loop2
     playerResponses:

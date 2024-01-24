@@ -80,6 +80,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DropObject"",
+                    ""type"": ""Button"",
+                    ""id"": ""5f33ddb6-f47d-4e80-87c8-ff0d1f51f05c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -192,6 +201,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""HoldObject"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""be12d3f4-af0b-4827-a580-422b38a2ac35"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DropObject"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -206,6 +226,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_HoldObject = m_Player.FindAction("HoldObject", throwIfNotFound: true);
+        m_Player_DropObject = m_Player.FindAction("DropObject", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,6 +294,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_HoldObject;
+    private readonly InputAction m_Player_DropObject;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -283,6 +305,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @HoldObject => m_Wrapper.m_Player_HoldObject;
+        public InputAction @DropObject => m_Wrapper.m_Player_DropObject;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -310,6 +333,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @HoldObject.started += instance.OnHoldObject;
             @HoldObject.performed += instance.OnHoldObject;
             @HoldObject.canceled += instance.OnHoldObject;
+            @DropObject.started += instance.OnDropObject;
+            @DropObject.performed += instance.OnDropObject;
+            @DropObject.canceled += instance.OnDropObject;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -332,6 +358,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @HoldObject.started -= instance.OnHoldObject;
             @HoldObject.performed -= instance.OnHoldObject;
             @HoldObject.canceled -= instance.OnHoldObject;
+            @DropObject.started -= instance.OnDropObject;
+            @DropObject.performed -= instance.OnDropObject;
+            @DropObject.canceled -= instance.OnDropObject;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -357,5 +386,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnHoldObject(InputAction.CallbackContext context);
+        void OnDropObject(InputAction.CallbackContext context);
     }
 }
