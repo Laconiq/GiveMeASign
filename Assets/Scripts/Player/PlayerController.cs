@@ -1,3 +1,4 @@
+using Cinemachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -15,8 +16,10 @@ public class PlayerController : MonoBehaviour
     private CharacterController _controller;
     private PlayerFeedbacks _feedbacks;
     private Vector3 _playerVelocity;
+    private CinemachineVirtualCamera _cinemachineVirtualCamera;
     private bool _isGrounded;
     private Transform _cameraTransform;
+    private Interactable _nearbyInteractable;
 
     private Controls _controls;
     private Vector2 _moveInput;
@@ -33,6 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         _feedbacks = GetComponent<PlayerFeedbacks>();
         _controller = GetComponent<CharacterController>();
+        _cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
         if (Camera.main != null) _cameraTransform = Camera.main.transform;
         _currentSpeed = movementSpeed;
 
@@ -42,19 +46,12 @@ public class PlayerController : MonoBehaviour
         _controls.Player.Jump.performed += _ => _jumpInput = true;
         _controls.Player.Jump.canceled += _ => _jumpInput = false;
         _controls.Player.Crouch.performed += _ => TryCrouch();
+        _controls.Player.Interact.performed += _ => TryToInteract();
+        
+        EnableControls();
     }
 
-    private void OnEnable()
-    {
-        _controls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        _controls.Disable();
-    }
-
-    private void Update()
+    private void FixedUpdate()
     {
         HandleMovement();
         HandleJumpAndGravity();
@@ -110,5 +107,43 @@ public class PlayerController : MonoBehaviour
 
         _playerVelocity.y += gravityValue * Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Interactable"))
+            _nearbyInteractable = other.GetComponent<Interactable>();
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Interactable"))
+            _nearbyInteractable = null;
+    }
+    
+    private void TryToInteract()
+    {
+        if (_nearbyInteractable != null)
+            _nearbyInteractable.OnPlayerInteract();
+    }
+    
+    public void DisableControls()
+    {
+        var povComponent = _cinemachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
+        povComponent.m_HorizontalAxis.m_MaxSpeed = 0;
+        povComponent.m_VerticalAxis.m_MaxSpeed = 0;
+        _controls.Disable();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    
+    public void EnableControls()
+    {
+        var povComponent = _cinemachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
+        povComponent.m_HorizontalAxis.m_MaxSpeed = 300;
+        povComponent.m_VerticalAxis.m_MaxSpeed = 300;
+        _controls.Enable();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

@@ -37,11 +37,11 @@ public class GameManager : MonoBehaviour
     
     private void LoadGame()
     {
-        Debug.Log("Game is loading");
+        Debug.Log("Game is loading...");
     }
 
     private void LoadMainMenu()
     {
-        Debug.Log("Main menu is loading");
+        Debug.Log("Main menu is loading...");
     }
 }
