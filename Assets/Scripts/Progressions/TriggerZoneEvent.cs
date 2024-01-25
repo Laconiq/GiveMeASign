@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TriggerZoneEvent : MonoBehaviour
 {
-    [SerializeField] private bool canUnlockProgression;
-    [SerializeField, ShowIf("canUnlockProgression")] private List<ProgressionScriptableObject> progressionsToUnlock;
-    [SerializeField] private bool canTeleportPlayer;
-    [SerializeField, ShowIf("canTeleportPlayer")] private Transform teleportPosition;
+    [SerializeField, Tooltip("Est-ce que la zone doit activer des progressions ?")] private bool canUnlockProgression;
+    [SerializeField, ShowIf("canUnlockProgression"), Tooltip("Les progressions validées quand le joueur est dans la zone")] private List<ProgressionScriptableObject> progressionsToUnlock;
+    [SerializeField, Tooltip("Est-ce que la zone doit téléporter le joueur ?")] private bool canTeleportPlayer;
+    [SerializeField, ShowIf("canTeleportPlayer"), Tooltip("Position où le joueur sera téléporté en rentrant dans la zone")] private Transform teleportPosition;
     
     private void OnTriggerEnter(Collider other)
     {

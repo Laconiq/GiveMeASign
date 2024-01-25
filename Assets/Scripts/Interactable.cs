@@ -4,8 +4,9 @@ public class Interactable : MonoBehaviour
 {
     private enum InteractionType
     {
-        Object,
-        Npc
+        GrabbableObject,
+        Npc,
+        Object
     }
     
     [SerializeField] private InteractionType interactionType;

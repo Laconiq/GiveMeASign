@@ -161,7 +161,6 @@ public class PlayerController : MonoBehaviour
             _nearbyInteractable.OnPlayerInteract();
     }
     
-    
     //Sensitivity
     [HideInInspector] public float sensitivity = 300f;
     public void DisableControls()
