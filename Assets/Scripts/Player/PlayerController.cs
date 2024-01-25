@@ -1,7 +1,7 @@
+using System.Collections;
 using Cinemachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -77,20 +77,38 @@ public class PlayerController : MonoBehaviour
     {
         if (_isCrouching)
         {
-            if (IsBlockedAbove()) 
+            if (IsBlockedAbove())
                 return;
-            _controller.height = standHeight;
-            _currentSpeed = movementSpeed;
-            _isCrouching = false;
-            _feedbacks.PlayCrouchFeedbackOff();
+            StartCoroutine(ChangeCrouchState(standHeight, movementSpeed, false));
         }
         else
+            StartCoroutine(ChangeCrouchState(crouchHeight, crouchSpeed, true));
+    }
+
+    private IEnumerator ChangeCrouchState(float targetHeight, float targetSpeed, bool isCrouching)
+    {
+        float timeToCrouch = 0.5f;
+        float currentTime = 0;
+        float startHeight = _controller.height;
+        float currentSpeed = _currentSpeed;
+
+        while (currentTime < timeToCrouch)
         {
-            _controller.height = crouchHeight;
-            _currentSpeed = crouchSpeed;
-            _isCrouching = true;
-            _feedbacks.PlayCrouchFeedbackOn();
+            currentTime += Time.deltaTime;
+            float t = currentTime / timeToCrouch;
+            _controller.height = Mathf.SmoothStep(startHeight, targetHeight, t);
+            _currentSpeed = Mathf.SmoothStep(currentSpeed, targetSpeed, t);
+            yield return null;
         }
+
+        _controller.height = targetHeight;
+        _currentSpeed = targetSpeed;
+        _isCrouching = isCrouching;
+
+        if (_isCrouching)
+            _feedbacks.PlayCrouchFeedbackOn();
+        else
+            _feedbacks.PlayCrouchFeedbackOff();
     }
     
     private bool IsBlockedAbove()
