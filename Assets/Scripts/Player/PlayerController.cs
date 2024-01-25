@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private bool _isGrounded;
     private Transform _cameraTransform;
     private Interactable _nearbyInteractable;
+    private HandleCursor _handleCursor;
     
     [Title("Camera Settings")]
     [SerializeField] private CinemachineVirtualCamera cineMachineVirtualCamera;
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         _feedbacks = GetComponent<PlayerFeedbacks>();
         _controller = GetComponent<CharacterController>();
+        _handleCursor = FindObjectOfType<HandleCursor>();
         if (Camera.main != null) _cameraTransform = Camera.main.transform;
         _currentSpeed = movementSpeed;
 
@@ -66,6 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         HandleMovement();
         HandleJumpAndGravity();
+        CheckIfObjectIsGrabbable();
     }
     
     private void LateUpdate()
@@ -218,10 +221,12 @@ public class PlayerController : MonoBehaviour
             if (hit.collider.GetComponent<GrabbableObject>() == null || !hit.collider.GetComponent<GrabbableObject>().isGrabbable) 
                 return;
             _heldObject = hit.collider.gameObject;
-            _heldObject.GetComponent<Rigidbody>().isKinematic = true;
-            _heldObject.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.Interpolate;
-            _heldObject.transform.position = holdPosition.position;
-            _heldObject.transform.parent = holdPosition;
+            var heldObjectRb = _heldObject.GetComponent<Rigidbody>();
+            var heldObjectTransform = _heldObject.transform;
+            heldObjectRb.isKinematic = true;
+            heldObjectRb.interpolation = RigidbodyInterpolation.Interpolate;
+            heldObjectTransform.position = holdPosition.position;
+            heldObjectTransform.parent = holdPosition;
             _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(true);
         }
         else if (_heldObject != null)
@@ -233,7 +238,18 @@ public class PlayerController : MonoBehaviour
             _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(false);
             _heldObject = null;
         }
-
+    }
+    
+    private void CheckIfObjectIsGrabbable()
+    {
+        if (_heldObject != null)
+            _handleCursor.SetCursorVisibility(true);
+        else if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out var hit, 2f) || 
+                 hit.collider.GetComponent<GrabbableObject>() is null || 
+                 !hit.collider.GetComponent<GrabbableObject>().isGrabbable)
+            _handleCursor.SetCursorVisibility(false);
+        else
+            _handleCursor.SetCursorVisibility(true);
     }
     
     private void UpdateHoldPosition()
