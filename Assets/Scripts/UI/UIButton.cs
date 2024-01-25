@@ -7,4 +7,9 @@ public class UIButton : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    
+    public void ResumeGame()
+    {
+        FindObjectOfType<PauseCanvas>().SwitchPauseCanvas();
+    }
 }

@@ -1,6 +1,7 @@
 using Cinemachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera cineMachineVirtualCameraDialogue;
 
     private Controls _controls;
+    private Controls _uiControls;
     private Vector2 _moveInput;
     private bool _jumpInput;
     private bool _isCrouching;
@@ -52,10 +54,14 @@ public class PlayerController : MonoBehaviour
         _controls.Player.HoldObject.performed += _ => HoldObject(throwForce);
         _controls.Player.DropObject.performed += _ => HoldObject(dropForce);
         
+        _uiControls = new Controls();
+        _uiControls.UI.Pause.performed += _ => FindObjectOfType<PauseCanvas>().SwitchPauseCanvas();
+        _uiControls.UI.Enable();
+        
         EnableControls();
         SetFPSCamera();
     }
-
+    
     private void FixedUpdate()
     {
         HandleMovement();
@@ -137,6 +143,9 @@ public class PlayerController : MonoBehaviour
             _nearbyInteractable.OnPlayerInteract();
     }
     
+    
+    //Sensitivity
+    [HideInInspector] public float sensitivity = 300f;
     public void DisableControls()
     {
         var povComponent = cineMachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
@@ -150,15 +159,14 @@ public class PlayerController : MonoBehaviour
     public void EnableControls()
     {
         var povComponent = cineMachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
-        povComponent.m_HorizontalAxis.m_MaxSpeed = 300;
-        povComponent.m_VerticalAxis.m_MaxSpeed = 300;
+        povComponent.m_HorizontalAxis.m_MaxSpeed = sensitivity;
+        povComponent.m_VerticalAxis.m_MaxSpeed = sensitivity;
         _controls.Enable();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     //Camera
-    
     public void SetDialogueCamera()
     {
         cineMachineVirtualCamera.Priority = 9;
@@ -215,8 +223,8 @@ public class PlayerController : MonoBehaviour
     {
         if (_heldObject != null)
         {
-            Vector3 targetPosition = _cameraTransform.position + _cameraTransform.forward * 1.5f; // Ajustez la distance si nécessaire
-            _heldObject.transform.position = Vector3.Lerp(_heldObject.transform.position, targetPosition, Time.deltaTime * 10); // Ajustez la vitesse si nécessaire
+            Vector3 targetPosition = _cameraTransform.position + _cameraTransform.forward * 1.5f;
+            _heldObject.transform.position = Vector3.Lerp(_heldObject.transform.position, targetPosition, Time.deltaTime * 10);
         }
     }
 
