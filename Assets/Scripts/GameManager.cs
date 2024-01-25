@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public ProgressionManager progressionManager;
+    public DialogueManager dialogueManager;
+    public PlayerController playerController;
+    public UIManager uiManager;
     
     private void Awake()
     {
@@ -35,7 +38,10 @@ public class GameManager : MonoBehaviour
     private void LoadGame()
     {
         Debug.Log("Game is loading...");
+        playerController.Initialize();
         progressionManager.Initialize();
+        dialogueManager.Initialize();
+        uiManager.Initialize();
     }
 
     private void LoadMainMenu()

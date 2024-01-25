@@ -1397,7 +1397,6 @@ GameObject:
   - component: {fileID: 1590836897975513859}
   - component: {fileID: 2566428884930848264}
   - component: {fileID: 2579617936705091977}
-  - component: {fileID: 6346623283567635436}
   - component: {fileID: 5701049928149449164}
   - component: {fileID: 3037827978784079931}
   m_Layer: 5
@@ -1493,25 +1492,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
---- !u!114 &6346623283567635436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4179025135162636443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb1c2528cb344d9468b7d0731079b201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcDialogueText: {fileID: 1837935932572662672}
-  npcNameText: {fileID: 6489434290036729572}
-  playerResponsesParent: {fileID: 3566132120501650719}
-  playerResponsePrefab: {fileID: 467046727655284709, guid: abb0fee31faede342acae541abddfdfe,
-    type: 3}
-  textRevealFeedback: {fileID: 5241529395680724030}
-  dialogueContainer: {fileID: 7127265099915155517}
 --- !u!114 &5701049928149449164
 MonoBehaviour:
   m_ObjectHideFlags: 0

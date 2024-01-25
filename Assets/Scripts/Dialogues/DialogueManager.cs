@@ -18,10 +18,10 @@ public class DialogueManager : MonoBehaviour
     private int _totalDialogueItems;
     private PlayerController _playerController;
     
-    private void Start()
+    public void Initialize()
     {
         npcDialogueText.text = "";
-        _playerController = FindObjectOfType<PlayerController>();
+        _playerController = GameManager.Instance.playerController;
         _textRevealFeedback = textRevealFeedback.GetFeedbackOfType<MMF_TMPTextReveal>();
         dialogueContainer.SetActive(false);
     }

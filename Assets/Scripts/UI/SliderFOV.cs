@@ -1,3 +1,4 @@
+using System.Globalization;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
@@ -14,6 +15,6 @@ public class SliderFOV : MonoBehaviour
         float fov = slider.value;
         cineMachineVirtualCamera.m_Lens.FieldOfView = fov;
         cineMachineVirtualCameraDialogue.m_Lens.FieldOfView = fov;
-        sliderValue.text = fov.ToString().Substring(0, 2);
+        sliderValue.text = fov.ToString(CultureInfo.InvariantCulture)[..2];
     }
 }

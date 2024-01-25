@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Cinemachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -14,12 +15,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float crouchHeight = 1.0f;
     [SerializeField] private float standHeight = 2.0f;
 
+    public static PlayerController Instance;
     private CharacterController _controller;
     private PlayerFeedbacks _feedbacks;
     private Vector3 _playerVelocity;
     private bool _isGrounded;
     private Transform _cameraTransform;
-    private Interactable _nearbyInteractable;
     private HandleCursor _handleCursor;
     
     [Title("Camera Settings")]
@@ -33,12 +34,7 @@ public class PlayerController : MonoBehaviour
     private bool _isCrouching;
     private float _currentSpeed;
 
-    private void Awake()
-    {
-        Initialize();
-    }
-
-    private void Initialize()
+    public void Initialize()
     {
         _feedbacks = GetComponent<PlayerFeedbacks>();
         _controller = GetComponent<CharacterController>();
@@ -55,11 +51,11 @@ public class PlayerController : MonoBehaviour
         _controls.Player.Interact.performed += _ => TryToInteract();
         _controls.Player.HoldObject.performed += _ => HoldObject(throwForce);
         _controls.Player.DropObject.performed += _ => HoldObject(dropForce);
-        
+    
         _uiControls = new Controls();
         _uiControls.UI.Pause.performed += _ => FindObjectOfType<PauseCanvas>().SwitchPauseCanvas();
         _uiControls.UI.Enable();
-        
+    
         EnableControls();
         SetFPSCamera();
     }
@@ -120,25 +116,41 @@ public class PlayerController : MonoBehaviour
         return hitSomething;
     }
 
+    private bool _isOnLadder;
+    public void SetIsOnLadder(bool b) { _isOnLadder = b; }
+    public bool GetIsOnLadder() { return _isOnLadder; }
+    
     private void HandleMovement()
     {
         _isGrounded = _controller.isGrounded;
         if (_isGrounded && _playerVelocity.y < 0)
             _playerVelocity.y = 0f;
 
-        Vector3 forward = _cameraTransform.forward;
-        Vector3 right = _cameraTransform.right;
-        forward.y = 0;
-        right.y = 0;
-        forward.Normalize();
-        right.Normalize();
+        Vector3 moveDirection;
 
-        Vector3 moveDirection = forward * _moveInput.y + right * _moveInput.x;
-        _controller.Move(moveDirection * (_currentSpeed * Time.deltaTime));
+        if (_isOnLadder)
+        {
+            moveDirection = Vector3.up * _moveInput.y;
+            _controller.Move(moveDirection * (_currentSpeed * Time.deltaTime));
+        }
+        else
+        {
+            Vector3 forward = _cameraTransform.forward;
+            Vector3 right = _cameraTransform.right;
+            forward.y = 0;
+            right.y = 0;
+            forward.Normalize();
+            right.Normalize();
+
+            moveDirection = forward * _moveInput.y + right * _moveInput.x;
+            _controller.Move(moveDirection * (_currentSpeed * Time.deltaTime));
+        }
     }
 
     private void HandleJumpAndGravity()
     {
+        if (_isOnLadder)
+            return;
         if (_jumpInput && _isGrounded)
             _playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
 
@@ -146,22 +158,41 @@ public class PlayerController : MonoBehaviour
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
     
-    private void OnTriggerEnter(Collider other)
+    private List<Interactable> _nearbyInteractables = new List<Interactable>();
+    public void AddNearbyInteractable(Interactable interactable)
     {
-        if (other.CompareTag("Interactable"))
-            _nearbyInteractable = other.GetComponent<Interactable>();
+        if (!_nearbyInteractables.Contains(interactable))
+            _nearbyInteractables.Add(interactable);
+    }
+    public void RemoveNearbyInteractable(Interactable interactable)
+    {
+        if (_nearbyInteractables.Contains(interactable))
+            _nearbyInteractables.Remove(interactable);
     }
     
-    private void OnTriggerExit(Collider other)
+    private Interactable GetNearestInteractable()
     {
-        if (other.CompareTag("Interactable"))
-            _nearbyInteractable = null;
+        if (_nearbyInteractables.Count == 0)
+            return null;
+        Interactable nearestInteractable = _nearbyInteractables[0];
+        float nearestDistance = Vector3.Distance(transform.position, nearestInteractable.transform.position);
+        foreach (Interactable interactable in _nearbyInteractables)
+        {
+            float distance = Vector3.Distance(transform.position, interactable.transform.position);
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                nearestInteractable = interactable;
+            }
+        }
+        return nearestInteractable;
     }
     
     private void TryToInteract()
     {
-        if (_nearbyInteractable != null)
-            _nearbyInteractable.OnPlayerInteract();
+        var nearestInteractable = GetNearestInteractable();
+        if (nearestInteractable != null)
+            nearestInteractable.OnPlayerInteract();
     }
     
     //Sensitivity
@@ -260,5 +291,4 @@ public class PlayerController : MonoBehaviour
             _heldObject.transform.position = Vector3.Lerp(_heldObject.transform.position, targetPosition, Time.deltaTime * 10);
         }
     }
-
 }

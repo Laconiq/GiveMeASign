@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 
 public class HandleCursor : MonoBehaviour
 {
     [SerializeField] private GameObject handleCursor;
 
-    private void Awake()
+    public void Initialize()
     {
         handleCursor.SetActive(false);
     }

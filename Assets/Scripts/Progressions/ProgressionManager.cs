@@ -26,7 +26,6 @@ public class ProgressionManager : MonoBehaviour
     [Button("Add Progression")]
     private void AddProgressionEditor()
     {
-        // Charge le prefab depuis le dossier Resources
         GameObject progressionPrefab = Resources.Load<GameObject>("Progression");
         if (progressionPrefab != null)
         {

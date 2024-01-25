@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
@@ -7,13 +8,11 @@ public class Npc : Interactable
 {
     [SerializeField] private string npcName;
     private List<Dialogue> _dialogues;
-    
     private int _currentDialogueIndex;
     private DialogueManager _dialogueManager;
-    private void Awake()
+    private void Start()
     {
-        _dialogueManager = FindObjectOfType<DialogueManager>();
-        
+        _dialogueManager = GameManager.Instance.dialogueManager;
         _dialogues = new List<Dialogue>();
         foreach (Transform child in transform)
         {
@@ -53,13 +52,7 @@ public class Npc : Interactable
             return tempDialogueIndex+1;
         
         // If the dialogue is finished and there is a next dialogue with condition, we check if the condition is met
-        bool allProgressionsFinished = true;
-        foreach(var progression in _dialogues[tempDialogueIndex+1].progressionsToStart)
-            if(!progression.GetProgressionStatus())
-            {
-                allProgressionsFinished = false;
-                break;
-            }
+        bool allProgressionsFinished = _dialogues[tempDialogueIndex + 1].progressionsToStart.All(progression => progression.GetProgressionStatus());
         if (_dialogues[tempDialogueIndex+1].requireProgressionToStart && allProgressionsFinished)
             return tempDialogueIndex+1;
 

@@ -7,11 +7,11 @@ public class PauseCanvas : MonoBehaviour
     private PlayerController _playerController;
     [SerializeField] private Volume blurVolume;
 
-    private void Awake()
+    public void Initialize()
     {
         pauseCanvas.SetActive(false);
         blurVolume.weight = 0;
-        _playerController = FindObjectOfType<PlayerController>();
+        _playerController = GameManager.Instance.playerController;
     }
 
     public void SwitchPauseCanvas()
