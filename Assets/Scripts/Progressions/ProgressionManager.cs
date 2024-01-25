@@ -8,7 +8,6 @@ using UnityEditor;
 public class ProgressionManager : MonoBehaviour
 {
     private List<Progression> _progressionItems;
-
     public void Initialize()
     {
         _progressionItems = new List<Progression>();
@@ -32,14 +31,11 @@ public class ProgressionManager : MonoBehaviour
         if (progressionPrefab != null)
         {
             GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(progressionPrefab, transform);
-            instance.name = "Progression"; // Optionnel: définir le nom de l'instance
-            // Assurez-vous que cette opération est enregistrée dans les undo d'Unity
+            instance.name = "Progression";
             Undo.RegisterCreatedObjectUndo(instance, "Create progression instance");
         }
         else
-        {
             Debug.LogWarning("Progression prefab not found in Resources.");
-        }
     }
 #endif
 }

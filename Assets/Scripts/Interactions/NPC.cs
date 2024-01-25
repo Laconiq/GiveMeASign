@@ -1,28 +1,39 @@
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
+using UnityEditor;
 using UnityEngine;
 
 public class Npc : Interactable
 {
     [SerializeField] private string npcName;
-    [SerializeField] private List<DialogueScriptableObject> dialogueScriptableObject;
+    private List<Dialogue> _dialogues;
+    
     private int _currentDialogueIndex;
     private DialogueManager _dialogueManager;
     private void Awake()
     {
         _dialogueManager = FindObjectOfType<DialogueManager>();
+        
+        _dialogues = new List<Dialogue>();
+        foreach (Transform child in transform)
+        {
+            Dialogue dialogue = child.GetComponent<Dialogue>();
+            if (dialogue != null)
+                _dialogues.Add(dialogue);
+        }
         ResetDialogue();
     }
 
     private void ResetDialogue()
     {
-        foreach (DialogueScriptableObject dialogue in dialogueScriptableObject)
+        foreach (Dialogue dialogue in _dialogues)
             dialogue.isDialogueFinished = false;
     }
     public override void OnPlayerInteract()
     {
         base.OnPlayerInteract();
         _currentDialogueIndex = ResearchDialogue();
-        _dialogueManager.StartDialogue(dialogueScriptableObject[_currentDialogueIndex], npcName);
+        _dialogueManager.StartDialogue(_dialogues[_currentDialogueIndex], npcName);
     }
     
     private int ResearchDialogue()
@@ -30,29 +41,46 @@ public class Npc : Interactable
         int tempDialogueIndex = _currentDialogueIndex;
         
         // If the dialogue is not finished, we start it
-        if (!dialogueScriptableObject[tempDialogueIndex].isDialogueFinished)
+        if (!_dialogues[tempDialogueIndex].isDialogueFinished)
             return tempDialogueIndex;
 
         // If the dialogue is finished and there is no next dialogue, we repeat the last one
-        if (dialogueScriptableObject[tempDialogueIndex].isDialogueFinished && tempDialogueIndex + 1 == dialogueScriptableObject.Count)
+        if (_dialogues[tempDialogueIndex].isDialogueFinished && tempDialogueIndex + 1 == _dialogues.Count)
             return tempDialogueIndex;
 
         // If the dialogue is finished and there is a next dialogue without condition, we start it
-        if (dialogueScriptableObject[tempDialogueIndex+1].requireProgressionToStart == false)
+        if (_dialogues[tempDialogueIndex+1].requireProgressionToStart == false)
             return tempDialogueIndex+1;
         
         // If the dialogue is finished and there is a next dialogue with condition, we check if the condition is met
         bool allProgressionsFinished = true;
-        foreach(var progression in dialogueScriptableObject[tempDialogueIndex+1].progressionsToStart)
+        foreach(var progression in _dialogues[tempDialogueIndex+1].progressionsToStart)
             if(!progression.GetProgressionStatus())
             {
                 allProgressionsFinished = false;
                 break;
             }
-        if (dialogueScriptableObject[tempDialogueIndex+1].requireProgressionToStart && allProgressionsFinished)
+        if (_dialogues[tempDialogueIndex+1].requireProgressionToStart && allProgressionsFinished)
             return tempDialogueIndex+1;
 
         // If the dialogue is finished and there is a next dialogue with condition, we repeat the last one
         return tempDialogueIndex;
     }
+    
+#if UNITY_EDITOR
+    [Button("Add Dialogue")]
+    private void AddDialogueEditor()
+    {
+        // Charge le prefab depuis le dossier Resources
+        GameObject dialoguePrefab = Resources.Load<GameObject>("Dialogue");
+        if (dialoguePrefab != null)
+        {
+            GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(dialoguePrefab, transform);
+            instance.name = "Dialogue";
+            Undo.RegisterCreatedObjectUndo(instance, "Create progression instance");
+        }
+        else
+            Debug.LogWarning("Dialogue prefab not found in Resources.");
+    }
+#endif
 }

@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private MMF_Player textRevealFeedback;
     [SerializeField] private GameObject dialogueContainer;
     private MMF_TMPTextReveal _textRevealFeedback;
-    private DialogueScriptableObject _currentDialogueScriptableObject;
+    private Dialogue _currentDialogue;
     private int _currentDialogueIndex;
     private int _totalDialogueItems;
     private PlayerController _playerController;
@@ -32,26 +32,24 @@ public class DialogueManager : MonoBehaviour
         textRevealFeedback.PlayFeedbacks();
     }
     
-    public void StartDialogue(DialogueScriptableObject dialogueScriptableObject, string npcName)
+    public void StartDialogue(Dialogue dialogue, string npcName)
     {
         dialogueContainer.SetActive(true);
         npcNameText.text = npcName;
-        _currentDialogueScriptableObject = dialogueScriptableObject;
+        _currentDialogue = dialogue;
         LoadCurrentDialogueIndex();
-        _totalDialogueItems = _currentDialogueScriptableObject.dialogueItems.Count;
+        _totalDialogueItems = _currentDialogue.dialogueItems.Count;
         
         _playerController.DisableControls();
         _playerController.SetDialogueCamera();
-        if (_currentDialogueScriptableObject.lookAtTarget != null)
-            _playerController.LookAtTarget(_currentDialogueScriptableObject.lookAtTarget);
         
-        DialogueItem dialogueItemToLoad = _currentDialogueScriptableObject.isDialogueFinished ? _currentDialogueScriptableObject.repeatDialogueItem : _currentDialogueScriptableObject.dialogueItems[_currentDialogueIndex];
+        DialogueItem dialogueItemToLoad = _currentDialogue.isDialogueFinished ? _currentDialogue.repeatDialogueItem : _currentDialogue.dialogueItems[_currentDialogueIndex];
         DisplayCurrentDialogue(dialogueItemToLoad);
     }
 
     private void LoadCurrentDialogueIndex()
     {
-        if (_currentDialogueScriptableObject.isDialogueFinished)
+        if (_currentDialogue.isDialogueFinished)
             _currentDialogueIndex = _totalDialogueItems - 1;
         else
             _currentDialogueIndex = 0;
@@ -60,6 +58,7 @@ public class DialogueManager : MonoBehaviour
     private void DisplayCurrentDialogue(DialogueItem dialogueItem)
     {
         DestroyPlayerResponses();
+        _playerController.LookAtTarget(dialogueItem.lookAtTarget);
         RevealText(dialogueItem.npcDialogue);
         foreach (string playerResponse in dialogueItem.playerResponses)
         {
@@ -73,7 +72,7 @@ public class DialogueManager : MonoBehaviour
         if (_currentDialogueIndex < _totalDialogueItems - 1)
         {
             _currentDialogueIndex++;
-            DisplayCurrentDialogue(_currentDialogueScriptableObject.dialogueItems[_currentDialogueIndex]);
+            DisplayCurrentDialogue(_currentDialogue.dialogueItems[_currentDialogueIndex]);
         }
         else
             CloseDialogue();
@@ -85,8 +84,8 @@ public class DialogueManager : MonoBehaviour
         DestroyPlayerResponses();
         _playerController.EnableControls();
         _playerController.SetFPSCamera();
-        _currentDialogueScriptableObject.isDialogueFinished = true;
-        _currentDialogueScriptableObject.UnlockProgression();
+        _currentDialogue.isDialogueFinished = true;
+        _currentDialogue.UnlockProgression();
         dialogueContainer.SetActive(false);
     }
     

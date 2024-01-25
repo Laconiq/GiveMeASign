@@ -2,11 +2,8 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewDialogue", menuName = "Dialogue System/Dialogue")]
-public class DialogueScriptableObject : ScriptableObject
+public class Dialogue : MonoBehaviour
 {
-    public Transform lookAtTarget;
-    
     public List<DialogueItem> dialogueItems;
     [HideInInspector] public bool isDialogueFinished;
     public DialogueItem repeatDialogueItem;
