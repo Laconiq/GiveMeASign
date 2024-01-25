@@ -66,12 +66,6 @@ public class PlayerController : MonoBehaviour
         HandleJumpAndGravity();
         CheckIfObjectIsGrabbable();
     }
-    
-    private void LateUpdate()
-    {
-        UpdateHoldPosition();
-    }
-
     private void TryCrouch()
     {
         if (_isCrouching)
@@ -242,6 +236,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float throwForce = 10.0f;
     [SerializeField] private float dropForce = 2.0f;
     private GameObject _heldObject;
+    private Rigidbody _heldObjectRb;
 
     private void HoldObject(float force)
     {
@@ -252,25 +247,34 @@ public class PlayerController : MonoBehaviour
             if (hit.collider.GetComponent<GrabbableObject>() == null || !hit.collider.GetComponent<GrabbableObject>().isGrabbable) 
                 return;
             _heldObject = hit.collider.gameObject;
-            var heldObjectRb = _heldObject.GetComponent<Rigidbody>();
-            var heldObjectTransform = _heldObject.transform;
-            heldObjectRb.isKinematic = true;
-            heldObjectRb.interpolation = RigidbodyInterpolation.Interpolate;
-            heldObjectTransform.position = holdPosition.position;
-            heldObjectTransform.parent = holdPosition;
+            _heldObjectRb = _heldObject.GetComponent<Rigidbody>();
+            _heldObjectRb.useGravity = false;
             _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(true);
+            StartCoroutine(UpdateHoldPositionRoutine());
+            
         }
-        else if (_heldObject != null)
+        else
         {
-            Rigidbody rb = _heldObject.GetComponent<Rigidbody>();
-            rb.isKinematic = false;
-            _heldObject.transform.parent = null;
-            rb.AddForce(_cameraTransform.forward * force, ForceMode.VelocityChange);
+            _heldObjectRb.useGravity = true;
+            _heldObjectRb.AddForce(_cameraTransform.forward * force, ForceMode.VelocityChange);
             _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(false);
+            StopCoroutine(UpdateHoldPositionRoutine());
             _heldObject = null;
+            _heldObjectRb = null;
         }
     }
-    
+
+    private IEnumerator UpdateHoldPositionRoutine()
+    {
+        while (_heldObject is not null && _heldObjectRb is not null)
+        {
+            Vector3 desiredVelocity = (holdPosition.position - _heldObject.transform.position) * 8f;
+            _heldObjectRb.velocity = Vector3.Lerp(_heldObjectRb.velocity, desiredVelocity, 0.1f);
+            yield return new WaitForFixedUpdate();
+        }
+    }
+
+
     private void CheckIfObjectIsGrabbable()
     {
         if (_heldObject != null)
@@ -281,14 +285,5 @@ public class PlayerController : MonoBehaviour
             _handleCursor.SetCursorVisibility(false);
         else
             _handleCursor.SetCursorVisibility(true);
-    }
-    
-    private void UpdateHoldPosition()
-    {
-        if (_heldObject != null)
-        {
-            Vector3 targetPosition = _cameraTransform.position + _cameraTransform.forward * 1.5f;
-            _heldObject.transform.position = Vector3.Lerp(_heldObject.transform.position, targetPosition, Time.deltaTime * 10);
-        }
     }
 }
