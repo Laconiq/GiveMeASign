@@ -13,15 +13,15 @@ public class DialogueScriptableObject : ScriptableObject
     
     [Title("Progression Settings")]
     public bool unlockProgressionOnDialogueFinish;
-    [ShowIf("unlockProgressionOnDialogueFinish")] public List<ProgressionScriptableObject> progressionsToUnlock;
+    [ShowIf("unlockProgressionOnDialogueFinish")] public List<Progression> progressionsToUnlock;
     public bool requireProgressionToStart;
-    [ShowIf("requireProgressionToStart")] public List<ProgressionScriptableObject> progressionsToStart;
+    [ShowIf("requireProgressionToStart")] public List<Progression> progressionsToStart;
     
     public void UnlockProgression()
     {
         if (!unlockProgressionOnDialogueFinish)
             return;
-        foreach (ProgressionScriptableObject progression in progressionsToUnlock)
-            progression.IsProgressionFinished = true;
+        foreach (Progression progression in progressionsToUnlock)
+            progression.SetProgressionStatus(true);
     }
 }

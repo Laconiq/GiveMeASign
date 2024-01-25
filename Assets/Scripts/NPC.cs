@@ -44,7 +44,7 @@ public class Npc : Interactable
         // If the dialogue is finished and there is a next dialogue with condition, we check if the condition is met
         bool allProgressionsFinished = true;
         foreach(var progression in dialogueScriptableObject[tempDialogueIndex+1].progressionsToStart)
-            if(!progression.IsProgressionFinished)
+            if(!progression.GetProgressionStatus())
             {
                 allProgressionsFinished = false;
                 break;

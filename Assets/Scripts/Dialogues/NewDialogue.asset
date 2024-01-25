@@ -26,9 +26,9 @@ MonoBehaviour:
     npcDialogue: Loop
     playerResponses:
     - Loop
-  unlockProgressionOnDialogueFinish: 0
+  unlockProgressionOnDialogueFinish: 1
   progressionsToUnlock:
-  - {fileID: 11400000, guid: 5babc245e5dede647a6d9d185eb25c6e, type: 2}
+  - {fileID: 0}
   requireProgressionToStart: 0
   progressionsToStart:
   - {fileID: 0}

@@ -5,6 +5,7 @@ public class InteractableObject : Interactable
 {
     private Animator _animator;
     [SerializeField] private string animatorTriggerName;
+    [SerializeField] private float delayBeforeTriggeringAnimation;
 
     private void Awake()
     {
@@ -14,6 +15,11 @@ public class InteractableObject : Interactable
     public override void OnPlayerInteract()
     {
         base.OnPlayerInteract();
-        _animator.SetTrigger(animatorTriggerName);        
+        Invoke(nameof(SetAnimatorTrigger), delayBeforeTriggeringAnimation);
+    }
+    
+    private void SetAnimatorTrigger()
+    {
+        _animator.SetTrigger(animatorTriggerName);
     }
 }
