@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private bool _isGrounded;
     private Transform _cameraTransform;
     private HandleCursor _handleCursor;
+    private CinemachineBasicMultiChannelPerlin _noise;
     
     [Title("Camera Settings")]
     [SerializeField] private CinemachineVirtualCamera cineMachineVirtualCamera;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
         _feedbacks = GetComponent<PlayerFeedbacks>();
         _controller = GetComponent<CharacterController>();
         _handleCursor = FindObjectOfType<HandleCursor>();
+        _noise = cineMachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         if (Camera.main != null) _cameraTransform = Camera.main.transform;
         _currentSpeed = movementSpeed;
 
@@ -138,6 +140,11 @@ public class PlayerController : MonoBehaviour
 
             moveDirection = forward * _moveInput.y + right * _moveInput.x;
             _controller.Move(moveDirection * (_currentSpeed * Time.deltaTime));
+
+            if (_moveInput != Vector2.zero)
+                _noise.m_FrequencyGain = _isCrouching ? 0.03f : 0.05f;
+            else
+                _noise.m_FrequencyGain = 0.005f;
         }
     }
 

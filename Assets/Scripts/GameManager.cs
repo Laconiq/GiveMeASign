@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public ProgressionManager progressionManager;
-    public DialogueManager dialogueManager;
-    public PlayerController playerController;
-    public UIManager uiManager;
+    [HideInInspector] public ProgressionManager progressionManager;
+    [HideInInspector] public DialogueManager dialogueManager;
+    [HideInInspector] public PlayerController playerController;
+    [HideInInspector] public UIManager uiManager;
     
     private void Awake()
     {
@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
     private void LoadGame()
     {
         Debug.Log("Game is loading...");
+        playerController = FindObjectOfType<PlayerController>();
+        progressionManager = FindObjectOfType<ProgressionManager>();
+        dialogueManager = FindObjectOfType<DialogueManager>();
+        uiManager = FindObjectOfType<UIManager>();
         playerController.Initialize();
         progressionManager.Initialize();
         dialogueManager.Initialize();
