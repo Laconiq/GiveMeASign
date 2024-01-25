@@ -130,7 +130,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 2.75
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -154,7 +154,7 @@ MonoBehaviour:
   jumpHeight: 0.7
   gravityValue: -9.81
   crouchHeight: 1
-  standHeight: 2
+  standHeight: 2.75
   cineMachineVirtualCamera: {fileID: 5126506825604188572}
   cineMachineVirtualCameraDialogue: {fileID: 8003961603710254541}
   holdPosition: {fileID: 2974816291339248530}
