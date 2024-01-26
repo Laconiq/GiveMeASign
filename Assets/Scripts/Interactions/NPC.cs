@@ -11,6 +11,7 @@ public class Npc : Interactable
     private int _currentDialogueIndex;
     private DialogueManager _dialogueManager;
     [SerializeField] private GameObject dialogueContainer;
+    [SerializeField] private GameObject npcCanvas;
     private void Start()
     {
         _dialogueManager = GameManager.Instance.dialogueManager;
@@ -21,7 +22,20 @@ public class Npc : Interactable
             if (dialogue != null)
                 _dialogues.Add(dialogue);
         }
+        npcCanvas.SetActive(false);
         ResetDialogue();
+    }
+    
+    protected override void OnTriggerEnter(Collider other)
+    {
+        base.OnTriggerEnter(other);
+        npcCanvas.SetActive(true);
+    }
+    
+    protected override void OnTriggerExit(Collider other)
+    {
+        base.OnTriggerExit(other);
+        npcCanvas.SetActive(false);
     }
 
     private void ResetDialogue()
@@ -34,6 +48,7 @@ public class Npc : Interactable
         base.OnPlayerInteract();
         _currentDialogueIndex = ResearchDialogue();
         _dialogueManager.StartDialogue(_dialogues[_currentDialogueIndex], npcName);
+        npcCanvas.SetActive(false);
     }
     
     private int ResearchDialogue()

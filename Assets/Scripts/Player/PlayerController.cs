@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     private Controls _controls;
     private Controls _uiControls;
+    [HideInInspector] public Controls DialogueControls;
     private Vector2 _moveInput;
     private bool _jumpInput;
     private bool _isCrouching;
@@ -57,7 +58,11 @@ public class PlayerController : MonoBehaviour
         _uiControls = new Controls();
         _uiControls.UI.Pause.performed += _ => FindObjectOfType<PauseCanvas>().SwitchPauseCanvas();
         _uiControls.UI.Enable();
-    
+        
+        DialogueControls = new Controls();
+        DialogueControls.Dialogue.SpeedUp.performed += _ => GameManager.Instance.dialogueManager.SetTextRevealSpeed(0.005f);
+        DialogueControls.Dialogue.Disable();
+        
         EnableControls();
         SetFPSCamera();
     }

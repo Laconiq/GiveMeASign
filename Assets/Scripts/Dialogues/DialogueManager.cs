@@ -33,6 +33,11 @@ public class DialogueManager : MonoBehaviour
         textRevealFeedback.PlayFeedbacks();
     }
     
+    public void SetTextRevealSpeed(float f)
+    {
+        _textRevealFeedback.IntervalBetweenReveals = f;
+    }
+    
     public void StartDialogue(Dialogue dialogue, string npcName)
     {
         dialogueContainer.SetActive(true);
@@ -45,6 +50,7 @@ public class DialogueManager : MonoBehaviour
         _playerController.SetDialogueCamera();
         
         DisplayCurrentDialogue(_currentDialogue.isDialogueFinished ? _currentDialogue.repeatDialogueItem : _currentDialogue.dialogueItems[_currentDialogueIndex]);
+        _playerController.DialogueControls.Enable();
     }
 
     private void LoadCurrentDialogueIndex()
@@ -57,6 +63,7 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayCurrentDialogue(DialogueItem dialogueItem)
     {
+        SetTextRevealSpeed(0.05f);
         _currentDialogueItem = dialogueItem;
         DestroyPlayerResponses();
         _playerController.LookAtTarget(_currentDialogueItem.lookAtTarget);
@@ -92,6 +99,7 @@ public class DialogueManager : MonoBehaviour
         _currentDialogue.isDialogueFinished = true;
         _currentDialogue.UnlockProgression();
         dialogueContainer.SetActive(false);
+        _playerController.DialogueControls.Disable();
     }
     
     private void DestroyPlayerResponses()

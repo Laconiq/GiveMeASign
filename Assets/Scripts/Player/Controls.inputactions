@@ -352,6 +352,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Dialogue",
+            "id": "fe8aa397-583f-46d9-b338-b59b67d93ea2",
+            "actions": [
+                {
+                    "name": "SpeedUp",
+                    "type": "Button",
+                    "id": "54be254c-68e7-48b7-a4a7-4dade4a63d47",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5e6571d8-b8c8-4998-b863-98c36e47b571",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpeedUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

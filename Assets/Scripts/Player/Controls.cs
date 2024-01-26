@@ -374,6 +374,34 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Dialogue"",
+            ""id"": ""fe8aa397-583f-46d9-b338-b59b67d93ea2"",
+            ""actions"": [
+                {
+                    ""name"": ""SpeedUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""54be254c-68e7-48b7-a4a7-4dade4a63d47"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5e6571d8-b8c8-4998-b863-98c36e47b571"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpeedUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -390,6 +418,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
+        // Dialogue
+        m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
+        m_Dialogue_SpeedUp = m_Dialogue.FindAction("SpeedUp", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -587,6 +618,52 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Dialogue
+    private readonly InputActionMap m_Dialogue;
+    private List<IDialogueActions> m_DialogueActionsCallbackInterfaces = new List<IDialogueActions>();
+    private readonly InputAction m_Dialogue_SpeedUp;
+    public struct DialogueActions
+    {
+        private @Controls m_Wrapper;
+        public DialogueActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SpeedUp => m_Wrapper.m_Dialogue_SpeedUp;
+        public InputActionMap Get() { return m_Wrapper.m_Dialogue; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DialogueActions set) { return set.Get(); }
+        public void AddCallbacks(IDialogueActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DialogueActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DialogueActionsCallbackInterfaces.Add(instance);
+            @SpeedUp.started += instance.OnSpeedUp;
+            @SpeedUp.performed += instance.OnSpeedUp;
+            @SpeedUp.canceled += instance.OnSpeedUp;
+        }
+
+        private void UnregisterCallbacks(IDialogueActions instance)
+        {
+            @SpeedUp.started -= instance.OnSpeedUp;
+            @SpeedUp.performed -= instance.OnSpeedUp;
+            @SpeedUp.canceled -= instance.OnSpeedUp;
+        }
+
+        public void RemoveCallbacks(IDialogueActions instance)
+        {
+            if (m_Wrapper.m_DialogueActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDialogueActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DialogueActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DialogueActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public DialogueActions @Dialogue => new DialogueActions(this);
     public interface IPlayerActions
     {
         void OnJump(InputAction.CallbackContext context);
@@ -600,5 +677,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public interface IUIActions
     {
         void OnPause(InputAction.CallbackContext context);
+    }
+    public interface IDialogueActions
+    {
+        void OnSpeedUp(InputAction.CallbackContext context);
     }
 }
