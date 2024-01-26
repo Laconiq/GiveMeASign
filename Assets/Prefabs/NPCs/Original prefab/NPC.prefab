@@ -3141,8 +3141,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 1
   npcName: 
+  animationToPlay: 
   dialogueContainer: {fileID: 2466325638986012433}
   npcCanvas: {fileID: 2671277325488784707}
+  npcAnimator: {fileID: 6686807066833284489}
 --- !u!1 &6900736137874458235
 GameObject:
   m_ObjectHideFlags: 0

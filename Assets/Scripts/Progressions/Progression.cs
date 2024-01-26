@@ -15,7 +15,7 @@ public class Progression : MonoBehaviour
     [SerializeField, ShowIf("canMoveObject")] private Transform destination;
     
     [SerializeField] private bool canRemoveDialogue;
-    [SerializeField, ShowIf("canRemoveDialogue")] private Dialogue dialogueToRemove;
+    [SerializeField, ShowIf("canRemoveDialogue")] private List<Dialogue> dialoguesToRemove;
     
     public bool GetProgressionStatus()
     {
@@ -43,7 +43,10 @@ public class Progression : MonoBehaviour
         }
 
         if (canRemoveDialogue)
-            dialogueToRemove.isDialogueFinished = true;
+        {
+            foreach (Dialogue dialogue in dialoguesToRemove)
+                dialogue.isDialogueFinished = true;
+        }
     }
     
     public void ResetProgression()

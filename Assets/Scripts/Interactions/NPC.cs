@@ -10,8 +10,13 @@ public class Npc : Interactable
     private List<Dialogue> _dialogues;
     private int _currentDialogueIndex;
     private DialogueManager _dialogueManager;
+    [SerializeField] private string animationToPlay;
+    
+    [Title("Data")]
     [SerializeField] private GameObject dialogueContainer;
     [SerializeField] private GameObject npcCanvas;
+    [SerializeField] private Animator npcAnimator;
+    
     private void Start()
     {
         _dialogueManager = GameManager.Instance.dialogueManager;
@@ -24,6 +29,9 @@ public class Npc : Interactable
         }
         npcCanvas.SetActive(false);
         ResetDialogue();
+        
+        if (animationToPlay != "")
+            npcAnimator.Play(animationToPlay);
     }
 
     public void ReloadDialogues()
