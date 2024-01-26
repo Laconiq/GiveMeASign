@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialogueContainer;
     private MMF_TMPTextReveal _textRevealFeedback;
     private Dialogue _currentDialogue;
+    private DialogueItem _currentDialogueItem;
     private int _currentDialogueIndex;
     private int _totalDialogueItems;
     private PlayerController _playerController;
@@ -43,8 +44,7 @@ public class DialogueManager : MonoBehaviour
         _playerController.DisableControls();
         _playerController.SetDialogueCamera();
         
-        DialogueItem dialogueItemToLoad = _currentDialogue.isDialogueFinished ? _currentDialogue.repeatDialogueItem : _currentDialogue.dialogueItems[_currentDialogueIndex];
-        DisplayCurrentDialogue(dialogueItemToLoad);
+        DisplayCurrentDialogue(_currentDialogue.isDialogueFinished ? _currentDialogue.repeatDialogueItem : _currentDialogue.dialogueItems[_currentDialogueIndex]);
     }
 
     private void LoadCurrentDialogueIndex()
@@ -57,10 +57,15 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayCurrentDialogue(DialogueItem dialogueItem)
     {
+        _currentDialogueItem = dialogueItem;
         DestroyPlayerResponses();
-        _playerController.LookAtTarget(dialogueItem.lookAtTarget);
-        RevealText(dialogueItem.npcDialogue);
-        foreach (string playerResponse in dialogueItem.playerResponses)
+        _playerController.LookAtTarget(_currentDialogueItem.lookAtTarget);
+        RevealText(_currentDialogueItem.npcDialogue);
+    }
+
+    public void DisplayPlayerResponses()
+    {
+        foreach (string playerResponse in _currentDialogueItem.playerResponses)
         {
             GameObject playerResponseGameObject = Instantiate(playerResponsePrefab, playerResponsesParent.transform);
             playerResponseGameObject.GetComponentInChildren<TMP_Text>().text = playerResponse;
