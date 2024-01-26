@@ -10,11 +10,12 @@ public class Npc : Interactable
     private List<Dialogue> _dialogues;
     private int _currentDialogueIndex;
     private DialogueManager _dialogueManager;
+    [SerializeField] private GameObject dialogueContainer;
     private void Start()
     {
         _dialogueManager = GameManager.Instance.dialogueManager;
         _dialogues = new List<Dialogue>();
-        foreach (Transform child in transform)
+        foreach (Transform child in dialogueContainer.transform)
         {
             Dialogue dialogue = child.GetComponent<Dialogue>();
             if (dialogue != null)
@@ -64,11 +65,10 @@ public class Npc : Interactable
     [Button("Add Dialogue")]
     private void AddDialogueEditor()
     {
-        // Charge le prefab depuis le dossier Resources
         GameObject dialoguePrefab = Resources.Load<GameObject>("Dialogue");
         if (dialoguePrefab != null)
         {
-            GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(dialoguePrefab, transform);
+            GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(dialoguePrefab, dialogueContainer.transform);
             instance.name = "Dialogue";
             Undo.RegisterCreatedObjectUndo(instance, "Create progression instance");
         }

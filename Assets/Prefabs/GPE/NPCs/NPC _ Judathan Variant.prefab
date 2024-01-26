@@ -1,0 +1,303 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1910739325452202622
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6323639032379704097}
+    m_Modifications:
+    - target: {fileID: 5254256636970863139, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_Name
+      value: 1st Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: repeatDialogueItem.npcDialogue
+      value: 'Can''t you see I''m busy ? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: progressionsToUnlock.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: repeatDialogueItem.lookAtTarget
+      value: 
+      objectReference: {fileID: 6437371633831371469}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: unlockProgressionOnDialogueFinish
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[0].npcDialogue
+      value: Hi there, are you lost ?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[1].npcDialogue
+      value: Figures, you here for the HAOL ?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[2].npcDialogue
+      value: Then let's not waste any more of your time, the first thing you'll need
+        is the BGMPFLC.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[3].npcDialogue
+      value: The Brutal and Gruesome Murder Perpetration Free Life Certificate, for
+        shorts.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[4].npcDialogue
+      value: It's just a formality really, but I'm not the one in charge for those,
+        go ask Michael or something, he should be in his office somewhere around.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[0].lookAtTarget
+      value: 
+      objectReference: {fileID: 6437371633831371469}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[1].lookAtTarget
+      value: 
+      objectReference: {fileID: 6437371633831371469}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[2].lookAtTarget
+      value: 
+      objectReference: {fileID: 6437371633831371469}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[3].lookAtTarget
+      value: 
+      objectReference: {fileID: 6437371633831371469}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[4].lookAtTarget
+      value: 
+      objectReference: {fileID: 6437371633831371469}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: repeatDialogueItem.playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
+      value: <i>Leave</leave>
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[0].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[1].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[2].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[3].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[4].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
+      value: Yeah.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[1].playerResponses.Array.data[0]
+      value: Yeah.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
+      value: Okay ?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[3].playerResponses.Array.data[0]
+      value: Okay ?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[4].playerResponses.Array.data[0]
+      value: Fine.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9332bcb63dca3354dbbf18290e079b4c, type: 3}
+--- !u!4 &7566670260430438822 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1910739325452202622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3585832582710463295
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2708768716536795289, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708768716536795289, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708768716536795289, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708768716536795289, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708768716536795289, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708768716536795289, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708768716536795289, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708768716536795289, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708768716536795289, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708768716536795289, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058002751113978758, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: npcName
+      value: Judathan
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667645036957353042, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_Name
+      value: NPC _ Judathan Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7350291918283278366, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7566670260430438822}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef5eb88653662c848823ad8262b77fcf, type: 3}
+--- !u!4 &6323639032379704097 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7350291918283278366, guid: ef5eb88653662c848823ad8262b77fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 3585832582710463295}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6437371633831371469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7536014045121047026, guid: ef5eb88653662c848823ad8262b77fcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 3585832582710463295}
+  m_PrefabAsset: {fileID: 0}
