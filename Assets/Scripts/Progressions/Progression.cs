@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class Progression : MonoBehaviour
@@ -6,6 +7,8 @@ public class Progression : MonoBehaviour
     [HideInInspector] public bool isProgressionFinished;
     [SerializeField] private List<GameObject> objectsToActivate;
     [SerializeField] private List<GameObject> objectsToDeactivate;
+    [SerializeField] private bool canStartClock;
+    [SerializeField, ShowIf("canStartClock")] private Clock clockToStart;
     
     public bool GetProgressionStatus()
     {
@@ -21,6 +24,8 @@ public class Progression : MonoBehaviour
             objectToActivate.SetActive(true);
         foreach (GameObject objectToDeactivate in objectsToDeactivate)
             objectToDeactivate.SetActive(false);
+        if (canStartClock)
+            clockToStart.StartClock();
     }
     
     public void ResetProgression()
