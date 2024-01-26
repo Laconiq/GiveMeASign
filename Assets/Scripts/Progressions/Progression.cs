@@ -10,6 +10,10 @@ public class Progression : MonoBehaviour
     [SerializeField] private bool canStartClock;
     [SerializeField, ShowIf("canStartClock")] private Clock clockToStart;
     
+    [SerializeField] private bool canMoveObject;
+    [SerializeField, ShowIf("canMoveObject")] private GameObject objectToMove;
+    [SerializeField, ShowIf("canMoveObject")] private Transform destination;
+    
     public bool GetProgressionStatus()
     {
         return isProgressionFinished;
@@ -22,10 +26,18 @@ public class Progression : MonoBehaviour
             return;
         foreach (GameObject objectToActivate in objectsToActivate)
             objectToActivate.SetActive(true);
+        
         foreach (GameObject objectToDeactivate in objectsToDeactivate)
             objectToDeactivate.SetActive(false);
+        
         if (canStartClock)
             clockToStart.StartClock();
+        
+        if (canMoveObject)
+        {
+            objectToMove.transform.position = destination.position;
+            objectToMove.transform.rotation = destination.rotation;
+        }
     }
     
     public void ResetProgression()
