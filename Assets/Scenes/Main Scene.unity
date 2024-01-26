@@ -2861,49 +2861,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5241529395680724030, guid: 37d37f4053f36044ea768586497f2196,
         type: 3}
-      propertyPath: Events.OnComplete.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5241529395680724030, guid: 37d37f4053f36044ea768586497f2196,
-        type: 3}
-      propertyPath: Events.OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5241529395680724030, guid: 37d37f4053f36044ea768586497f2196,
-        type: 3}
       propertyPath: Events.OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 16620765}
-    - target: {fileID: 5241529395680724030, guid: 37d37f4053f36044ea768586497f2196,
-        type: 3}
-      propertyPath: Events.OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5241529395680724030, guid: 37d37f4053f36044ea768586497f2196,
-        type: 3}
-      propertyPath: Events.OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisplayPlayerResponses
-      objectReference: {fileID: 0}
-    - target: {fileID: 5241529395680724030, guid: 37d37f4053f36044ea768586497f2196,
-        type: 3}
-      propertyPath: Events.OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DialogueManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5241529395680724030, guid: 37d37f4053f36044ea768586497f2196,
-        type: 3}
-      propertyPath: Events.OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 5701049928149449164, guid: 37d37f4053f36044ea768586497f2196,
         type: 3}
       propertyPath: blurVolume
       value: 
       objectReference: {fileID: 2099510808}
-    - target: {fileID: 6643885156079440061, guid: 37d37f4053f36044ea768586497f2196,
-        type: 3}
-      propertyPath: m_CellSize.x
-      value: 400
-      objectReference: {fileID: 0}
     - target: {fileID: 7404973060143615836, guid: 37d37f4053f36044ea768586497f2196,
         type: 3}
       propertyPath: cineMachineVirtualCamera
