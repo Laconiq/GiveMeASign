@@ -168,6 +168,11 @@ PrefabInstance:
       propertyPath: npcName
       value: Peter
       objectReference: {fileID: 0}
+    - target: {fileID: 6058002751113978758, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: animationToPlay
+      value: Old Man Idle
+      objectReference: {fileID: 0}
     - target: {fileID: 6667645036957353042, guid: ef5eb88653662c848823ad8262b77fcf,
         type: 3}
       propertyPath: m_Name
