@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TriggerZoneEvent : MonoBehaviour
 {
+    [SerializeField] private bool isLockedByProgression;
+    [SerializeField, ShowIf("isLockedByProgression")] private Progression progressionToUnlock;
+    
     [SerializeField, Tooltip("Est-ce que la zone doit activer des progressions ?")] private bool canUnlockProgression;
     [SerializeField, ShowIf("canUnlockProgression"), Tooltip("Les progressions validées quand le joueur est dans la zone")] private List<Progression> progressionsToUnlock;
     [SerializeField, Tooltip("Est-ce que la zone doit téléporter le joueur ?")] private bool canTeleportPlayer;
@@ -11,6 +14,9 @@ public class TriggerZoneEvent : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        if (isLockedByProgression && !progressionToUnlock.GetProgressionStatus())
+            return;
+        
         //Progression
         if (other.CompareTag("Player") && canUnlockProgression)
             foreach (Progression progression in progressionsToUnlock)
