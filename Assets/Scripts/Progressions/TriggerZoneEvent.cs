@@ -18,6 +18,10 @@ public class TriggerZoneEvent : MonoBehaviour
 
         //Teleport
         if (other.CompareTag("Player") && canTeleportPlayer)
+        {
+            other.GetComponent<CharacterController>().enabled = false;
             other.transform.position = teleportPosition.position;
+            other.GetComponent<CharacterController>().enabled = true;
+        }
     }
 }
