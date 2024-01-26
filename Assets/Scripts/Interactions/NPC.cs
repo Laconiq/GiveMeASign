@@ -25,6 +25,17 @@ public class Npc : Interactable
         npcCanvas.SetActive(false);
         ResetDialogue();
     }
+
+    public void ReloadDialogues()
+    {
+        _dialogues.Clear();
+        foreach (Transform child in dialogueContainer.transform)
+        {
+            Dialogue dialogue = child.GetComponent<Dialogue>();
+            if (dialogue != null)
+                _dialogues.Add(dialogue);
+        }
+    }
     
     protected override void OnTriggerEnter(Collider other)
     {

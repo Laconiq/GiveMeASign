@@ -14,6 +14,9 @@ public class Progression : MonoBehaviour
     [SerializeField, ShowIf("canMoveObject")] private GameObject objectToMove;
     [SerializeField, ShowIf("canMoveObject")] private Transform destination;
     
+    [SerializeField] private bool canRemoveDialogue;
+    [SerializeField, ShowIf("canRemoveDialogue")] private Dialogue dialogueToRemove;
+    
     public bool GetProgressionStatus()
     {
         return isProgressionFinished;
@@ -38,6 +41,9 @@ public class Progression : MonoBehaviour
             objectToMove.transform.position = destination.position;
             objectToMove.transform.rotation = destination.rotation;
         }
+
+        if (canRemoveDialogue)
+            dialogueToRemove.isDialogueFinished = true;
     }
     
     public void ResetProgression()
