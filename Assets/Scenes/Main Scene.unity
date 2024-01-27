@@ -2501,7 +2501,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0024999778, y: 0, z: 0, w: 0.9999969}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4800,6 +4800,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 453463129}
+    - target: {fileID: 9024659126868150286, guid: 2027e032c9f69374bb97479619bd66a2,
+        type: 3}
+      propertyPath: canInteract
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024659126868150286, guid: 2027e032c9f69374bb97479619bd66a2,
+        type: 3}
+      propertyPath: progressionToCheck
+      value: 
+      objectReference: {fileID: 1072664985}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7692,7 +7702,7 @@ PrefabInstance:
     - target: {fileID: 6693991702479629522, guid: 2027e032c9f69374bb97479619bd66a2,
         type: 3}
       propertyPath: m_Name
-      value: Door | Digicode
+      value: Door | Suceed Digicode
       objectReference: {fileID: 0}
     - target: {fileID: 7159243704188591210, guid: 2027e032c9f69374bb97479619bd66a2,
         type: 3}
@@ -7774,6 +7784,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.099999905
       objectReference: {fileID: 0}
+    - target: {fileID: 9024659126868150286, guid: 2027e032c9f69374bb97479619bd66a2,
+        type: 3}
+      propertyPath: canInteract
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024659126868150286, guid: 2027e032c9f69374bb97479619bd66a2,
+        type: 3}
+      propertyPath: progressionToCheck
+      value: 
+      objectReference: {fileID: 1613952510}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8225,7 +8245,7 @@ MonoBehaviour:
     IsHidden: 0
 --- !u!4 &904786390
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8279,7 +8299,7 @@ PrefabInstance:
     - target: {fileID: 6693991702479629522, guid: 2027e032c9f69374bb97479619bd66a2,
         type: 3}
       propertyPath: m_Name
-      value: Door | First Dialogue
+      value: Door | Unlocks Administration
       objectReference: {fileID: 0}
     - target: {fileID: 7159243704188591210, guid: 2027e032c9f69374bb97479619bd66a2,
         type: 3}
@@ -8356,6 +8376,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 310658428}
+    - target: {fileID: 9024659126868150286, guid: 2027e032c9f69374bb97479619bd66a2,
+        type: 3}
+      propertyPath: canInteract
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024659126868150286, guid: 2027e032c9f69374bb97479619bd66a2,
+        type: 3}
+      propertyPath: progressionToCheck
+      value: 
+      objectReference: {fileID: 1265379203}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

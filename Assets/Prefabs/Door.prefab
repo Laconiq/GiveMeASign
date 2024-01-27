@@ -670,8 +670,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7959389892182218281}
-  - component: {fileID: 5099511431024738237}
   - component: {fileID: 675004519157254685}
+  - component: {fileID: 9024659126868150286}
   m_Layer: 0
   m_Name: Door
   m_TagString: Interactable
@@ -695,26 +695,6 @@ Transform:
   - {fileID: 8959401857650635734}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5099511431024738237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6693991702479629522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 602b0fd1e3c11bd4aab3662e48e45a2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionType: 2
-  animator: {fileID: 7000943381431708364}
-  animatorTriggerName: OpenDoor
-  delayBeforeTriggeringAnimation: 0
-  canUnlockProgression: 0
-  progressionToUnlock: {fileID: 0}
-  canInteract: 1
-  progressionToCheck: {fileID: 0}
 --- !u!65 &675004519157254685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -736,6 +716,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0.6, y: 0, z: 0}
+--- !u!114 &9024659126868150286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693991702479629522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f379a5dc88d7b174ba520a3506852ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionType: 2
+  doorIsOpen: 0
+  animator: {fileID: 7000943381431708364}
+  delayBeforeTriggeringAnimation: 0
+  canInteract: 1
+  progressionToCheck: {fileID: 0}
 --- !u!1 &7202013000073778223
 GameObject:
   m_ObjectHideFlags: 0
