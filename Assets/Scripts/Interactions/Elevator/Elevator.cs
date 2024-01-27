@@ -8,7 +8,7 @@ public class Elevator : MonoBehaviour
     [SerializeField] private Animator elevatorAnimator;
     [SerializeField] private int currentFloor;
     private int _targetFloor;
-    private List<Vector3> _floorPositions = new List<Vector3>();
+    [SerializeField] private List<Vector3> floorPositions = new List<Vector3>();
     private bool _isMoving;
     private bool _isDoorOpen;
     
@@ -19,20 +19,22 @@ public class Elevator : MonoBehaviour
         if (_isMoving)
             return;
         _targetFloor = floor;
-        _isMoving = true;
-
         if (currentFloor == _targetFloor)
+        {            
             OpenElevator();
+            Debug.Log("Elevator is already on floor " + _targetFloor);
+        }
         else
             StartCoroutine(MoveElevator());
     }
     
     private IEnumerator MoveElevator()
     {
+        _isMoving = true;
         CloseElevator();
-        while (transform.position != _floorPositions[_targetFloor])
+        while (transform.position != floorPositions[_targetFloor])
         {
-            transform.position = Vector3.MoveTowards(transform.position, _floorPositions[_targetFloor], elevatorSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, floorPositions[_targetFloor], elevatorSpeed * Time.deltaTime);
             yield return null;
         }
         _isMoving = false;
@@ -51,9 +53,10 @@ public class Elevator : MonoBehaviour
     
     private void CloseElevator()
     {
+        if (!_isDoorOpen)
+            return;
         _isDoorOpen = false;
         elevatorAnimator.Play("CloseDoor");
         frontDoorAnimators[currentFloor].Play("CloseDoor");
     }
-    
 }
