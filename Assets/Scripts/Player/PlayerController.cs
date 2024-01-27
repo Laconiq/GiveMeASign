@@ -147,10 +147,23 @@ public class PlayerController : MonoBehaviour
             _controller.Move(moveDirection * (_currentSpeed * Time.deltaTime));
 
             if (_moveInput != Vector2.zero)
+            {
                 _noise.m_FrequencyGain = _isCrouching ? 0.03f : 0.05f;
+                PlayFootStep();
+            }
             else
                 _noise.m_FrequencyGain = 0.005f;
         }
+    }
+
+    private float _nextFootStepTime;
+    private void PlayFootStep()
+    {
+        var cooldown = _isCrouching ? 0.5f : 0.3f;
+        if (!(Time.time > _nextFootStepTime)) 
+            return;
+        _nextFootStepTime = Time.time + cooldown;
+        //Debug.Log("Footstep");
     }
 
     private void HandleJumpAndGravity()
@@ -185,11 +198,10 @@ public class PlayerController : MonoBehaviour
         foreach (Interactable interactable in _nearbyInteractables)
         {
             float distance = Vector3.Distance(transform.position, interactable.transform.position);
-            if (distance < nearestDistance)
-            {
-                nearestDistance = distance;
-                nearestInteractable = interactable;
-            }
+            if (!(distance < nearestDistance)) 
+                continue;
+            nearestDistance = distance;
+            nearestInteractable = interactable;
         }
         return nearestInteractable;
     }
@@ -257,15 +269,14 @@ public class PlayerController : MonoBehaviour
             RaycastHit[] hits = Physics.RaycastAll(_cameraTransform.position, _cameraTransform.forward, 2f);
             foreach (var hit in hits)
             {
-                if (IsObjectGrabbable(hit))
-                {
-                    _heldObject = hit.collider.gameObject;
-                    _heldObjectRb = _heldObject.GetComponent<Rigidbody>();
-                    _heldObjectRb.useGravity = false;
-                    _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(true);
-                    StartCoroutine(UpdateHoldPositionRoutine());
-                    return;
-                }
+                if (!IsObjectGrabbable(hit)) 
+                    continue;
+                _heldObject = hit.collider.gameObject;
+                _heldObjectRb = _heldObject.GetComponent<Rigidbody>();
+                _heldObjectRb.useGravity = false;
+                _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(true);
+                StartCoroutine(UpdateHoldPositionRoutine());
+                return;
             }
         }
         else
@@ -281,7 +292,7 @@ public class PlayerController : MonoBehaviour
 
     private void CheckIfObjectIsGrabbable()
     {
-        if (_heldObject != null)
+        if (_heldObject is not null)
             _handleCursor.SetCursorVisibility(true);
         else if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out var hit, 2f) || !IsObjectGrabbable(hit))
             _handleCursor.SetCursorVisibility(false);
@@ -292,7 +303,7 @@ public class PlayerController : MonoBehaviour
     private bool IsObjectGrabbable(RaycastHit hit)
     {
         return hit.collider.CompareTag("Grabbable") && 
-               hit.collider.GetComponent<GrabbableObject>() != null && 
+               hit.collider.GetComponent<GrabbableObject>() is not null && 
                hit.collider.GetComponent<GrabbableObject>().isGrabbable;
     }
 
