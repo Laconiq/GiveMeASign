@@ -17,6 +17,10 @@ public class Progression : MonoBehaviour
     [SerializeField] private bool canRemoveDialogue;
     [SerializeField, ShowIf("canRemoveDialogue")] private List<Dialogue> dialoguesToRemove;
     
+    [SerializeField] private bool canChangeAnimation;
+    [SerializeField, ShowIf("canChangeAnimation")] private Animator animator;
+    [SerializeField, ShowIf("canChangeAnimation")] private string animationToPlay;
+    
     public bool GetProgressionStatus()
     {
         return isProgressionFinished;
