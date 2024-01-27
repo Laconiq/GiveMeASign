@@ -64,7 +64,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Interact"",
+                    ""name"": ""Talk"",
                     ""type"": ""Button"",
                     ""id"": ""918ee0b0-29b1-4719-8c84-f6112ddba54b"",
                     ""expectedControlType"": ""Button"",
@@ -73,7 +73,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""HoldObject"",
+                    ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""99e48f01-4b48-4b02-9a1a-677d7a568615"",
                     ""expectedControlType"": ""Button"",
@@ -308,7 +308,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Interact"",
+                    ""action"": ""Talk"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -319,7 +319,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""HoldObject"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -412,8 +412,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_Talk = m_Player.FindAction("Talk", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_HoldObject = m_Player.FindAction("HoldObject", throwIfNotFound: true);
         m_Player_DropObject = m_Player.FindAction("DropObject", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -486,8 +486,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_Talk;
     private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_HoldObject;
     private readonly InputAction m_Player_DropObject;
     public struct PlayerActions
     {
@@ -497,8 +497,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @Talk => m_Wrapper.m_Player_Talk;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
-        public InputAction @HoldObject => m_Wrapper.m_Player_HoldObject;
         public InputAction @DropObject => m_Wrapper.m_Player_DropObject;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -521,12 +521,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Talk.started += instance.OnTalk;
+            @Talk.performed += instance.OnTalk;
+            @Talk.canceled += instance.OnTalk;
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
-            @HoldObject.started += instance.OnHoldObject;
-            @HoldObject.performed += instance.OnHoldObject;
-            @HoldObject.canceled += instance.OnHoldObject;
             @DropObject.started += instance.OnDropObject;
             @DropObject.performed += instance.OnDropObject;
             @DropObject.canceled += instance.OnDropObject;
@@ -546,12 +546,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Talk.started -= instance.OnTalk;
+            @Talk.performed -= instance.OnTalk;
+            @Talk.canceled -= instance.OnTalk;
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
-            @HoldObject.started -= instance.OnHoldObject;
-            @HoldObject.performed -= instance.OnHoldObject;
-            @HoldObject.canceled -= instance.OnHoldObject;
             @DropObject.started -= instance.OnDropObject;
             @DropObject.performed -= instance.OnDropObject;
             @DropObject.canceled -= instance.OnDropObject;
@@ -670,8 +670,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+        void OnTalk(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-        void OnHoldObject(InputAction.CallbackContext context);
         void OnDropObject(InputAction.CallbackContext context);
     }
     public interface IUIActions

@@ -1,16 +1,34 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HandleCursor : MonoBehaviour
 {
-    [SerializeField] private GameObject handleCursor;
+    [SerializeField] private GameObject grabCursor;
+    [SerializeField] private GameObject useCursor;
+    [SerializeField] private GameObject crosshair;
 
     public void Initialize()
     {
-        handleCursor.SetActive(false);
+        grabCursor.SetActive(false);
     }
 
-    public void SetCursorVisibility(bool visibility)
+    public void SetGrabCursorVisibility(bool visibility)
     {
-        handleCursor.SetActive(visibility);
+        grabCursor.SetActive(visibility);
+    }
+    
+    public void SetGrabCursorClor(Color color)
+    {
+        grabCursor.GetComponent<Image>().color = color;
+    }
+    
+    public void SetUseCursorVisibility(bool visibility)
+    {
+        useCursor.SetActive(visibility);
+    }
+    
+    public void SetCrosshairVisibility(bool visibility)
+    {
+        crosshair.SetActive(visibility);
     }
 }

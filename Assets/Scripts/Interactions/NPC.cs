@@ -45,16 +45,9 @@ public class Npc : Interactable
         }
     }
     
-    protected override void OnTriggerEnter(Collider other)
+    public void DisplayNpcCanvas(bool b)
     {
-        base.OnTriggerEnter(other);
-        npcCanvas.SetActive(true);
-    }
-    
-    protected override void OnTriggerExit(Collider other)
-    {
-        base.OnTriggerExit(other);
-        npcCanvas.SetActive(false);
+        npcCanvas.SetActive(b);
     }
 
     private void ResetDialogue()

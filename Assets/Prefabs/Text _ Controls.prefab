@@ -67,9 +67,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<b>Movement:</b> WASD/ZQSD
 
-    <b>Interact:</b> E
+    <b>Talk:</b> E
 
-    <b>Grab:</b> Left/Right
+    <b>Grab/Use:</b> Left/Right
     Click
 
     <b>Throw:</b> Left Click
