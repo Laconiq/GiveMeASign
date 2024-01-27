@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InteractableObject : Interactable
 {
-    private Animator _animator;
+    [SerializeField] private Animator animator;
     [SerializeField] private string animatorTriggerName;
     [SerializeField] private float delayBeforeTriggeringAnimation;
     [SerializeField] private bool canUnlockProgression;
@@ -11,11 +11,6 @@ public class InteractableObject : Interactable
     [SerializeField] private bool canInteract = true;
     [SerializeField, HideIf("canInteract")] private Progression progressionToCheck;
 
-    private void Awake()
-    {
-        _animator = GetComponent<Animator>();
-    }
-    
     public override void OnPlayerInteract()
     {
         base.OnPlayerInteract();
@@ -28,6 +23,6 @@ public class InteractableObject : Interactable
     
     private void SetAnimatorTrigger()
     {
-        _animator.SetTrigger(animatorTriggerName);
+        animator.SetTrigger(animatorTriggerName);
     }
 }
