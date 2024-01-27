@@ -158,10 +158,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6058002751113978758, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: npcName
+      value: Elizabeth
+      objectReference: {fileID: 0}
     - target: {fileID: 6667645036957353042, guid: ef5eb88653662c848823ad8262b77fcf,
         type: 3}
       propertyPath: m_Name
-      value: NPC _ Rose Variant
+      value: NPC _ Elizabeth Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7128545571163631289, guid: ef5eb88653662c848823ad8262b77fcf,
         type: 3}
