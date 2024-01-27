@@ -288,7 +288,7 @@ public class PlayerController : MonoBehaviour
     private bool IsObjectInteractable(RaycastHit hit)
     {
         var interactableObject = hit.collider.GetComponent<Interactable>();
-        if (interactableObject is null)
+        if (interactableObject is null && hit.collider.CompareTag("Interactable"))
             Debug.Log("No interactable component found");
         return hit.collider.CompareTag("Interactable");
     }
