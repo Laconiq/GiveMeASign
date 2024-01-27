@@ -8383,7 +8383,7 @@ GameObject:
   - component: {fileID: 940413867}
   m_Layer: 0
   m_Name: Phone
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11192,7 +11192,7 @@ GameObject:
   - component: {fileID: 1278263008}
   m_Layer: 0
   m_Name: Elevator Keycard
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16011,7 +16011,7 @@ GameObject:
   - component: {fileID: 1742665294}
   m_Layer: 0
   m_Name: 2nd Document
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18157,7 +18157,7 @@ GameObject:
   - component: {fileID: 1820903247}
   m_Layer: 0
   m_Name: 1st Document
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20674,7 +20674,7 @@ GameObject:
   - component: {fileID: 2115820346}
   m_Layer: 0
   m_Name: Last Document
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -254,16 +254,19 @@ public class PlayerController : MonoBehaviour
     {
         if (_heldObject == null)
         {
-            if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out var hit, 2f)) 
-                return;
-            if (hit.collider.GetComponent<GrabbableObject>() == null || !hit.collider.GetComponent<GrabbableObject>().isGrabbable) 
-                return;
-            _heldObject = hit.collider.gameObject;
-            _heldObjectRb = _heldObject.GetComponent<Rigidbody>();
-            _heldObjectRb.useGravity = false;
-            _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(true);
-            StartCoroutine(UpdateHoldPositionRoutine());
-            
+            RaycastHit[] hits = Physics.RaycastAll(_cameraTransform.position, _cameraTransform.forward, 2f);
+            foreach (var hit in hits)
+            {
+                if (IsObjectGrabbable(hit))
+                {
+                    _heldObject = hit.collider.gameObject;
+                    _heldObjectRb = _heldObject.GetComponent<Rigidbody>();
+                    _heldObjectRb.useGravity = false;
+                    _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(true);
+                    StartCoroutine(UpdateHoldPositionRoutine());
+                    return;
+                }
+            }
         }
         else
         {
@@ -276,6 +279,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void CheckIfObjectIsGrabbable()
+    {
+        if (_heldObject != null)
+            _handleCursor.SetCursorVisibility(true);
+        else if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out var hit, 2f) || !IsObjectGrabbable(hit))
+            _handleCursor.SetCursorVisibility(false);
+        else
+            _handleCursor.SetCursorVisibility(true);
+    }
+
+    private bool IsObjectGrabbable(RaycastHit hit)
+    {
+        return hit.collider.CompareTag("Grabbable") && 
+               hit.collider.GetComponent<GrabbableObject>() != null && 
+               hit.collider.GetComponent<GrabbableObject>().isGrabbable;
+    }
+
+
     private IEnumerator UpdateHoldPositionRoutine()
     {
         while (_heldObject is not null && _heldObjectRb is not null)
@@ -284,18 +305,5 @@ public class PlayerController : MonoBehaviour
             _heldObjectRb.velocity = Vector3.Lerp(_heldObjectRb.velocity, desiredVelocity, 0.1f);
             yield return new WaitForFixedUpdate();
         }
-    }
-
-
-    private void CheckIfObjectIsGrabbable()
-    {
-        if (_heldObject != null)
-            _handleCursor.SetCursorVisibility(true);
-        else if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out var hit, 2f) || 
-                 hit.collider.GetComponent<GrabbableObject>() is null || 
-                 !hit.collider.GetComponent<GrabbableObject>().isGrabbable)
-            _handleCursor.SetCursorVisibility(false);
-        else
-            _handleCursor.SetCursorVisibility(true);
     }
 }
