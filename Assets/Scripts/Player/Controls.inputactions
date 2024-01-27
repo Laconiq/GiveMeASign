@@ -42,7 +42,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Interact",
+                    "name": "Talk",
                     "type": "Button",
                     "id": "918ee0b0-29b1-4719-8c84-f6112ddba54b",
                     "expectedControlType": "Button",
@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "HoldObject",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "99e48f01-4b48-4b02-9a1a-677d7a568615",
                     "expectedControlType": "Button",
@@ -286,7 +286,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact",
+                    "action": "Talk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -297,7 +297,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HoldObject",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using Cinemachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -15,7 +14,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float crouchHeight = 1.0f;
     [SerializeField] private float standHeight = 2.0f;
 
-    public static PlayerController Instance;
     private CharacterController _controller;
     private PlayerFeedbacks _feedbacks;
     private Vector3 _playerVelocity;
@@ -51,9 +49,9 @@ public class PlayerController : MonoBehaviour
         _controls.Player.Jump.performed += _ => _jumpInput = true;
         _controls.Player.Jump.canceled += _ => _jumpInput = false;
         _controls.Player.Crouch.performed += _ => TryCrouch();
-        _controls.Player.Interact.performed += _ => TryToInteract();
-        _controls.Player.HoldObject.performed += _ => HoldObject(throwForce);
-        _controls.Player.DropObject.performed += _ => HoldObject(dropForce);
+        _controls.Player.Talk.performed += _ => GetComponent<TalkToNpc>().TryTalkingToNpc();
+        _controls.Player.Interact.performed += _ => Interact(throwForce);
+        _controls.Player.DropObject.performed += _ => Interact(dropForce);
     
         _uiControls = new Controls();
         _uiControls.UI.Pause.performed += _ => FindObjectOfType<PauseCanvas>().SwitchPauseCanvas();
@@ -177,42 +175,6 @@ public class PlayerController : MonoBehaviour
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
     
-    private List<Interactable> _nearbyInteractables = new List<Interactable>();
-    public void AddNearbyInteractable(Interactable interactable)
-    {
-        if (!_nearbyInteractables.Contains(interactable))
-            _nearbyInteractables.Add(interactable);
-    }
-    public void RemoveNearbyInteractable(Interactable interactable)
-    {
-        if (_nearbyInteractables.Contains(interactable))
-            _nearbyInteractables.Remove(interactable);
-    }
-    
-    private Interactable GetNearestInteractable()
-    {
-        if (_nearbyInteractables.Count == 0)
-            return null;
-        Interactable nearestInteractable = _nearbyInteractables[0];
-        float nearestDistance = Vector3.Distance(transform.position, nearestInteractable.transform.position);
-        foreach (Interactable interactable in _nearbyInteractables)
-        {
-            float distance = Vector3.Distance(transform.position, interactable.transform.position);
-            if (!(distance < nearestDistance)) 
-                continue;
-            nearestDistance = distance;
-            nearestInteractable = interactable;
-        }
-        return nearestInteractable;
-    }
-    
-    private void TryToInteract()
-    {
-        var nearestInteractable = GetNearestInteractable();
-        if (nearestInteractable != null)
-            nearestInteractable.OnPlayerInteract();
-    }
-    
     //Sensitivity
     [HideInInspector] public float sensitivity = 300f;
     public void DisableControls()
@@ -262,24 +224,9 @@ public class PlayerController : MonoBehaviour
     private GameObject _heldObject;
     private Rigidbody _heldObjectRb;
 
-    private void HoldObject(float force)
+    private void Interact(float force)
     {
-        if (_heldObject == null)
-        {
-            RaycastHit[] hits = Physics.RaycastAll(_cameraTransform.position, _cameraTransform.forward, 2f);
-            foreach (var hit in hits)
-            {
-                if (!IsObjectGrabbable(hit)) 
-                    continue;
-                _heldObject = hit.collider.gameObject;
-                _heldObjectRb = _heldObject.GetComponent<Rigidbody>();
-                _heldObjectRb.useGravity = false;
-                _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(true);
-                StartCoroutine(UpdateHoldPositionRoutine());
-                return;
-            }
-        }
-        else
+        if (_heldObject != null)
         {
             _heldObjectRb.useGravity = true;
             _heldObjectRb.AddForce(_cameraTransform.forward * force, ForceMode.VelocityChange);
@@ -288,23 +235,62 @@ public class PlayerController : MonoBehaviour
             _heldObject = null;
             _heldObjectRb = null;
         }
+        else
+        {
+            RaycastHit hit = new RaycastHit();
+            if (Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out hit, 2f) && IsObjectGrabbable(hit))
+            {
+                _heldObject = hit.collider.gameObject;
+                _heldObjectRb = _heldObject.GetComponent<Rigidbody>();
+                _heldObjectRb.useGravity = false;
+                _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(true);
+                StartCoroutine(UpdateHoldPositionRoutine());
+            }
+            else if (Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out hit, 2f) && IsObjectInteractable(hit))
+            {
+                hit.collider.GetComponent<Interactable>().OnPlayerInteract();
+            }
+        }
     }
 
     private void CheckIfObjectIsGrabbable()
     {
         if (_heldObject is not null)
-            _handleCursor.SetCursorVisibility(true);
-        else if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out var hit, 2f) || !IsObjectGrabbable(hit))
-            _handleCursor.SetCursorVisibility(false);
+        {
+            _handleCursor.SetGrabCursorVisibility(true);
+            _handleCursor.SetUseCursorVisibility(false);
+            _handleCursor.SetCrosshairVisibility(false);
+            _handleCursor.SetGrabCursorClor(new Color(1f, 1f, 1f, 0.5f));
+            return;
+        }
+        var ray = new Ray(_cameraTransform.position, _cameraTransform.forward);
+        if (Physics.Raycast(ray, out var hit, 2f) && IsObjectGrabbable(hit))
+        {
+            _handleCursor.SetGrabCursorClor(new Color(1, 1, 1, 1f));
+            _handleCursor.SetGrabCursorVisibility(true);
+        }
+        else if (Physics.Raycast(ray, out hit, 2f) && IsObjectInteractable(hit))
+            _handleCursor.SetUseCursorVisibility(true);
         else
-            _handleCursor.SetCursorVisibility(true);
+        {
+            _handleCursor.SetGrabCursorVisibility(false);
+            _handleCursor.SetUseCursorVisibility(false);
+            _handleCursor.SetCrosshairVisibility(true);
+        }
     }
 
     private bool IsObjectGrabbable(RaycastHit hit)
     {
-        return hit.collider.CompareTag("Grabbable") && 
-               hit.collider.GetComponent<GrabbableObject>() is not null && 
-               hit.collider.GetComponent<GrabbableObject>().isGrabbable;
+        var grabbableObject = hit.collider.GetComponent<GrabbableObject>();
+        return hit.collider.CompareTag("Grabbable") && grabbableObject is not null && grabbableObject.isGrabbable;
+    }
+    
+    private bool IsObjectInteractable(RaycastHit hit)
+    {
+        var interactableObject = hit.collider.GetComponent<Interactable>();
+        if (interactableObject is null)
+            Debug.Log("No interactable component found");
+        return hit.collider.CompareTag("Interactable");
     }
 
 
