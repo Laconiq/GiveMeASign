@@ -7,19 +7,33 @@ public class PlayerController : MonoBehaviour
     [Title("Movement Settings")]
     [SerializeField] private float movementSpeed = 5.0f;
     [SerializeField] private float crouchSpeed = 2.0f;
-    [SerializeField] private float jumpHeight = 2.0f;
-    [SerializeField] private float crouchHeight = 1.0f;
-    [SerializeField] private float standHeight = 2.0f;
-    [HideInInspector] public float sensitivity = 300f;
-    [SerializeField] private float slopeLimit = 45f;
 
-    private Rigidbody _rigidbody;
+    [Title("Player Height")]
+    [SerializeField] private float standHeight = 2.0f;
+    [SerializeField] private float crouchHeight = 1.0f;
+    
+    [Title("Force")]
+    [SerializeField] private float throwForce = 10.0f;
+    [SerializeField] private float dropForce = 2.0f;
+    
+    [Title("Head Bobbing")]
+    [SerializeField] private float walkingHeadBobSpeed = 0.05f;
+    [SerializeField] private float crouchingHeadBobSpeed = 0.03f;
+    
+    [Title("Other")]
+    [SerializeField] private float jumpHeight = 2.0f;
+    [SerializeField] private float slopeLimit = 45f;
+    
+    
+    [HideInInspector] public float sensitivity = 300f;
+    [HideInInspector] public Transform cameraTransform;
+    private Rigidbody _playerRigidBody;
     private BoxCollider _playerBoxCollider;
     private PlayerFeedbacks _feedbacks;
     private Vector3 _playerVelocity;
     private bool _isGrounded;
     private PlayerCamera _playerCamera;
-    [HideInInspector] public Transform cameraTransform;
+    
 
     private Controls _controls;
     private Controls _uiControls;
@@ -29,13 +43,12 @@ public class PlayerController : MonoBehaviour
     private bool _isCrouching;
     private float _currentSpeed;
     
-    [SerializeField] private float throwForce = 10.0f;
-    [SerializeField] private float dropForce = 2.0f;
+    
 
     public void Initialize()
     {
         _feedbacks = GetComponent<PlayerFeedbacks>();
-        _rigidbody = GetComponent<Rigidbody>();
+        _playerRigidBody = GetComponent<Rigidbody>();
         _playerBoxCollider = GetComponent<BoxCollider>();
         _playerCamera = GetComponent<PlayerCamera>();
         if (Camera.main != null) cameraTransform = Camera.main.transform;
@@ -131,7 +144,7 @@ public class PlayerController : MonoBehaviour
         if (_isOnLadder)
         {
             moveDirection = Vector3.up * _moveInput.y;
-            _rigidbody.MovePosition(_rigidbody.position + moveDirection * (_currentSpeed * Time.deltaTime));
+            _playerRigidBody.MovePosition(_playerRigidBody.position + moveDirection * (_currentSpeed * Time.deltaTime));
         }
         else
         {
@@ -150,13 +163,13 @@ public class PlayerController : MonoBehaviour
                 float slopeAngle = Vector3.Angle(Vector3.up, hit.normal);
                 if (slopeAngle <= slopeLimit)
                 {
-                    _rigidbody.MovePosition(_rigidbody.position + moveDirection * (_currentSpeed * Time.deltaTime));
+                    _playerRigidBody.MovePosition(_playerRigidBody.position + moveDirection * (_currentSpeed * Time.deltaTime));
                 }
             }
 
             if (_moveInput != Vector2.zero)
             {
-                _playerCamera.HeadBob(!_isCrouching ? 0.03f : 0.05f);
+                _playerCamera.HeadBob(!_isCrouching ? walkingHeadBobSpeed : crouchingHeadBobSpeed);
                 PlayFootStep();
             }
             else
@@ -170,7 +183,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             Vector3 airMoveDirection = moveDirection.normalized * _currentSpeed;
-            _rigidbody.velocity = new Vector3(airMoveDirection.x, _rigidbody.velocity.y, airMoveDirection.z);
+            _playerRigidBody.velocity = new Vector3(airMoveDirection.x, _playerRigidBody.velocity.y, airMoveDirection.z);
         }
     }
 
@@ -199,7 +212,7 @@ public class PlayerController : MonoBehaviour
             return;
         if (!_isGrounded) 
             return;
-        _rigidbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+        _playerRigidBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
     }
 
     public void DisableControls()
