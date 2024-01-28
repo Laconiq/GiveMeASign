@@ -19,11 +19,12 @@ public class Elevator : MonoBehaviour
     [SerializeField] private AK.Wwise.Event elevatorCloseDoorSound;
     
     [SerializeField] private List<Animator> frontDoorAnimators;
-    
     public void GoToFloor(int floor)
     {
         if (_isMoving)
             return;
+        if (floor == -1)
+            FakeGoToFloor();
         _targetFloor = floor;
         if (currentFloor == _targetFloor)
         {            
@@ -34,9 +35,17 @@ public class Elevator : MonoBehaviour
             StartCoroutine(MoveElevator());
     }
     
+    private void FakeGoToFloor()
+    {
+        _isMoving = true;
+        CloseElevator();
+        float delay = 10f;
+        Invoke(nameof(OpenElevator), delay);
+        Invoke(nameof(PlayDingSound), delay);
+    }
+    
     private IEnumerator MoveElevator()
     {
-        elevatorStartMovingSound.Post(gameObject);
         _isMoving = true;
         CloseElevator();
         while (transform.position != floorPositions[_targetFloor])
@@ -44,27 +53,33 @@ public class Elevator : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, floorPositions[_targetFloor], elevatorSpeed * Time.deltaTime);
             yield return null;
         }
-        elevatorStopMovingSound.Post(gameObject);
-        elevatorDingSound.Post(gameObject);
+        PlayDingSound();
         _isMoving = false;
         currentFloor = _targetFloor;
         OpenElevator();
+    }
+    
+    private void PlayDingSound()
+    {
+        elevatorDingSound.Post(gameObject);
     }
     
     private void OpenElevator()
     {
         if (_isDoorOpen)
             return;
+        elevatorStopMovingSound.Post(gameObject);
         elevatorOpenDoorSound.Post(gameObject);
         _isDoorOpen = true;
         elevatorAnimator.Play("OpenDoor");
-        frontDoorAnimators[_targetFloor].Play("OpenDoor");
+        frontDoorAnimators[currentFloor].Play("OpenDoor");
     }
     
     private void CloseElevator()
     {
         if (!_isDoorOpen)
             return;
+        elevatorStartMovingSound.Post(gameObject);
         elevatorCloseDoorSound.Post(gameObject);
         _isDoorOpen = false;
         elevatorAnimator.Play("CloseDoor");

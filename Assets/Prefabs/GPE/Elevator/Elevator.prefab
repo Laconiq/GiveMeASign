@@ -58,6 +58,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1358778641642011389, guid: 10d3c4ed0c6305e4b9c7118d9608a43c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: -314843321673679145, guid: 10d3c4ed0c6305e4b9c7118d9608a43c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 10d3c4ed0c6305e4b9c7118d9608a43c,
         type: 3}
       propertyPath: m_Name
@@ -88,6 +98,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.663966
       objectReference: {fileID: 0}
+    - target: {fileID: 4413441875551482351, guid: 10d3c4ed0c6305e4b9c7118d9608a43c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 7372001895347627191, guid: 10d3c4ed0c6305e4b9c7118d9608a43c,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -101,6 +116,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2232820055483126981}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 10d3c4ed0c6305e4b9c7118d9608a43c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6347881829579110125}
     - targetCorrespondingSourceObject: {fileID: -314843321673679145, guid: 10d3c4ed0c6305e4b9c7118d9608a43c,
         type: 3}
       insertIndex: -1
@@ -259,6 +278,48 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6347881829579110125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4869835489493455385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d1323b5666ff84fadb4d6b61ee7243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elevatorSpeed: 1
+  elevatorAnimator: {fileID: 2232820055483126981}
+  currentFloor: 0
+  floorPositions: []
+  elevatorDingSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2d2e8f2b00f8a6f4ab041ee31b48d089,
+      type: 2}
+  elevatorStartMovingSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 16b58e6157a9a8848ae088f433b8b74a,
+      type: 2}
+  elevatorStopMovingSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 74757f55e57cb4743bc077bb99745456,
+      type: 2}
+  elevatorOpenDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 250a47af0101b0443b0cf9f91fe597bf,
+      type: 2}
+  elevatorCloseDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a1cfdc7324388ba46ac14e2741b1d7fd,
+      type: 2}
+  frontDoorAnimators: []
 --- !u!1 &8244958708379967143 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4413441875551482351, guid: 10d3c4ed0c6305e4b9c7118d9608a43c,

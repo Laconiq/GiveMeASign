@@ -64,6 +64,13 @@
 						<Folder Name="Elevator" ID="{42441199-81D7-4D28-8104-7B3657C189B7}" ShortID="99895320">
 							<ChildrenList>
 								<Sound Name="Elevator_Ambiant" ID="{337F69A6-EBC3-40B0-961F-AA589F6A1E3A}" ShortID="255389931">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0E615AD6-FDBA-4A16-8150-5AFFFC5E454A}"/>

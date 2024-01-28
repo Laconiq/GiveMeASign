@@ -26,7 +26,7 @@ public class Door : Interactable
     {
         animator.SetBool("OpenDoor", true);
         doorIsOpen = true;
-        PlaySoundOpenDoor();
+        Invoke(nameof(PlaySoundOpenDoor), 0f);
     }
     
     private void CloseDoor()

@@ -7,7 +7,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-30</Value>
+								<Value>-40</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -145,6 +145,13 @@
 					</ChildrenList>
 				</MusicPlaylistContainer>
 				<MusicPlaylistContainer Name="OST" ID="{10D12072-B9FD-4C75-97F9-6DE09B758371}" ShortID="302383477">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0E615AD6-FDBA-4A16-8150-5AFFFC5E454A}"/>
