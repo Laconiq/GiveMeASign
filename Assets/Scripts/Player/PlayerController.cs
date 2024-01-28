@@ -268,26 +268,20 @@ public class PlayerController : MonoBehaviour
     {
         if (_heldObject is not null)
         {
-            _handleCursor.SetGrabCursorVisibility(true);
-            _handleCursor.SetUseCursorVisibility(false);
-            _handleCursor.SetCrosshairVisibility(false);
-            _handleCursor.SetGrabCursorClor(new Color(1f, 1f, 1f, 0.5f));
+            _handleCursor.DisplayGrabCursor();
+            _handleCursor.SetGrabCursorColor(new Color(1, 1, 1, 0.5f));
             return;
         }
         var ray = new Ray(_cameraTransform.position, _cameraTransform.forward);
         if (Physics.Raycast(ray, out var hit, 2f) && IsObjectGrabbable(hit))
         {
-            _handleCursor.SetGrabCursorClor(new Color(1, 1, 1, 1f));
-            _handleCursor.SetGrabCursorVisibility(true);
+            _handleCursor.DisplayGrabCursor();
+            _handleCursor.SetGrabCursorColor(new Color(1, 1, 1, 1f));
         }
         else if (Physics.Raycast(ray, out hit, 2f) && IsObjectInteractable(hit))
-            _handleCursor.SetUseCursorVisibility(true);
+            _handleCursor.DisplayUseCursor();
         else
-        {
-            _handleCursor.SetGrabCursorVisibility(false);
-            _handleCursor.SetUseCursorVisibility(false);
-            _handleCursor.SetCrosshairVisibility(true);
-        }
+            _handleCursor.DisplayCrosshair();
     }
 
     private bool IsObjectGrabbable(RaycastHit hit)

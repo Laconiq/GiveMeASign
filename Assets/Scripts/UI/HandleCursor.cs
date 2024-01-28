@@ -12,23 +12,29 @@ public class HandleCursor : MonoBehaviour
         grabCursor.SetActive(false);
     }
 
-    public void SetGrabCursorVisibility(bool visibility)
+    public void DisplayGrabCursor()
     {
-        grabCursor.SetActive(visibility);
+        grabCursor.SetActive(true);
+        useCursor.SetActive(false);
+        crosshair.SetActive(false);
     }
     
-    public void SetGrabCursorClor(Color color)
+    public void SetGrabCursorColor(Color color)
     {
         grabCursor.GetComponent<Image>().color = color;
     }
     
-    public void SetUseCursorVisibility(bool visibility)
+    public void DisplayUseCursor()
     {
-        useCursor.SetActive(visibility);
+        grabCursor.SetActive(false);
+        useCursor.SetActive(true);
+        crosshair.SetActive(false);
     }
     
-    public void SetCrosshairVisibility(bool visibility)
+    public void DisplayCrosshair()
     {
-        crosshair.SetActive(visibility);
+        grabCursor.SetActive(false);
+        useCursor.SetActive(false);
+        crosshair.SetActive(true);
     }
 }

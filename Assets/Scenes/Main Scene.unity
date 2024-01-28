@@ -1121,6 +1121,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 139758735}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &206298954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1745508162194429568, guid: 885331dc002a2a947ae8059c294cf868,
+    type: 3}
+  m_PrefabInstance: {fileID: 1067932963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &216784371
 Mesh:
   m_ObjectHideFlags: 0
@@ -9023,6 +9029,30 @@ MonoBehaviour:
     Ordinal: 35
     Priority: 0
     IconType: 158000
+    IconTexture: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 0
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 0
+    Name: 
+    GameObject: {fileID: 0}
+    Ordinal: 36
+    Priority: 0
+    IconType: 1000
+    IconTexture: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 0
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 0
+    Name: 
+    GameObject: {fileID: 206298954}
+    Ordinal: 37
+    Priority: 0
+    IconType: 103000
     IconTexture: {fileID: 0}
     IsIconRecursive: 0
     BackgroundType: 0
@@ -24422,16 +24452,16 @@ SceneRoots:
   - {fileID: 1745765337}
   - {fileID: 5187400068570539513}
   - {fileID: 1290561035}
+  - {fileID: 1620184107}
+  - {fileID: 339903142}
+  - {fileID: 1738819088}
   - {fileID: 1924856700}
   - {fileID: 1990680034}
   - {fileID: 437337192}
   - {fileID: 1953740984}
-  - {fileID: 1738819088}
+  - {fileID: 6263490093018655420}
   - {fileID: 4251553577449952139}
+  - {fileID: 1067932963}
   - {fileID: 688598774}
   - {fileID: 16620766}
   - {fileID: 18960061}
-  - {fileID: 1620184107}
-  - {fileID: 339903142}
-  - {fileID: 1067932963}
-  - {fileID: 6263490093018655420}
