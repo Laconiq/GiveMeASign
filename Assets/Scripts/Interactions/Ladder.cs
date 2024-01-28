@@ -15,9 +15,8 @@ public class Ladder : Interactable
         _playerController.SetIsOnLadder(!_playerController.GetIsOnLadder());
     }
     
-    protected override void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         _playerController.SetIsOnLadder(false);
-        base.OnTriggerExit(other);
     }
 }
