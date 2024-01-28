@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="GlobalGameJam24_WwiseProject" GUID="{C01F2F08-C5B7-4AEA-962F-C6E1C87AAA9F}" Generator="2023.1.0.8367"/>
+	<CacheRoot>../../../../GlobalGameJam24_WwiseProject/.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Mac" GUID="{155DA7CE-23C8-42DA-B52C-10CD7272022B}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="../../../../GlobalGameJam24_WwiseProject/GeneratedSoundBanks/Mac"/>
+		<Platform Name="Windows" GUID="{E21122C9-95C9-475A-A8FE-103AD7897499}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../GlobalGameJam24_WwiseProject/GeneratedSoundBanks/Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{2E60A190-1C82-4F66-A19D-98FDEA8BD45F}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{5258FA1B-B61D-5563-E2DB-D19F771473E1}</FileHash>
+</ProjectInfo>
