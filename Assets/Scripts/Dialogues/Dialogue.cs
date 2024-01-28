@@ -10,15 +10,15 @@ public class Dialogue : MonoBehaviour
     
     [Title("Progression Settings")]
     public bool unlockProgressionOnDialogueFinish;
-    [ShowIf("unlockProgressionOnDialogueFinish")] public List<Progression> progressionsToUnlock;
+    [ShowIf("unlockProgressionOnDialogueFinish")] public List<Event> progressionsToUnlock;
     public bool requireProgressionToStart;
-    [ShowIf("requireProgressionToStart")] public List<Progression> progressionsToStart;
+    [ShowIf("requireProgressionToStart")] public List<Event> progressionsToStart;
     
     public void UnlockProgression()
     {
         if (!unlockProgressionOnDialogueFinish)
             return;
-        foreach (Progression progression in progressionsToUnlock)
+        foreach (Event progression in progressionsToUnlock)
             progression.SetProgressionStatus(true);
     }
 }

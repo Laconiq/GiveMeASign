@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class InteractableObject : Interactable
 {
@@ -7,20 +8,20 @@ public class InteractableObject : Interactable
     [SerializeField] private string animatorTriggerName;
     [SerializeField] private float delayBeforeTriggeringAnimation;
     [SerializeField] private bool canUnlockProgression;
-    [SerializeField, ShowIf("canUnlockProgression")] private Progression progressionToUnlock;
+    [FormerlySerializedAs("progressionToUnlock")] [SerializeField, ShowIf("canUnlockProgression")] private Event eventToUnlock;
     [SerializeField] private bool canInteract = true;
-    [SerializeField, HideIf("canInteract")] private Progression progressionToCheck;
+    [FormerlySerializedAs("progressionToCheck")] [SerializeField, HideIf("canInteract")] private Event eventToCheck;
     [SerializeField] private AK.Wwise.Event interactSound;
 
     public override void OnPlayerInteract()
     {
         base.OnPlayerInteract();
         interactSound?.Post(gameObject);
-        if (!canInteract && progressionToCheck.GetProgressionStatus() == false)
+        if (!canInteract && eventToCheck.GetProgressionStatus() == false)
             return;
         Invoke(nameof(SetAnimatorTrigger), delayBeforeTriggeringAnimation);
         if (canUnlockProgression)
-            progressionToUnlock.SetProgressionStatus(true);
+            eventToUnlock.SetProgressionStatus(true);
     }
     
     protected void SetAnimatorTrigger()

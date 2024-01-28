@@ -1,11 +1,12 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Clock : MonoBehaviour
 {
     [SerializeField] private float activationDelay;
     [SerializeField] private bool canUnlockProgression;
-    [SerializeField, ShowIf("canUnlockProgression")] private Progression progressionToUnlock;
+    [FormerlySerializedAs("progressionToUnlock")] [SerializeField, ShowIf("canUnlockProgression")] private Event eventToUnlock;
     [SerializeField] private bool canStartDialogue;
     [SerializeField, ShowIf("canStartDialogue")] private Npc npcToStartDialogue;
     
@@ -18,7 +19,7 @@ public class Clock : MonoBehaviour
     {
         Debug.Log("Clock finished");
         if (canUnlockProgression)
-            progressionToUnlock.SetProgressionStatus(true);
+            eventToUnlock.SetProgressionStatus(true);
         if (canStartDialogue)
             npcToStartDialogue.OnPlayerInteract();
     }

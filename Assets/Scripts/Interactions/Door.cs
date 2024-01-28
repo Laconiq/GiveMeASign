@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Door : Interactable
 {
@@ -7,7 +8,7 @@ public class Door : Interactable
     [SerializeField] protected Animator animator;
     [SerializeField] private float delayBeforeTriggeringAnimation;
     [SerializeField] private bool canInteract = true;
-    [SerializeField, HideIf("canInteract")] private Progression progressionToCheck;
+    [FormerlySerializedAs("progressionToCheck")] [SerializeField, HideIf("canInteract")] private Event eventToCheck;
     [SerializeField] private AK.Wwise.Event openDoorSound;
     [SerializeField] private AK.Wwise.Event closeDoorSound;
     
@@ -16,7 +17,7 @@ public class Door : Interactable
         base.OnPlayerInteract();
 
         
-        if (!canInteract && progressionToCheck.GetProgressionStatus() == false)
+        if (!canInteract && eventToCheck.GetProgressionStatus() == false)
             Invoke(nameof(DoorIsLocked), delayBeforeTriggeringAnimation);
         else
             Invoke(doorIsOpen ? nameof(CloseDoor) : nameof(OpenDoor), delayBeforeTriggeringAnimation);

@@ -3162,10 +3162,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 0
   isGrabbable: 0
-  progressionToUnlockOnGrab: {fileID: 531166606}
+  eventToUnlockOnGrab: {fileID: 531166606}
   canToggleEventInTriggerZone: 0
   triggerZone: {fileID: 0}
-  progressionToUnlockInTriggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}
 --- !u!54 &397316751
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3743,9 +3743,9 @@ MonoBehaviour:
   animatorTriggerName: Press
   delayBeforeTriggeringAnimation: 0
   canUnlockProgression: 0
-  progressionToUnlock: {fileID: 0}
+  eventToUnlock: {fileID: 0}
   canInteract: 1
-  progressionToCheck: {fileID: 0}
+  eventToCheck: {fileID: 0}
   interactSound:
     idInternal: 0
     valueGuidInternal: 
@@ -5651,7 +5651,7 @@ GameObject:
   - component: {fileID: 688598774}
   - component: {fileID: 688598773}
   m_Layer: 0
-  m_Name: Progression Manager
+  m_Name: Event Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7012,9 +7012,9 @@ MonoBehaviour:
   animatorTriggerName: Press
   delayBeforeTriggeringAnimation: 0
   canUnlockProgression: 0
-  progressionToUnlock: {fileID: 0}
+  eventToUnlock: {fileID: 0}
   canInteract: 1
-  progressionToCheck: {fileID: 0}
+  eventToCheck: {fileID: 0}
   interactSound:
     idInternal: 0
     valueGuidInternal: 
@@ -9413,10 +9413,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 0
   isGrabbable: 1
-  progressionToUnlockOnGrab: {fileID: 1726709539}
+  eventToUnlockOnGrab: {fileID: 1726709539}
   canToggleEventInTriggerZone: 0
   triggerZone: {fileID: 0}
-  progressionToUnlockInTriggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}
 --- !u!54 &940413868
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10249,9 +10249,9 @@ MonoBehaviour:
   animatorTriggerName: Press
   delayBeforeTriggeringAnimation: 0
   canUnlockProgression: 0
-  progressionToUnlock: {fileID: 0}
+  eventToUnlock: {fileID: 0}
   canInteract: 1
-  progressionToCheck: {fileID: 0}
+  eventToCheck: {fileID: 0}
   interactSound:
     idInternal: 0
     valueGuidInternal: 
@@ -10276,9 +10276,9 @@ MonoBehaviour:
   animatorTriggerName: Press
   delayBeforeTriggeringAnimation: 0
   canUnlockProgression: 0
-  progressionToUnlock: {fileID: 0}
+  eventToUnlock: {fileID: 0}
   canInteract: 1
-  progressionToCheck: {fileID: 0}
+  eventToCheck: {fileID: 0}
   interactSound:
     idInternal: 0
     valueGuidInternal: 
@@ -11983,9 +11983,9 @@ MonoBehaviour:
   animatorTriggerName: Press
   delayBeforeTriggeringAnimation: 0
   canUnlockProgression: 0
-  progressionToUnlock: {fileID: 0}
+  eventToUnlock: {fileID: 0}
   canInteract: 1
-  progressionToCheck: {fileID: 0}
+  eventToCheck: {fileID: 0}
   interactSound:
     idInternal: 0
     valueGuidInternal: 
@@ -13383,10 +13383,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 0
   isGrabbable: 1
-  progressionToUnlockOnGrab: {fileID: 1165331104}
+  eventToUnlockOnGrab: {fileID: 1165331104}
   canToggleEventInTriggerZone: 1
   triggerZone: {fileID: 1697854479}
-  progressionToUnlockInTriggerZone: {fileID: 5589133}
+  eventToUnlockInTriggerZone: {fileID: 5589133}
 --- !u!54 &1278263009
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16588,10 +16588,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 0
   isGrabbable: 1
-  progressionToUnlockOnGrab: {fileID: 531166606}
+  eventToUnlockOnGrab: {fileID: 531166606}
   canToggleEventInTriggerZone: 0
   triggerZone: {fileID: 0}
-  progressionToUnlockInTriggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}
 --- !u!54 &1647589280
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17312,10 +17312,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 0
   isGrabbable: 1
-  progressionToUnlockOnGrab: {fileID: 0}
+  eventToUnlockOnGrab: {fileID: 0}
   canToggleEventInTriggerZone: 0
   triggerZone: {fileID: 0}
-  progressionToUnlockInTriggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}
 --- !u!114 &1726709539 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3157862413416686292, guid: e1be8af21981623439c85292152df0f1,
@@ -17568,10 +17568,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 0
   isGrabbable: 1
-  progressionToUnlockOnGrab: {fileID: 1165331104}
+  eventToUnlockOnGrab: {fileID: 1165331104}
   canToggleEventInTriggerZone: 0
   triggerZone: {fileID: 0}
-  progressionToUnlockInTriggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}
 --- !u!54 &1742665295
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19634,10 +19634,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 0
   isGrabbable: 1
-  progressionToUnlockOnGrab: {fileID: 770693594}
+  eventToUnlockOnGrab: {fileID: 770693594}
   canToggleEventInTriggerZone: 0
   triggerZone: {fileID: 0}
-  progressionToUnlockInTriggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}
 --- !u!54 &1820903248
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21947,10 +21947,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 0
   isGrabbable: 1
-  progressionToUnlockOnGrab: {fileID: 0}
+  eventToUnlockOnGrab: {fileID: 0}
   canToggleEventInTriggerZone: 0
   triggerZone: {fileID: 0}
-  progressionToUnlockInTriggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}
 --- !u!54 &2115820347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22078,9 +22078,9 @@ MonoBehaviour:
   animatorTriggerName: Press
   delayBeforeTriggeringAnimation: 1
   canUnlockProgression: 0
-  progressionToUnlock: {fileID: 0}
+  eventToUnlock: {fileID: 0}
   canInteract: 1
-  progressionToCheck: {fileID: 0}
+  eventToCheck: {fileID: 0}
   interactSound:
     idInternal: 0
     valueGuidInternal: 

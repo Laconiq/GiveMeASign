@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Digicode : MonoBehaviour
 {
-    [SerializeField] private Progression progressionToUnlock;
+    [FormerlySerializedAs("progressionToUnlock")] [SerializeField] private Event eventToUnlock;
     private readonly List<DigicodeButton> _buttons = new List<DigicodeButton>();
     public void PressButton(DigicodeButton button)
     {
@@ -25,6 +26,6 @@ public class Digicode : MonoBehaviour
     
     private void UnlockDoor()
     {
-        progressionToUnlock.SetProgressionStatus(true);
+        eventToUnlock.SetProgressionStatus(true);
     }
 }

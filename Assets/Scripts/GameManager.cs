@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    [HideInInspector] public ProgressionManager progressionManager;
+    [FormerlySerializedAs("progressionManager")] [HideInInspector] public EventManager eventManager;
     [HideInInspector] public DialogueManager dialogueManager;
     [HideInInspector] public PlayerController playerController;
     [HideInInspector] public UIManager uiManager;
@@ -39,11 +40,11 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Game is loading...");
         playerController = FindObjectOfType<PlayerController>();
-        progressionManager = FindObjectOfType<ProgressionManager>();
+        eventManager = FindObjectOfType<EventManager>();
         dialogueManager = FindObjectOfType<DialogueManager>();
         uiManager = FindObjectOfType<UIManager>();
         playerController.Initialize();
-        progressionManager.Initialize();
+        eventManager.Initialize();
         dialogueManager.Initialize();
         uiManager.Initialize();
     }

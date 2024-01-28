@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class Progression : MonoBehaviour
+public class Event : MonoBehaviour
 {
     [HideInInspector] public bool isProgressionFinished;
     [SerializeField] private List<GameObject> objectsToActivate;

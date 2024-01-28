@@ -5,17 +5,17 @@ using Sirenix.OdinInspector;
 using UnityEditor;
 #endif
 
-public class ProgressionManager : MonoBehaviour
+public class EventManager : MonoBehaviour
 {
-    private List<Progression> _progressionItems;
+    private List<Event> _progressionItems;
     public void Initialize()
     {
-        _progressionItems = new List<Progression>();
+        _progressionItems = new List<Event>();
         foreach (Transform child in transform)
         {
-            Progression progression = child.GetComponent<Progression>();
-            if (progression != null)
-                _progressionItems.Add(progression);
+            Event @event = child.GetComponent<Event>();
+            if (@event != null)
+                _progressionItems.Add(@event);
         }
         
         foreach (var progressionItem in _progressionItems)
@@ -23,18 +23,18 @@ public class ProgressionManager : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    [Button("Add Progression")]
+    [Button("Add Event")]
     private void AddProgressionEditor()
     {
         GameObject progressionPrefab = Resources.Load<GameObject>("Progression");
         if (progressionPrefab != null)
         {
             GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(progressionPrefab, transform);
-            instance.name = "Progression";
-            Undo.RegisterCreatedObjectUndo(instance, "Create progression instance");
+            instance.name = "New Event";
+            Undo.RegisterCreatedObjectUndo(instance, "Create event instance");
         }
         else
-            Debug.LogWarning("Progression prefab not found in Resources.");
+            Debug.LogWarning("Event prefab not found in Resources.");
     }
 #endif
 }
