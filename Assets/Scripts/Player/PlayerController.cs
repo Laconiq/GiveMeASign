@@ -3,32 +3,31 @@ using Cinemachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
     [Title("Movement Settings")]
     [SerializeField] private float movementSpeed = 5.0f;
     [SerializeField] private float crouchSpeed = 2.0f;
     [SerializeField] private float jumpHeight = 2.0f;
-    [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private float crouchHeight = 1.0f;
     [SerializeField] private float standHeight = 2.0f;
 
-    private CharacterController _controller;
+    private Rigidbody _rigidbody;
+    private BoxCollider _playerBoxCollider;
     private PlayerFeedbacks _feedbacks;
     private Vector3 _playerVelocity;
     private bool _isGrounded;
     private Transform _cameraTransform;
     private HandleCursor _handleCursor;
     private CinemachineBasicMultiChannelPerlin _noise;
-    
+
     [Title("Camera Settings")]
     [SerializeField] private CinemachineVirtualCamera cineMachineVirtualCamera;
     [SerializeField] private CinemachineVirtualCamera cineMachineVirtualCameraDialogue;
 
     private Controls _controls;
     private Controls _uiControls;
-    [HideInInspector] public Controls DialogueControls;
+    public Controls DialogueControls;
     private Vector2 _moveInput;
     private bool _jumpInput;
     private bool _isCrouching;
@@ -37,7 +36,8 @@ public class PlayerController : MonoBehaviour
     public void Initialize()
     {
         _feedbacks = GetComponent<PlayerFeedbacks>();
-        _controller = GetComponent<CharacterController>();
+        _rigidbody = GetComponent<Rigidbody>();
+        _playerBoxCollider = GetComponent<BoxCollider>();
         _handleCursor = FindObjectOfType<HandleCursor>();
         _noise = cineMachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         if (Camera.main != null) _cameraTransform = Camera.main.transform;
@@ -46,31 +46,31 @@ public class PlayerController : MonoBehaviour
         _controls = new Controls();
         _controls.Player.Move.performed += ctx => _moveInput = ctx.ReadValue<Vector2>();
         _controls.Player.Move.canceled += _ => _moveInput = Vector2.zero;
-        _controls.Player.Jump.performed += _ => _jumpInput = true;
-        _controls.Player.Jump.canceled += _ => _jumpInput = false;
+        _controls.Player.Jump.performed += _ => TryToJump();
         _controls.Player.Crouch.performed += _ => TryCrouch();
         _controls.Player.Talk.performed += _ => GetComponent<TalkToNpc>().TryTalkingToNpc();
         _controls.Player.Interact.performed += _ => Interact(throwForce);
         _controls.Player.DropObject.performed += _ => Interact(dropForce);
-    
+
         _uiControls = new Controls();
         _uiControls.UI.Pause.performed += _ => FindObjectOfType<PauseCanvas>().SwitchPauseCanvas();
         _uiControls.UI.Enable();
-        
+
         DialogueControls = new Controls();
         DialogueControls.Dialogue.SpeedUp.performed += _ => GameManager.Instance.dialogueManager.SetTextRevealSpeed(0.005f);
         DialogueControls.Dialogue.Disable();
-        
+
         EnableControls();
         SetFPSCamera();
     }
-    
+
     private void FixedUpdate()
     {
+        GroundChecking();
         HandleMovement();
-        HandleJumpAndGravity();
         CheckIfObjectIsGrabbable();
     }
+
     private void TryCrouch()
     {
         if (_isCrouching)
@@ -87,19 +87,23 @@ public class PlayerController : MonoBehaviour
     {
         float timeToCrouch = 0.5f;
         float currentTime = 0;
-        float startHeight = _controller.height;
+        float startHeight = _playerBoxCollider.size.y;
         float currentSpeed = _currentSpeed;
 
         while (currentTime < timeToCrouch)
         {
             currentTime += Time.deltaTime;
             float t = currentTime / timeToCrouch;
-            _controller.height = Mathf.SmoothStep(startHeight, targetHeight, t);
+            var size = _playerBoxCollider.size;
+            size.y = Mathf.SmoothStep(startHeight, targetHeight, t);
+            _playerBoxCollider.size = size;
             _currentSpeed = Mathf.SmoothStep(currentSpeed, targetSpeed, t);
             yield return null;
         }
 
-        _controller.height = targetHeight;
+        var vector3 = _playerBoxCollider.size;
+        vector3.y = targetHeight;
+        _playerBoxCollider.size = vector3;
         _currentSpeed = targetSpeed;
         _isCrouching = isCrouching;
 
@@ -108,20 +112,20 @@ public class PlayerController : MonoBehaviour
         else
             _feedbacks.PlayCrouchFeedbackOff();
     }
-    
+
     private bool IsBlockedAbove()
     {
-        bool hitSomething = Physics.Raycast(_controller.transform.position + _controller.center, Vector3.up, out _, standHeight - crouchHeight);
+        Vector3 rayStart = transform.position + Vector3.up * (GetComponent<CapsuleCollider>().height / 2);
+        bool hitSomething = Physics.Raycast(rayStart, Vector3.up, out _, standHeight - crouchHeight);
         return hitSomething;
     }
 
     private bool _isOnLadder;
     public void SetIsOnLadder(bool b) { _isOnLadder = b; }
     public bool GetIsOnLadder() { return _isOnLadder; }
-    
+
     private void HandleMovement()
     {
-        _isGrounded = _controller.isGrounded;
         if (_isGrounded && _playerVelocity.y < 0)
             _playerVelocity.y = 0f;
 
@@ -130,7 +134,7 @@ public class PlayerController : MonoBehaviour
         if (_isOnLadder)
         {
             moveDirection = Vector3.up * _moveInput.y;
-            _controller.Move(moveDirection * (_currentSpeed * Time.deltaTime));
+            _rigidbody.MovePosition(_rigidbody.position + moveDirection * (_currentSpeed * Time.deltaTime));
         }
         else
         {
@@ -142,7 +146,7 @@ public class PlayerController : MonoBehaviour
             right.Normalize();
 
             moveDirection = forward * _moveInput.y + right * _moveInput.x;
-            _controller.Move(moveDirection * (_currentSpeed * Time.deltaTime));
+            _rigidbody.MovePosition(_rigidbody.position + moveDirection * (_currentSpeed * Time.deltaTime));
 
             if (_moveInput != Vector2.zero)
             {
@@ -152,6 +156,14 @@ public class PlayerController : MonoBehaviour
             else
                 _noise.m_FrequencyGain = 0.005f;
         }
+    }
+
+    private void GroundChecking()
+    {
+        Vector3 rayStart = transform.position + Vector3.up * 0.1f;
+        float rayLenght = _playerBoxCollider.size.y / 2 + 0.1f;
+        _isGrounded = Physics.Raycast(rayStart, Vector3.down, rayLenght);
+        Debug.DrawRay(rayStart, Vector3.down * rayLenght, Color.red);
     }
 
     private float _nextFootStepTime;
@@ -164,17 +176,15 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Footstep");
     }
 
-    private void HandleJumpAndGravity()
+    private void TryToJump()
     {
         if (_isOnLadder)
             return;
-        if (_jumpInput && _isGrounded)
-            _playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-
-        _playerVelocity.y += gravityValue * Time.deltaTime;
-        _controller.Move(_playerVelocity * Time.deltaTime);
+        if (!_isGrounded) 
+            return;
+        _rigidbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
     }
-    
+
     //Sensitivity
     [HideInInspector] public float sensitivity = 300f;
     public void DisableControls()
@@ -237,8 +247,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            RaycastHit hit = new RaycastHit();
-            if (Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out hit, 2f) && IsObjectGrabbable(hit))
+            if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out RaycastHit hit, 2f)) 
+                return;
+            if (IsObjectGrabbable(hit))
             {
                 _heldObject = hit.collider.gameObject;
                 _heldObjectRb = _heldObject.GetComponent<Rigidbody>();
@@ -246,7 +257,7 @@ public class PlayerController : MonoBehaviour
                 _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(true);
                 StartCoroutine(UpdateHoldPositionRoutine());
             }
-            else if (Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out hit, 2f) && IsObjectInteractable(hit))
+            else if (IsObjectInteractable(hit))
             {
                 hit.collider.GetComponent<Interactable>().OnPlayerInteract();
             }
@@ -292,7 +303,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log("No interactable component found");
         return hit.collider.CompareTag("Interactable");
     }
-
 
     private IEnumerator UpdateHoldPositionRoutine()
     {
