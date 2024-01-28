@@ -82,8 +82,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7175773859614782794}
   - component: {fileID: 867731805629251807}
+  - component: {fileID: 4040504845889286150}
+  - component: {fileID: 6746548418215365336}
+  - component: {fileID: 649213960062631950}
   - component: {fileID: 5726164883160824361}
-  - component: {fileID: 4874081600804722401}
   - component: {fileID: 7892375991964565386}
   - component: {fileID: 7978386524163423844}
   - component: {fileID: 6346472167907087693}
@@ -129,12 +131,49 @@ MonoBehaviour:
   jumpHeight: 0.5
   crouchHeight: 0.55
   standHeight: 2.3
-  cineMachineVirtualCamera: {fileID: 5126506825604188572}
-  cineMachineVirtualCameraDialogue: {fileID: 8003961603710254541}
   sensitivity: 300
-  holdPosition: {fileID: 0}
+  cameraTransform: {fileID: 0}
   throwForce: 10
   dropForce: 1.5
+--- !u!114 &4040504845889286150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119171922965339522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44585b0a1269eab4599802612d438f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdPosition: {fileID: 0}
+--- !u!114 &6746548418215365336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119171922965339522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f58b41328dffa4c91f9687cd929b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &649213960062631950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119171922965339522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d013cb9a800d20c4cbf62c60e6033579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cineMachineVirtualCamera: {fileID: 5126506825604188572}
+  cineMachineVirtualCameraDialogue: {fileID: 8003961603710254541}
 --- !u!114 &5726164883160824361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,18 +188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crouchFeedbackOn: {fileID: 8328485091360518339}
   crouchFeedbackOff: {fileID: 5116860516371742285}
---- !u!114 &4874081600804722401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119171922965339522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0f58b41328dffa4c91f9687cd929b88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &7892375991964565386
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -18,11 +18,13 @@ public class DialogueManager : MonoBehaviour
     private int _currentDialogueIndex;
     private int _totalDialogueItems;
     private PlayerController _playerController;
+    private PlayerCamera _playerCamera;
     
     public void Initialize()
     {
         npcDialogueText.text = "";
         _playerController = GameManager.Instance.playerController;
+        _playerCamera = _playerController.GetComponent<PlayerCamera>();
         _textRevealFeedback = textRevealFeedback.GetFeedbackOfType<MMF_TMPTextReveal>();
         dialogueContainer.SetActive(false);
     }
@@ -47,7 +49,7 @@ public class DialogueManager : MonoBehaviour
         _totalDialogueItems = _currentDialogue.dialogueItems.Count;
         
         _playerController.DisableControls();
-        _playerController.SetDialogueCamera();
+        _playerCamera.SetDialogueCamera();
         
         DisplayCurrentDialogue(_currentDialogue.isDialogueFinished ? _currentDialogue.repeatDialogueItem : _currentDialogue.dialogueItems[_currentDialogueIndex]);
         _playerController.DialogueControls.Enable();
@@ -66,7 +68,7 @@ public class DialogueManager : MonoBehaviour
         SetTextRevealSpeed(0.05f);
         _currentDialogueItem = dialogueItem;
         DestroyPlayerResponses();
-        _playerController.LookAtTarget(_currentDialogueItem.lookAtTarget);
+        _playerCamera.LookAtTarget(_currentDialogueItem.lookAtTarget);
         RevealText(_currentDialogueItem.npcDialogue);
     }
 
@@ -95,7 +97,7 @@ public class DialogueManager : MonoBehaviour
         npcDialogueText.text = "";
         DestroyPlayerResponses();
         _playerController.EnableControls();
-        _playerController.SetFPSCamera();
+        _playerCamera.SetFPSCamera();
         _currentDialogue.isDialogueFinished = true;
         _currentDialogue.UnlockProgression();
         dialogueContainer.SetActive(false);

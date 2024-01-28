@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TalkToNpc : MonoBehaviour
+public class PlayerTalkToNpc : MonoBehaviour
 {
     private List<Npc> _npcs;
     

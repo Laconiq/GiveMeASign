@@ -1,5 +1,4 @@
 using System.Collections;
-using Cinemachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -11,19 +10,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpHeight = 2.0f;
     [SerializeField] private float crouchHeight = 1.0f;
     [SerializeField] private float standHeight = 2.0f;
+    [HideInInspector] public float sensitivity = 300f;
 
     private Rigidbody _rigidbody;
     private BoxCollider _playerBoxCollider;
     private PlayerFeedbacks _feedbacks;
     private Vector3 _playerVelocity;
     private bool _isGrounded;
-    private Transform _cameraTransform;
-    private HandleCursor _handleCursor;
-    private CinemachineBasicMultiChannelPerlin _noise;
-
-    [Title("Camera Settings")]
-    [SerializeField] private CinemachineVirtualCamera cineMachineVirtualCamera;
-    [SerializeField] private CinemachineVirtualCamera cineMachineVirtualCameraDialogue;
+    private PlayerCamera _playerCamera;
+    [HideInInspector] public Transform cameraTransform;
 
     private Controls _controls;
     private Controls _uiControls;
@@ -32,15 +27,17 @@ public class PlayerController : MonoBehaviour
     private bool _jumpInput;
     private bool _isCrouching;
     private float _currentSpeed;
+    
+    [SerializeField] private float throwForce = 10.0f;
+    [SerializeField] private float dropForce = 2.0f;
 
     public void Initialize()
     {
         _feedbacks = GetComponent<PlayerFeedbacks>();
         _rigidbody = GetComponent<Rigidbody>();
         _playerBoxCollider = GetComponent<BoxCollider>();
-        _handleCursor = FindObjectOfType<HandleCursor>();
-        _noise = cineMachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        if (Camera.main != null) _cameraTransform = Camera.main.transform;
+        _playerCamera = GetComponent<PlayerCamera>();
+        if (Camera.main != null) cameraTransform = Camera.main.transform;
         _currentSpeed = movementSpeed;
 
         _controls = new Controls();
@@ -48,9 +45,9 @@ public class PlayerController : MonoBehaviour
         _controls.Player.Move.canceled += _ => _moveInput = Vector2.zero;
         _controls.Player.Jump.performed += _ => TryToJump();
         _controls.Player.Crouch.performed += _ => TryCrouch();
-        _controls.Player.Talk.performed += _ => GetComponent<TalkToNpc>().TryTalkingToNpc();
-        _controls.Player.Interact.performed += _ => Interact(throwForce);
-        _controls.Player.DropObject.performed += _ => Interact(dropForce);
+        _controls.Player.Talk.performed += _ => GetComponent<PlayerTalkToNpc>().TryTalkingToNpc();
+        _controls.Player.Interact.performed += _ => GetComponent<PlayerInteraction>().Interact(throwForce);
+        _controls.Player.DropObject.performed += _ => GetComponent<PlayerInteraction>().Interact(dropForce);
 
         _uiControls = new Controls();
         _uiControls.UI.Pause.performed += _ => FindObjectOfType<PauseCanvas>().SwitchPauseCanvas();
@@ -60,15 +57,14 @@ public class PlayerController : MonoBehaviour
         DialogueControls.Dialogue.SpeedUp.performed += _ => GameManager.Instance.dialogueManager.SetTextRevealSpeed(0.005f);
         DialogueControls.Dialogue.Disable();
 
+        _playerCamera.SetFPSCamera();
         EnableControls();
-        SetFPSCamera();
     }
 
     private void FixedUpdate()
     {
         GroundChecking();
         HandleMovement();
-        CheckIfObjectIsGrabbable();
     }
 
     private void TryCrouch()
@@ -138,8 +134,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Vector3 forward = _cameraTransform.forward;
-            Vector3 right = _cameraTransform.right;
+            Vector3 forward = cameraTransform.forward;
+            Vector3 right = cameraTransform.right;
             forward.y = 0;
             right.y = 0;
             forward.Normalize();
@@ -150,11 +146,11 @@ public class PlayerController : MonoBehaviour
 
             if (_moveInput != Vector2.zero)
             {
-                _noise.m_FrequencyGain = _isCrouching ? 0.03f : 0.05f;
+                _playerCamera.HeadBob(!_isCrouching ? 0.03f : 0.05f);
                 PlayFootStep();
             }
             else
-                _noise.m_FrequencyGain = 0.005f;
+                _playerCamera.HeadBob(0.005f);
         }
     }
 
@@ -185,13 +181,9 @@ public class PlayerController : MonoBehaviour
         _rigidbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
     }
 
-    //Sensitivity
-    [HideInInspector] public float sensitivity = 300f;
     public void DisableControls()
     {
-        var povComponent = cineMachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
-        povComponent.m_HorizontalAxis.m_MaxSpeed = 0;
-        povComponent.m_VerticalAxis.m_MaxSpeed = 0;
+        GetComponent<PlayerCamera>().EnablePovCamera(false);
         _controls.Disable();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -199,112 +191,9 @@ public class PlayerController : MonoBehaviour
     
     public void EnableControls()
     {
-        var povComponent = cineMachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
-        povComponent.m_HorizontalAxis.m_MaxSpeed = sensitivity;
-        povComponent.m_VerticalAxis.m_MaxSpeed = sensitivity;
+        GetComponent<PlayerCamera>().EnablePovCamera(true);
         _controls.Enable();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    //Camera
-    public void SetDialogueCamera()
-    {
-        cineMachineVirtualCamera.Priority = 9;
-        cineMachineVirtualCameraDialogue.Priority = 11;
-    }
-    
-    public void SetFPSCamera()
-    {
-        cineMachineVirtualCamera.Priority = 11;
-        cineMachineVirtualCameraDialogue.Priority = 9;
-        cineMachineVirtualCameraDialogue.LookAt = null;
-    }
-    
-    public void LookAtTarget(Transform target)
-    {
-        cineMachineVirtualCameraDialogue.LookAt = target;
-    }
-    
-    //Physics Objects
-    [Title("Physics Objects")]
-    [SerializeField] private Transform holdPosition;
-    [SerializeField] private float throwForce = 10.0f;
-    [SerializeField] private float dropForce = 2.0f;
-    private GameObject _heldObject;
-    private Rigidbody _heldObjectRb;
-
-    private void Interact(float force)
-    {
-        if (_heldObject != null)
-        {
-            _heldObjectRb.useGravity = true;
-            _heldObjectRb.AddForce(_cameraTransform.forward * force, ForceMode.VelocityChange);
-            _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(false);
-            StopCoroutine(UpdateHoldPositionRoutine());
-            _heldObject = null;
-            _heldObjectRb = null;
-        }
-        else
-        {
-            if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out RaycastHit hit, 2f)) 
-                return;
-            if (IsObjectGrabbable(hit))
-            {
-                _heldObject = hit.collider.gameObject;
-                _heldObjectRb = _heldObject.GetComponent<Rigidbody>();
-                _heldObjectRb.useGravity = false;
-                _heldObject.GetComponent<GrabbableObject>().ObjectIsGrabbed(true);
-                StartCoroutine(UpdateHoldPositionRoutine());
-            }
-            else if (IsObjectInteractable(hit))
-            {
-                hit.collider.GetComponent<Interactable>().OnPlayerInteract();
-            }
-        }
-    }
-
-    private void CheckIfObjectIsGrabbable()
-    {
-        if (_heldObject is not null)
-        {
-            _handleCursor.DisplayGrabCursor();
-            _handleCursor.SetGrabCursorColor(new Color(1, 1, 1, 0.5f));
-            return;
-        }
-        var ray = new Ray(_cameraTransform.position, _cameraTransform.forward);
-        if (Physics.Raycast(ray, out var hit, 2f) && IsObjectGrabbable(hit))
-        {
-            _handleCursor.DisplayGrabCursor();
-            _handleCursor.SetGrabCursorColor(new Color(1, 1, 1, 1f));
-        }
-        else if (Physics.Raycast(ray, out hit, 2f) && IsObjectInteractable(hit))
-            _handleCursor.DisplayUseCursor();
-        else
-            _handleCursor.DisplayCrosshair();
-    }
-
-    private bool IsObjectGrabbable(RaycastHit hit)
-    {
-        var grabbableObject = hit.collider.GetComponent<GrabbableObject>();
-        return hit.collider.CompareTag("Grabbable") && grabbableObject is not null && grabbableObject.isGrabbable;
-    }
-    
-    private bool IsObjectInteractable(RaycastHit hit)
-    {
-        var interactableObject = hit.collider.GetComponent<Interactable>();
-        if (interactableObject is null && hit.collider.CompareTag("Interactable"))
-            Debug.Log("No interactable component found");
-        return hit.collider.CompareTag("Interactable");
-    }
-
-    private IEnumerator UpdateHoldPositionRoutine()
-    {
-        while (_heldObject is not null && _heldObjectRb is not null)
-        {
-            Vector3 desiredVelocity = (holdPosition.position - _heldObject.transform.position) * 8f;
-            _heldObjectRb.velocity = Vector3.Lerp(_heldObjectRb.velocity, desiredVelocity, 0.1f);
-            yield return new WaitForFixedUpdate();
-        }
     }
 }
