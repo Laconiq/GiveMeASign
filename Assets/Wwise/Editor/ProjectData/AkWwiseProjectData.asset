@@ -66,8 +66,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: cc2c785b299086408325b45d41bd3e0f
     GuidInternal: 
-    m_lastTime: -8584952054281081581
-    List: []
+    m_lastTime: -8584952050736232409
+    List:
+    - name: SoundBank
+      guid: 674560e77ed6764fb676a451308c5bc2
+      id: 1661994096
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: cc2c785b299086408325b45d41bd3e0f
+      - ElementName: SoundBank
+        ObjectType: 7
+        guid: 674560e77ed6764fb676a451308c5bc2
+      Path: SoundBanks\Default Work Unit\SoundBank
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -97,8 +111,8 @@ MonoBehaviour:
         guid: 1100809ac143ec46919471c54a54ffda
       Path: Events\Default Work Unit\Footstep
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
