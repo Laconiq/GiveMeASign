@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float crouchHeight = 1.0f;
     [SerializeField] private float standHeight = 2.0f;
     [HideInInspector] public float sensitivity = 300f;
+    [SerializeField] private float slopeLimit = 45f;
 
     private Rigidbody _rigidbody;
     private BoxCollider _playerBoxCollider;
@@ -111,7 +112,7 @@ public class PlayerController : MonoBehaviour
 
     private bool IsBlockedAbove()
     {
-        Vector3 rayStart = transform.position + Vector3.up * (GetComponent<CapsuleCollider>().height / 2);
+        Vector3 rayStart = transform.position + Vector3.up * (_playerBoxCollider.size.y / 2);
         bool hitSomething = Physics.Raycast(rayStart, Vector3.up, out _, standHeight - crouchHeight);
         return hitSomething;
     }
@@ -142,7 +143,16 @@ public class PlayerController : MonoBehaviour
             right.Normalize();
 
             moveDirection = forward * _moveInput.y + right * _moveInput.x;
-            _rigidbody.MovePosition(_rigidbody.position + moveDirection * (_currentSpeed * Time.deltaTime));
+
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, _playerBoxCollider.size.y / 2 + 0.1f))
+            {
+                float slopeAngle = Vector3.Angle(Vector3.up, hit.normal);
+                if (slopeAngle <= slopeLimit)
+                {
+                    _rigidbody.MovePosition(_rigidbody.position + moveDirection * (_currentSpeed * Time.deltaTime));
+                }
+            }
 
             if (_moveInput != Vector2.zero)
             {
@@ -152,7 +162,18 @@ public class PlayerController : MonoBehaviour
             else
                 _playerCamera.HeadBob(0.005f);
         }
+
+        if (!_isGrounded) 
+            return;
+        if (_jumpInput)
+            _playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
+        else
+        {
+            Vector3 airMoveDirection = moveDirection.normalized * _currentSpeed;
+            _rigidbody.velocity = new Vector3(airMoveDirection.x, _rigidbody.velocity.y, airMoveDirection.z);
+        }
     }
+
 
     private void GroundChecking()
     {
