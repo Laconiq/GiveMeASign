@@ -19,7 +19,7 @@ public class InteractableObject : Interactable
         interactSound?.Post(gameObject);
         if (!canInteract && eventToCheck.GetProgressionStatus() == false)
             return;
-        if (animatorTriggerName is not null && animator is not null)
+        if (animatorTriggerName != "" && animator is not null)
             Invoke(nameof(SetAnimatorTrigger), delayBeforeTriggeringAnimation);  
         if (canUnlockProgression)
             eventToUnlock.SetProgressionStatus(true);
