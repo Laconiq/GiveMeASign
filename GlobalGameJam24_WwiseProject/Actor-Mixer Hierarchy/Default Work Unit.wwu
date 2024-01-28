@@ -1,6 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{BD212059-118C-4850-B725-1C78AB4C2ED3}" SchemaVersion="119">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{BD212059-118C-4850-B725-1C78AB4C2ED3}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{BD212059-118C-4850-B725-1C78AB4C2ED3}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="Mixer" ID="{9EE0D31C-D9B1-4BFC-8638-5DF3A75625C8}" ShortID="44672667">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0E615AD6-FDBA-4A16-8150-5AFFFC5E454A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0ACC7738-2FEE-4E6B-AC22-9AA1A025DB67}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Folder Name="Door" ID="{BA5674BF-2ADB-41BD-99C0-F28F686BD3EB}" ShortID="1001399021">
+							<ChildrenList>
+								<Sound Name="Door_Close" ID="{D0383E66-5DB4-4A9E-9E21-90C317EA99E5}" ShortID="188351206">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0E615AD6-FDBA-4A16-8150-5AFFFC5E454A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0ACC7738-2FEE-4E6B-AC22-9AA1A025DB67}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Door_Close" ID="{33EF8C12-7ACB-413D-BB7B-5D299D980BE7}">
+											<Language>SFX</Language>
+											<AudioFile>Door_Close.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="127282876"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Door_Close" ID="{33EF8C12-7ACB-413D-BB7B-5D299D980BE7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Door_Open" ID="{F230CF1D-94BE-4B20-9DF8-294BD64E8777}" ShortID="201712262">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0E615AD6-FDBA-4A16-8150-5AFFFC5E454A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0ACC7738-2FEE-4E6B-AC22-9AA1A025DB67}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Door_Open" ID="{13F9A8BA-48D2-4E22-B566-C03E160E56B9}">
+											<Language>SFX</Language>
+											<AudioFile>Door_Open.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="787726247"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Door_Open" ID="{13F9A8BA-48D2-4E22-B566-C03E160E56B9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Elevator" ID="{42441199-81D7-4D28-8104-7B3657C189B7}" ShortID="99895320">
+							<ChildrenList>
+								<Sound Name="Elevator_Ambiant" ID="{337F69A6-EBC3-40B0-961F-AA589F6A1E3A}" ShortID="255389931">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0E615AD6-FDBA-4A16-8150-5AFFFC5E454A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0ACC7738-2FEE-4E6B-AC22-9AA1A025DB67}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Elevator_Ambiant" ID="{596C3170-C678-4B95-B039-2AD07D2B9E78}">
+											<Language>SFX</Language>
+											<AudioFile>Elevator_Ambiant.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="616810643"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Elevator_Ambiant" ID="{596C3170-C678-4B95-B039-2AD07D2B9E78}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Elevator_Button" ID="{EFFB5C0A-DDB9-442D-B104-8591D19F868B}" ShortID="279092063">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0E615AD6-FDBA-4A16-8150-5AFFFC5E454A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0ACC7738-2FEE-4E6B-AC22-9AA1A025DB67}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Elevator_Button" ID="{7A9B407B-BA4D-4A82-A6A8-2BAB686BAFB4}">
+											<Language>SFX</Language>
+											<AudioFile>Elevator_Button.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="416975870"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Elevator_Button" ID="{7A9B407B-BA4D-4A82-A6A8-2BAB686BAFB4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Elevator_Ding" ID="{F4DCB47D-4DF8-499A-BD53-BFC1F34D0128}" ShortID="197931432">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0E615AD6-FDBA-4A16-8150-5AFFFC5E454A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0ACC7738-2FEE-4E6B-AC22-9AA1A025DB67}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Elevator_Ding" ID="{94B8832A-F201-4C70-A5DA-E731E9168AAA}">
+											<Language>SFX</Language>
+											<AudioFile>Elevator_Ding.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="30468092"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Elevator_Ding" ID="{94B8832A-F201-4C70-A5DA-E731E9168AAA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Elevator_Doors_Closed" ID="{DBFAEDDC-DB55-4165-BC03-2BBB603852B3}" ShortID="996150634">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0E615AD6-FDBA-4A16-8150-5AFFFC5E454A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0ACC7738-2FEE-4E6B-AC22-9AA1A025DB67}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Elevator_Doors_Closed" ID="{A059F4F6-D39E-42EE-8763-2E5C864E1A3E}">
+											<Language>SFX</Language>
+											<AudioFile>Elevator_Doors_Closed.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="120619257"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Elevator_Doors_Closed" ID="{A059F4F6-D39E-42EE-8763-2E5C864E1A3E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Elevator_Doors_Open" ID="{E15DDAB0-E70C-4559-BE44-178F81FDA855}" ShortID="587363440">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0E615AD6-FDBA-4A16-8150-5AFFFC5E454A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0ACC7738-2FEE-4E6B-AC22-9AA1A025DB67}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Elevator_Doors_Open" ID="{C16DD0EA-EA95-4338-B18A-FA78472F8C33}">
+											<Language>SFX</Language>
+											<AudioFile>Elevator_Doors_Open.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="129386650"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Elevator_Doors_Open" ID="{C16DD0EA-EA95-4338-B18A-FA78472F8C33}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

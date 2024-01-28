@@ -11,6 +11,20 @@
 
 namespace AK
 {
+    namespace EVENTS
+    {
+        static const AkUniqueID CLOSEDOOR = 1405443347U;
+        static const AkUniqueID CLOSEELEVATORDOOR = 3143178837U;
+        static const AkUniqueID DING = 2396968165U;
+        static const AkUniqueID OPENDOOR = 2122995345U;
+        static const AkUniqueID OPENELEVATORDOOR = 2267214559U;
+        static const AkUniqueID PRESSBUTTON = 2561485778U;
+        static const AkUniqueID STARTELEVATORAMBIANT = 844717215U;
+        static const AkUniqueID STARTMUSIC = 3827058668U;
+        static const AkUniqueID STOPELEVATORAMBIANT = 2338482029U;
+        static const AkUniqueID STOPMUSIC = 1917263390U;
+    } // namespace EVENTS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;

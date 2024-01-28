@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FakeElevatorButton : InteractableObject
@@ -7,6 +5,10 @@ public class FakeElevatorButton : InteractableObject
     [SerializeField] private Animator elevatorAnimator;
     [SerializeField] private Animator frontDoorAnimator;
     [SerializeField] private bool isFrontButton;
+    
+    [SerializeField] private AK.Wwise.Event openDoorSound;
+    [SerializeField] private AK.Wwise.Event closeDoorSound;
+    [SerializeField] private AK.Wwise.Event elevatorDingSound;
     
     public override void OnPlayerInteract()
     {
@@ -18,6 +20,7 @@ public class FakeElevatorButton : InteractableObject
     }   
     private void OpenDoor()
     {
+        openDoorSound.Post(gameObject);
         elevatorAnimator.SetTrigger("OpenDoor");
         frontDoorAnimator.SetTrigger("OpenDoor");
     }
@@ -29,8 +32,16 @@ public class FakeElevatorButton : InteractableObject
             Debug.Log("Door is already closed");
             return;
         }
+        closeDoorSound.Post(gameObject);
         elevatorAnimator.SetTrigger("CloseDoor");
         frontDoorAnimator.SetTrigger("CloseDoor");
-        Invoke(nameof(OpenDoor), 10f);
+        float delay = 10f;
+        Invoke(nameof(OpenDoor), delay);
+        Invoke(nameof(PlayerSoundDing), delay);
+    }
+    
+    private void PlayerSoundDing()
+    {
+        elevatorDingSound.Post(gameObject);
     }
 }

@@ -8,7 +8,9 @@ public class Door : Interactable
     [SerializeField] private float delayBeforeTriggeringAnimation;
     [SerializeField] private bool canInteract = true;
     [SerializeField, HideIf("canInteract")] private Progression progressionToCheck;
-
+    [SerializeField] private AK.Wwise.Event openDoorSound;
+    [SerializeField] private AK.Wwise.Event closeDoorSound;
+    
     public override void OnPlayerInteract()
     {
         base.OnPlayerInteract();
@@ -24,16 +26,29 @@ public class Door : Interactable
     {
         animator.SetBool("OpenDoor", true);
         doorIsOpen = true;
+        PlaySoundOpenDoor();
     }
     
     private void CloseDoor()
     {
         animator.SetBool("OpenDoor", false);
         doorIsOpen = false;
+        Invoke(nameof(PlaySoundCloseDoor), 1f);
     }
     
     private void DoorIsLocked()
     {
         animator.SetTrigger("DoorIsLocked");
     }
+
+    private void PlaySoundOpenDoor()
+    {
+        openDoorSound.Post(gameObject);
+    }
+    
+    public void PlaySoundCloseDoor()
+    {
+        closeDoorSound.Post(gameObject);
+    }
+
 }

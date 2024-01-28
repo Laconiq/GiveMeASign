@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9c5a4ebd6ce2b469dfb8dc7cec8407, type: 3}
+  m_Name: F74FC582-1E2F-4846-8EA8-F351D3828DFA
+  m_EditorClassIdentifier: 
+  objectName: StopElevatorAmbiant
+  id: 2338482029
+  guid: F74FC582-1E2F-4846-8EA8-F351D3828DFA

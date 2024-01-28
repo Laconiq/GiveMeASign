@@ -10,10 +10,12 @@ public class InteractableObject : Interactable
     [SerializeField, ShowIf("canUnlockProgression")] private Progression progressionToUnlock;
     [SerializeField] private bool canInteract = true;
     [SerializeField, HideIf("canInteract")] private Progression progressionToCheck;
+    [SerializeField] private AK.Wwise.Event interactSound;
 
     public override void OnPlayerInteract()
     {
         base.OnPlayerInteract();
+        interactSound?.Post(gameObject);
         if (!canInteract && progressionToCheck.GetProgressionStatus() == false)
             return;
         Invoke(nameof(SetAnimatorTrigger), delayBeforeTriggeringAnimation);

@@ -22,10 +22,93 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="1661994096" Type="User" Language="SFX" Hash="{87A14BF9-0107-DD5E-2AC7-AB17BCE1F976}">
+		<SoundBank Id="1661994096" Type="User" Language="SFX" Hash="{C4907D24-9DC1-1D6A-CCF9-BF05EE9CAF5F}">
 			<ShortName>SoundBank</ShortName>
 			<Path>SoundBank.bnk</Path>
+			<Media>
+				<File Id="30468092" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Elevator_Ding.wav</ShortName>
+					<CachePath>SFX/Elevator_Ding_818F3B66.wem</CachePath>
+				</File>
+				<File Id="120619257" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Elevator_Doors_Closed.wav</ShortName>
+					<CachePath>SFX/Elevator_Doors_Closed_818F3B66.wem</CachePath>
+				</File>
+				<File Id="127282876" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Door_Close.wav</ShortName>
+					<CachePath>SFX/Door_Close_818F3B66.wem</CachePath>
+				</File>
+				<File Id="129386650" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Elevator_Doors_Open.wav</ShortName>
+					<CachePath>SFX/Elevator_Doors_Open_818F3B66.wem</CachePath>
+				</File>
+				<File Id="253363914" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Office Ambiance.wav</ShortName>
+					<CachePath>SFX/Office Ambiance_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="416975870" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Elevator_Button.wav</ShortName>
+					<CachePath>SFX/Elevator_Button_818F3B66.wem</CachePath>
+				</File>
+				<File Id="616810643" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Elevator_Ambiant.wav</ShortName>
+					<CachePath>SFX/Elevator_Ambiant_818F3B66.wem</CachePath>
+				</File>
+				<File Id="787726247" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Door_Open.wav</ShortName>
+					<CachePath>SFX/Door_Open_818F3B66.wem</CachePath>
+				</File>
+				<File Id="858918694" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>OST.wav</ShortName>
+					<CachePath>SFX/OST_FBC78EF0.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1405443347" Name="CloseDoor" DurationType="OneShot" DurationMin="1.3066894" DurationMax="1.3066894">
+					<MediaRefs>
+						<MediaRef Id="127282876"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3143178837" Name="CloseElevatorDoor" DurationType="OneShot" DurationMin="3.026576" DurationMax="3.026576">
+					<MediaRefs>
+						<MediaRef Id="120619257"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2396968165" Name="Ding" DurationType="OneShot" DurationMin="1.9370295" DurationMax="1.9370295">
+					<MediaRefs>
+						<MediaRef Id="30468092"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2122995345" Name="OpenDoor" DurationType="OneShot" DurationMin="1.1466893" DurationMax="1.1466893">
+					<MediaRefs>
+						<MediaRef Id="787726247"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2267214559" Name="OpenElevatorDoor" DurationType="OneShot" DurationMin="2.7520182" DurationMax="2.7520182">
+					<MediaRefs>
+						<MediaRef Id="129386650"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2561485778" Name="PressButton" DurationType="OneShot" DurationMin="0.24213152" DurationMax="0.24213152">
+					<MediaRefs>
+						<MediaRef Id="416975870"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="844717215" Name="StartElevatorAmbiant" DurationType="OneShot" DurationMin="27.118118" DurationMax="27.118118">
+					<MediaRefs>
+						<MediaRef Id="616810643"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3827058668" Name="StartMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="253363914"/>
+						<MediaRef Id="858918694"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2338482029" Name="StopElevatorAmbiant" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1917263390" Name="StopMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C26D2AA9-ED29-BEDD-A4D4-CDCA70430685}</FileHash>
+	<FileHash>{CC5199AD-24EB-A05A-6FB6-C47DC52CD742}</FileHash>
 </SoundBanksInfo>

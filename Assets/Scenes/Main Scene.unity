@@ -5417,6 +5417,11 @@ MonoBehaviour:
   progressionToUnlock: {fileID: 0}
   canInteract: 1
   progressionToCheck: {fileID: 0}
+  interactSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 44a222501ac190b4a8931cffc257f921,
+      type: 2}
 --- !u!54 &490903185
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8734,6 +8739,31 @@ MonoBehaviour:
   floorPositions:
   - {x: 17.436, y: 24.674, z: -3.445}
   - {x: 17.436, y: 37.445, z: -3.445}
+  elevatorDingSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2d2e8f2b00f8a6f4ab041ee31b48d089,
+      type: 2}
+  elevatorStartMovingSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 74757f55e57cb4743bc077bb99745456,
+      type: 2}
+  elevatorStopMovingSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 16b58e6157a9a8848ae088f433b8b74a,
+      type: 2}
+  elevatorOpenDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 250a47af0101b0443b0cf9f91fe597bf,
+      type: 2}
+  elevatorCloseDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a1cfdc7324388ba46ac14e2741b1d7fd,
+      type: 2}
   frontDoorAnimators:
   - {fileID: 553966315}
   - {fileID: 1122343534}
@@ -9315,8 +9345,17 @@ MonoBehaviour:
   progressionToUnlock: {fileID: 0}
   canInteract: 1
   progressionToCheck: {fileID: 0}
+  interactSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   elevator: {fileID: 753032652}
   floorToGo: 0
+  elevatorButtonSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 44a222501ac190b4a8931cffc257f921,
+      type: 2}
 --- !u!65 &789076228
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11173,7 +11212,7 @@ MonoBehaviour:
     IsHidden: 0
 --- !u!4 &904786390
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -12774,9 +12813,26 @@ MonoBehaviour:
   progressionToUnlock: {fileID: 0}
   canInteract: 1
   progressionToCheck: {fileID: 0}
+  interactSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 44a222501ac190b4a8931cffc257f921,
+      type: 2}
   elevatorAnimator: {fileID: 2037502731}
   frontDoorAnimator: {fileID: 1535855915}
   isFrontButton: 0
+  openDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  closeDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  elevatorDingSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!54 &1018109075
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12824,9 +12880,26 @@ MonoBehaviour:
   progressionToUnlock: {fileID: 0}
   canInteract: 1
   progressionToCheck: {fileID: 0}
+  interactSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 44a222501ac190b4a8931cffc257f921,
+      type: 2}
   elevatorAnimator: {fileID: 2037502731}
   frontDoorAnimator: {fileID: 1535855915}
   isFrontButton: 0
+  openDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  closeDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  elevatorDingSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!95 &1018109080 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4754192974664330448, guid: ccb1e5371c1615848982e33c5dd2acac,
@@ -14053,6 +14126,74 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &1067932963
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1745508162194429568, guid: 885331dc002a2a947ae8059c294cf868,
+        type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197687210583282271, guid: 885331dc002a2a947ae8059c294cf868,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197687210583282271, guid: 885331dc002a2a947ae8059c294cf868,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197687210583282271, guid: 885331dc002a2a947ae8059c294cf868,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197687210583282271, guid: 885331dc002a2a947ae8059c294cf868,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197687210583282271, guid: 885331dc002a2a947ae8059c294cf868,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197687210583282271, guid: 885331dc002a2a947ae8059c294cf868,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197687210583282271, guid: 885331dc002a2a947ae8059c294cf868,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197687210583282271, guid: 885331dc002a2a947ae8059c294cf868,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197687210583282271, guid: 885331dc002a2a947ae8059c294cf868,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197687210583282271, guid: 885331dc002a2a947ae8059c294cf868,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 885331dc002a2a947ae8059c294cf868, type: 3}
 --- !u!43 &1071169784
 Mesh:
   m_ObjectHideFlags: 0
@@ -14461,8 +14602,17 @@ MonoBehaviour:
   progressionToUnlock: {fileID: 0}
   canInteract: 1
   progressionToCheck: {fileID: 0}
+  interactSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   elevator: {fileID: 753032652}
   floorToGo: 0
+  elevatorButtonSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 44a222501ac190b4a8931cffc257f921,
+      type: 2}
 --- !u!95 &1096111603 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3943891090642186642, guid: 15851378a77eb9d40943646236333763,
@@ -15028,6 +15178,11 @@ MonoBehaviour:
   progressionToUnlock: {fileID: 0}
   canInteract: 1
   progressionToCheck: {fileID: 0}
+  interactSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 44a222501ac190b4a8931cffc257f921,
+      type: 2}
 --- !u!65 &1169851538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15597,8 +15752,17 @@ MonoBehaviour:
   progressionToUnlock: {fileID: 0}
   canInteract: 1
   progressionToCheck: {fileID: 0}
+  interactSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   elevator: {fileID: 753032652}
   floorToGo: 1
+  elevatorButtonSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 44a222501ac190b4a8931cffc257f921,
+      type: 2}
 --- !u!54 &1199057784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28561,9 +28725,26 @@ MonoBehaviour:
   progressionToUnlock: {fileID: 0}
   canInteract: 1
   progressionToCheck: {fileID: 0}
+  interactSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 44a222501ac190b4a8931cffc257f921,
+      type: 2}
   elevatorAnimator: {fileID: 2037502731}
   frontDoorAnimator: {fileID: 1535855915}
   isFrontButton: 1
+  openDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  closeDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  elevatorDingSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1001 &2064672538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29439,8 +29620,17 @@ MonoBehaviour:
   progressionToUnlock: {fileID: 0}
   canInteract: 1
   progressionToCheck: {fileID: 0}
+  interactSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   elevator: {fileID: 753032652}
   floorToGo: 1
+  elevatorButtonSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 44a222501ac190b4a8931cffc257f921,
+      type: 2}
 --- !u!65 &2135013278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31818,3 +32008,4 @@ SceneRoots:
   - {fileID: 1620184107}
   - {fileID: 339903142}
   - {fileID: 2091430462}
+  - {fileID: 1067932963}

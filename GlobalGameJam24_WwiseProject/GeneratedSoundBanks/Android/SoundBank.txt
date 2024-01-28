@@ -1,0 +1,23 @@
+Event	ID	Name			Wwise Object Path	Notes
+	844717215	StartElevatorAmbiant			\Default Work Unit\Elevator\StartElevatorAmbiant	
+	1405443347	CloseDoor			\Default Work Unit\CloseDoor	
+	1917263390	StopMusic			\Default Work Unit\Music\StopMusic	
+	2122995345	OpenDoor			\Default Work Unit\OpenDoor	
+	2267214559	OpenElevatorDoor			\Default Work Unit\Elevator\OpenElevatorDoor	
+	2338482029	StopElevatorAmbiant			\Default Work Unit\Elevator\StopElevatorAmbiant	
+	2396968165	Ding			\Default Work Unit\Elevator\Ding	
+	2561485778	PressButton			\Default Work Unit\Elevator\PressButton	
+	3143178837	CloseElevatorDoor			\Default Work Unit\Elevator\CloseElevatorDoor	
+	3827058668	StartMusic			\Default Work Unit\Music\StartMusic	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	30468092	Elevator_Ding	D:\Unity\GlobalGameJam24\GlobalGameJam24_WwiseProject\.cache\Android\SFX\Elevator_Ding_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mixer\Elevator\Elevator_Ding		341788
+	120619257	Elevator_Doors_Closed	D:\Unity\GlobalGameJam24\GlobalGameJam24_WwiseProject\.cache\Android\SFX\Elevator_Doors_Closed_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mixer\Elevator\Elevator_Doors_Closed		533984
+	127282876	Door_Close	D:\Unity\GlobalGameJam24\GlobalGameJam24_WwiseProject\.cache\Android\SFX\Door_Close_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mixer\Door\Door_Close		230596
+	129386650	Elevator_Doors_Open	D:\Unity\GlobalGameJam24\GlobalGameJam24_WwiseProject\.cache\Android\SFX\Elevator_Doors_Open_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mixer\Elevator\Elevator_Doors_Open		485552
+	253363914	Office Ambiance	D:\Unity\GlobalGameJam24\GlobalGameJam24_WwiseProject\.cache\Android\SFX\Office Ambiance_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Ambiance\Office Ambiance\Office Ambiance		9647652
+	416975870	Elevator_Button	D:\Unity\GlobalGameJam24\GlobalGameJam24_WwiseProject\.cache\Android\SFX\Elevator_Button_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mixer\Elevator\Elevator_Button		42808
+	616810643	Elevator_Ambiant	D:\Unity\GlobalGameJam24\GlobalGameJam24_WwiseProject\.cache\Android\SFX\Elevator_Ambiant_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mixer\Elevator\Elevator_Ambiant		4783732
+	787726247	Door_Open	D:\Unity\GlobalGameJam24\GlobalGameJam24_WwiseProject\.cache\Android\SFX\Door_Open_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Mixer\Door\Door_Open		202372
+	858918694	OST	D:\Unity\GlobalGameJam24\GlobalGameJam24_WwiseProject\.cache\Android\SFX\OST_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\OST\OST\OST		23357936
+

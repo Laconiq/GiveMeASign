@@ -734,6 +734,16 @@ MonoBehaviour:
   delayBeforeTriggeringAnimation: 0
   canInteract: 1
   progressionToCheck: {fileID: 0}
+  openDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 576971a9d3dfa5b4689b15a488f22383,
+      type: 2}
+  closeDoorSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1456d3700d1530c49960ca79f230a3e6,
+      type: 2}
 --- !u!1 &7202013000073778223
 GameObject:
   m_ObjectHideFlags: 0

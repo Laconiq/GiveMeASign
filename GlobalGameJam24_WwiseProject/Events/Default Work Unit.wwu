@@ -1,6 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C49106A2-4EAF-4CFA-BEDB-BF64FE50B5DB}" SchemaVersion="119">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{C49106A2-4EAF-4CFA-BEDB-BF64FE50B5DB}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C49106A2-4EAF-4CFA-BEDB-BF64FE50B5DB}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Music" ID="{1B9CD52C-6938-4F1A-8229-B7088A42DF2F}" ShortID="853065751">
+					<ChildrenList>
+						<Event Name="StartMusic" ID="{95541AC6-5B32-45E2-BFFF-CAD79A39A9E2}">
+							<ChildrenList>
+								<Action Name="" ID="{B3F355F5-EDC5-47D8-85A4-06D74413A6A1}" ShortID="681860238">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="OST" ID="{10D12072-B9FD-4C75-97F9-6DE09B758371}" WorkUnitID="{4B351421-8873-4BCD-81F3-58F1F2F6C6AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{18255D4D-B0A4-4618-8318-212E47F13B34}" ShortID="330066428">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ambiance" ID="{DFB43F34-40FC-49D3-BDAA-FDC679A3446C}" WorkUnitID="{4B351421-8873-4BCD-81F3-58F1F2F6C6AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="StopMusic" ID="{D0A0AA97-299E-491C-B809-9B7507D9780C}">
+							<ChildrenList>
+								<Action Name="" ID="{356A2CC3-BA16-4A8E-8545-17206BDD910A}" ShortID="632016624">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="OST" ID="{10D12072-B9FD-4C75-97F9-6DE09B758371}" WorkUnitID="{4B351421-8873-4BCD-81F3-58F1F2F6C6AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{BDCA8254-690B-48A7-8D63-97CBC6DA85AB}" ShortID="715263350">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ambiance" ID="{DFB43F34-40FC-49D3-BDAA-FDC679A3446C}" WorkUnitID="{4B351421-8873-4BCD-81F3-58F1F2F6C6AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Event Name="OpenDoor" ID="{17243746-CAF0-41EC-B3BF-D819094A2A96}">
+					<ChildrenList>
+						<Action Name="" ID="{944D5EB0-744E-4EB1-A55B-B95B66F06556}" ShortID="937651618">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Door_Open" ID="{F230CF1D-94BE-4B20-9DF8-294BD64E8777}" WorkUnitID="{BD212059-118C-4850-B725-1C78AB4C2ED3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="CloseDoor" ID="{0FA9DFA9-9B6C-40F1-A1A9-576CF3460667}">
+					<ChildrenList>
+						<Action Name="" ID="{7B7D30C1-7B18-428F-BF9A-24120FE65E00}" ShortID="1020204445">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Door_Close" ID="{D0383E66-5DB4-4A9E-9E21-90C317EA99E5}" WorkUnitID="{BD212059-118C-4850-B725-1C78AB4C2ED3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Folder Name="Elevator" ID="{FC69F6EF-F055-4ACF-8608-349D184DFE40}" ShortID="807173459">
+					<ChildrenList>
+						<Event Name="PressButton" ID="{91EE4634-0FDF-4C0D-9675-CB31EA308342}">
+							<ChildrenList>
+								<Action Name="" ID="{44FAAC6F-C847-4835-B153-BD1FF603A331}" ShortID="997843595">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Elevator_Button" ID="{EFFB5C0A-DDB9-442D-B104-8591D19F868B}" WorkUnitID="{BD212059-118C-4850-B725-1C78AB4C2ED3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="OpenElevatorDoor" ID="{5D192A72-3A22-44AE-85F4-0982FD4FF762}">
+							<ChildrenList>
+								<Action Name="" ID="{1DAA1441-24DD-4C48-91EA-E9B05143219B}" ShortID="915567376">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Elevator_Doors_Open" ID="{E15DDAB0-E70C-4559-BE44-178F81FDA855}" WorkUnitID="{BD212059-118C-4850-B725-1C78AB4C2ED3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="CloseElevatorDoor" ID="{275D80B2-B601-40C4-BC35-F1E606606DF5}">
+							<ChildrenList>
+								<Action Name="" ID="{4BE4FA5E-98BC-4554-BDD1-1404E45C085B}" ShortID="66391821">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Elevator_Doors_Closed" ID="{DBFAEDDC-DB55-4165-BC03-2BBB603852B3}" WorkUnitID="{BD212059-118C-4850-B725-1C78AB4C2ED3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Ding" ID="{D1AA5C8F-C9C8-4471-A675-61BC25D66286}">
+							<ChildrenList>
+								<Action Name="" ID="{D184EA84-3429-465B-B3AE-E415F8B75538}" ShortID="722327650">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Elevator_Ding" ID="{F4DCB47D-4DF8-499A-BD53-BFC1F34D0128}" WorkUnitID="{BD212059-118C-4850-B725-1C78AB4C2ED3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="StartElevatorAmbiant" ID="{2233515B-1C46-45CA-AFE7-36A307E30E91}">
+							<ChildrenList>
+								<Action Name="" ID="{6ADEABF6-0664-4CC2-843E-9453A13A8F79}" ShortID="276694556">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Elevator_Ambiant" ID="{337F69A6-EBC3-40B0-961F-AA589F6A1E3A}" WorkUnitID="{BD212059-118C-4850-B725-1C78AB4C2ED3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="StopElevatorAmbiant" ID="{F74FC582-1E2F-4846-8EA8-F351D3828DFA}">
+							<ChildrenList>
+								<Action Name="" ID="{2632FB8E-199E-4F10-B41D-034E12CCE1CF}" ShortID="554994351">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Elevator_Ambiant" ID="{337F69A6-EBC3-40B0-961F-AA589F6A1E3A}" WorkUnitID="{BD212059-118C-4850-B725-1C78AB4C2ED3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
