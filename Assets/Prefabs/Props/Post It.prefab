@@ -58,13 +58,190 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1324903303137653230, guid: a7fdc81a17cc3bb4db7139b098a10a8e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grabbable
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a7fdc81a17cc3bb4db7139b098a10a8e,
         type: 3}
       propertyPath: m_Name
-      value: Post_it
+      value: Post It
+      objectReference: {fileID: 0}
+    - target: {fileID: 3375439229047671897, guid: a7fdc81a17cc3bb4db7139b098a10a8e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grabbable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3375439229047671897, guid: a7fdc81a17cc3bb4db7139b098a10a8e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8425402061025351354}
+    - targetCorrespondingSourceObject: {fileID: 3375439229047671897, guid: a7fdc81a17cc3bb4db7139b098a10a8e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3831001333488597335}
+    - targetCorrespondingSourceObject: {fileID: 3375439229047671897, guid: a7fdc81a17cc3bb4db7139b098a10a8e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1401849018926739228}
+    - targetCorrespondingSourceObject: {fileID: -1324903303137653230, guid: a7fdc81a17cc3bb4db7139b098a10a8e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3256884171619474694}
+    - targetCorrespondingSourceObject: {fileID: -1324903303137653230, guid: a7fdc81a17cc3bb4db7139b098a10a8e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 89693371749003654}
+    - targetCorrespondingSourceObject: {fileID: -1324903303137653230, guid: a7fdc81a17cc3bb4db7139b098a10a8e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8342850873097782128}
   m_SourcePrefab: {fileID: 100100000, guid: a7fdc81a17cc3bb4db7139b098a10a8e, type: 3}
+--- !u!1 &4519816610776386253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1324903303137653230, guid: a7fdc81a17cc3bb4db7139b098a10a8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5991302861366068447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3256884171619474694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519816610776386253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e83a67e9f36d5b439807a7e016aa673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrabbable: 1
+  eventToUnlockOnGrab: {fileID: 0}
+  canToggleEventInTriggerZone: 0
+  triggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}
+--- !u!65 &89693371749003654
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519816610776386253}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0006290146, y: 0.00059628894, z: 0.00025305303}
+  m_Center: {x: -0.00047963954, y: 0.0000015546827, z: 0.00012957555}
+--- !u!54 &8342850873097782128
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519816610776386253}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!1 &9075485720823433350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3375439229047671897, guid: a7fdc81a17cc3bb4db7139b098a10a8e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5991302861366068447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &8425402061025351354
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9075485720823433350}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4494204774184520391, guid: a7fdc81a17cc3bb4db7139b098a10a8e, type: 3}
+--- !u!54 &3831001333488597335
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9075485720823433350}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &1401849018926739228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9075485720823433350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e83a67e9f36d5b439807a7e016aa673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrabbable: 1
+  eventToUnlockOnGrab: {fileID: 0}
+  canToggleEventInTriggerZone: 0
+  triggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}

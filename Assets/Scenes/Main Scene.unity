@@ -24683,11 +24683,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1259791465619693802, guid: 0448e50b30a06194b98d928f26b2bc98,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 126
-      objectReference: {fileID: 0}
     - target: {fileID: 6342076022268257886, guid: 0448e50b30a06194b98d928f26b2bc98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24742,46 +24737,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level_Art
-      objectReference: {fileID: 0}
-    - target: {fileID: 8366039705924817627, guid: 0448e50b30a06194b98d928f26b2bc98,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8366039705924817627, guid: 0448e50b30a06194b98d928f26b2bc98,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.617
-      objectReference: {fileID: 0}
-    - target: {fileID: 8366039705924817627, guid: 0448e50b30a06194b98d928f26b2bc98,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -19.542
-      objectReference: {fileID: 0}
-    - target: {fileID: 8366039705924817627, guid: 0448e50b30a06194b98d928f26b2bc98,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.64085597
-      objectReference: {fileID: 0}
-    - target: {fileID: 8366039705924817627, guid: 0448e50b30a06194b98d928f26b2bc98,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.6408572
-      objectReference: {fileID: 0}
-    - target: {fileID: 8366039705924817627, guid: 0448e50b30a06194b98d928f26b2bc98,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.2988358
-      objectReference: {fileID: 0}
-    - target: {fileID: 8366039705924817627, guid: 0448e50b30a06194b98d928f26b2bc98,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.29883593
-      objectReference: {fileID: 0}
-    - target: {fileID: 9174382630740035681, guid: 0448e50b30a06194b98d928f26b2bc98,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
