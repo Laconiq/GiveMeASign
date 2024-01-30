@@ -8,12 +8,17 @@ public class PlayerTalkToNpc : MonoBehaviour
     private void Start()
     {
         _npcs = new List<Npc>();
-        InvokeRepeating(nameof(ManageNpcCanvas), 0f, 0.2f);
     }
-    
+
+    private void Update()
+    {
+        if (_npcs.Count > 1)
+            ManageNpcCanvas();
+    }
+
     public void TryTalkingToNpc()
     {
-        Npc nearestNpc = GetClosestNpc();
+        var nearestNpc = GetClosestNpc();
         if (nearestNpc != null)
             nearestNpc.OnPlayerInteract();
     }
@@ -23,35 +28,34 @@ public class PlayerTalkToNpc : MonoBehaviour
         if (!other.CompareTag("NPC") || _npcs.Contains(other.GetComponent<Npc>())) 
             return;
         _npcs.Add(other.GetComponent<Npc>());
+        ManageNpcCanvas();
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("NPC") || !_npcs.Contains(other.GetComponent<Npc>())) 
             return;
+        other.GetComponent<Npc>().DisplayNpcCanvas(false);
         _npcs.Remove(other.GetComponent<Npc>());
     }
     
     private Npc GetClosestNpc()
     {
         Npc closestNpc = null;
-        float closestDistance = Mathf.Infinity;
+        var closestDistance = Mathf.Infinity;
         foreach (var npc in _npcs)
         {
-            float distance = Vector3.Distance(transform.position, npc.transform.position);
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestNpc = npc;
-            }
+            var distance = Vector3.Distance(transform.position, npc.transform.position);
+            if (!(distance < closestDistance)) 
+                continue;
+            closestDistance = distance;
+            closestNpc = npc;
         }
         return closestNpc;
     }
 
     private void ManageNpcCanvas()
     {
-        if (_npcs.Count == 0)
-            return;
         foreach (var npc in _npcs)
             npc.DisplayNpcCanvas(false);
         var closestNpc = GetClosestNpc();
