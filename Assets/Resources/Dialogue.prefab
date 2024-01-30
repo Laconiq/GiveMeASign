@@ -44,11 +44,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d123fb7e06a5e95448295f7ad94a740d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueItems: []
+  dialogueItems:
+  - npcDialogue: Whatever it is you want please acknowledge that I could not care
+      less.
+    playerResponses:
+    - I hate it here.
+    lookAtTarget: {fileID: 0}
+  - npcDialogue: Me too, but don't expect the two of us bonding over any of this,
+      though.
+    playerResponses:
+    - I see.
+    lookAtTarget: {fileID: 0}
   isDialogueFinished: 0
   repeatDialogueItem:
-    npcDialogue: 
-    playerResponses: []
+    npcDialogue: If I could kill myself twice I'd do it all over.
+    playerResponses:
+    - <i>Leave</i>
     lookAtTarget: {fileID: 0}
   unlockProgressionOnDialogueFinish: 0
   progressionsToUnlock: []

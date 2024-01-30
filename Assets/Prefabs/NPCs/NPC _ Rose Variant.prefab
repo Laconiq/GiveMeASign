@@ -840,8 +840,8 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[4].npcDialogue
-      value: <i>She looks at you with annoyed eyes</i> And perhaps we should with
-        boring administrative stuff first.
+      value: <i>She looks at you with annoyed eyes</i> And perhaps we should deal
+        with boring administrative stuff first.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -856,7 +856,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[7].npcDialogue
-      value: Okay so fuck the system and I just give them the A.D.U.D.D ?
+      value: Okay so fuck the system and I just give them the D.U.D.D ?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}

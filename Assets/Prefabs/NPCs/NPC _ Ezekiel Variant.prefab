@@ -334,13 +334,13 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[4].npcDialogue
-      value: I have another story for you. Last weekend, my wife and I went to a
-        lake. The weather was clear, there wasn't too many people, the drinks were
-        at the right temperature in the cool box. Everything was perfect. THEN you
-        have this savage group with there loud music who settled right next to us.
-        And there were laughing and playing with NO RESPECT AT ALL for the other
-        yachtsman. I swear, I were a daring person, I would have done something !
-        But I didn't and we went home.
+      value: Oh I almot forgot ! Last weekend, my wife and I went to a lake. The
+        weather was clear, there wasn't too many people, the drinks were at the right
+        temperature in the cool box. Everything was perfect. THEN you have this savage
+        group with there loud music who settled right next to us. And there were
+        laughing and playing with NO RESPECT AT ALL for the other yachtsman. I swear,
+        I were a daring person, I would have done something ! But I didn't and we
+        went home.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -365,13 +365,13 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[8].npcDialogue
       value: 'Oh but I''m not in charge of that right now. No, I taking care of the
-        Browser History now, do you need yours ? '
+        Browser History, do you need yours ? '
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[9].npcDialogue
       value: Yes, I don't know what you've heard about me, but I've never actually
-        been in charge of TPA.
+        been in charge of T.P.A.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -656,7 +656,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].npcDialogue
-      value: ...
+      value: You shouldn't be here.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
