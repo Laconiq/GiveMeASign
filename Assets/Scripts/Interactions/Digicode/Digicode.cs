@@ -8,8 +8,6 @@ public class Digicode : MonoBehaviour
     private readonly List<DigicodeButton> _buttons = new List<DigicodeButton>();
     public void PressButton(DigicodeButton button)
     {
-        if (_buttons.Contains(button))
-            return;
         _buttons.Add(button);
     }
     
