@@ -127,7 +127,12 @@ public class PlayerController : MonoBehaviour
     }
 
     private bool _isOnLadder;
-    public void SetIsOnLadder(bool b) { _isOnLadder = b; }
+
+    public void SetIsOnLadder(bool b)
+    {
+        _isOnLadder = b;
+        _playerRigidBody.useGravity = !b;
+    }
     public bool GetIsOnLadder() { return _isOnLadder; }
 
     private void HandleMovement()
