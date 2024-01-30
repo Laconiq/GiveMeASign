@@ -233,12 +233,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e83a67e9f36d5b439807a7e016aa673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 0
   isGrabbable: 1
-  progressionToUnlockOnGrab: {fileID: 0}
+  eventToUnlockOnGrab: {fileID: 0}
   canToggleEventInTriggerZone: 0
   triggerZone: {fileID: 0}
-  progressionToUnlockInTriggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}
 --- !u!65 &3896849485052589950
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -268,7 +267,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001916477346681373}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
