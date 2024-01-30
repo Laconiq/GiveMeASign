@@ -28,12 +28,12 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public float sensitivity = 300f;
     [HideInInspector] public Transform cameraTransform;
     private Rigidbody _playerRigidBody;
-    private BoxCollider _playerBoxCollider;
+    private CapsuleCollider _playerBoxCollider;
     private PlayerFeedbacks _feedbacks;
     private Vector3 _playerVelocity;
     private bool _isGrounded;
     private PlayerCamera _playerCamera;
-    
+    private float _slopeAngle;
 
     private Controls _controls;
     private Controls _uiControls;
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         _feedbacks = GetComponent<PlayerFeedbacks>();
         _playerRigidBody = GetComponent<Rigidbody>();
-        _playerBoxCollider = GetComponent<BoxCollider>();
+        _playerBoxCollider = GetComponent<CapsuleCollider>();
         _playerCamera = GetComponent<PlayerCamera>();
         if (Camera.main != null) cameraTransform = Camera.main.transform;
         _currentSpeed = movementSpeed;
@@ -97,23 +97,19 @@ public class PlayerController : MonoBehaviour
     {
         float timeToCrouch = 0.5f;
         float currentTime = 0;
-        float startHeight = _playerBoxCollider.size.y;
+        float startHeight = _playerBoxCollider.height;
         float currentSpeed = _currentSpeed;
 
         while (currentTime < timeToCrouch)
         {
             currentTime += Time.deltaTime;
             float t = currentTime / timeToCrouch;
-            var size = _playerBoxCollider.size;
-            size.y = Mathf.SmoothStep(startHeight, targetHeight, t);
-            _playerBoxCollider.size = size;
+            _playerBoxCollider.height = Mathf.SmoothStep(startHeight, targetHeight, t);
             _currentSpeed = Mathf.SmoothStep(currentSpeed, targetSpeed, t);
             yield return null;
         }
 
-        var vector3 = _playerBoxCollider.size;
-        vector3.y = targetHeight;
-        _playerBoxCollider.size = vector3;
+        _playerBoxCollider.height = targetHeight;
         _currentSpeed = targetSpeed;
         _isCrouching = isCrouching;
 
@@ -125,7 +121,7 @@ public class PlayerController : MonoBehaviour
 
     private bool IsBlockedAbove()
     {
-        Vector3 rayStart = transform.position + Vector3.up * (_playerBoxCollider.size.y / 2);
+        Vector3 rayStart = transform.position + Vector3.up * (_playerBoxCollider.height / 2);
         bool hitSomething = Physics.Raycast(rayStart, Vector3.up, out _, standHeight - crouchHeight);
         return hitSomething;
     }
@@ -156,16 +152,7 @@ public class PlayerController : MonoBehaviour
             right.Normalize();
 
             moveDirection = forward * _moveInput.y + right * _moveInput.x;
-
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, _playerBoxCollider.size.y / 2 + 0.1f))
-            {
-                float slopeAngle = Vector3.Angle(Vector3.up, hit.normal);
-                if (slopeAngle <= slopeLimit)
-                {
-                    _playerRigidBody.MovePosition(_playerRigidBody.position + moveDirection * (_currentSpeed * Time.deltaTime));
-                }
-            }
+            _playerRigidBody.MovePosition(_playerRigidBody.position + moveDirection * (_currentSpeed * Time.deltaTime));
 
             if (_moveInput != Vector2.zero)
             {
@@ -175,23 +162,29 @@ public class PlayerController : MonoBehaviour
             else
                 _playerCamera.HeadBob(0.005f);
         }
-
-        if (!_isGrounded) 
-            return;
-        if (_jumpInput)
-            _playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
-        else
-        {
-            Vector3 airMoveDirection = moveDirection.normalized * _currentSpeed;
-            _playerRigidBody.velocity = new Vector3(airMoveDirection.x, _playerRigidBody.velocity.y, airMoveDirection.z);
-        }
     }
 
-
+    private float GetSlopeAngle()
+    {
+        Vector3 rayDirection = Quaternion.Euler(0, 45, 0) * cameraTransform.forward;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, rayDirection, out hit))
+        {
+            _slopeAngle = Vector3.Angle(hit.normal, Vector3.up) > slopeLimit ? 0f : Vector3.Angle(hit.normal, Vector3.up);
+            Debug.DrawRay(transform.position, rayDirection * hit.distance, Color.yellow);
+            Debug.Log("Angle de courbure: " + Vector3.Angle(hit.normal, Vector3.up));
+            return _slopeAngle;
+        }
+        Debug.Log("Aucune collision détectée.");
+        _slopeAngle = 0f;
+        return _slopeAngle;
+    }
+    
+    
     private void GroundChecking()
     {
         Vector3 rayStart = transform.position + Vector3.up * 0.1f;
-        float rayLenght = _playerBoxCollider.size.y / 2 + 0.1f;
+        float rayLenght = _playerBoxCollider.height / 2 + 0.1f;
         _isGrounded = Physics.Raycast(rayStart, Vector3.down, rayLenght);
         Debug.DrawRay(rayStart, Vector3.down * rayLenght, Color.red);
     }
@@ -206,13 +199,12 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Footstep");
     }
 
+    private bool isJumping;
     private void TryToJump()
     {
-        if (_isOnLadder)
+        if (_isOnLadder || !_isGrounded)
             return;
-        if (!_isGrounded) 
-            return;
-        _playerRigidBody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+        isJumping = true;
     }
 
     public void DisableControls()

@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 5726164883160824361}
   - component: {fileID: 7892375991964565386}
   - component: {fileID: 7978386524163423844}
-  - component: {fileID: 6346472167907087693}
+  - component: {fileID: 1173089937873588517}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -127,14 +127,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  crouchSpeed: 2
-  jumpHeight: 0.5
-  crouchHeight: 0.55
+  crouchSpeed: 4
   standHeight: 2.3
-  sensitivity: 300
-  cameraTransform: {fileID: 0}
+  crouchHeight: 1
   throwForce: 10
   dropForce: 1.5
+  walkingHeadBobSpeed: 0.05
+  crouchingHeadBobSpeed: 0.03
+  jumpHeight: 0.5
+  slopeLimit: 45
+  sensitivity: 300
+  cameraTransform: {fileID: 0}
 --- !u!114 &4040504845889286150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +221,7 @@ Rigidbody:
   m_GameObject: {fileID: 2119171922965339522}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -236,14 +239,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!65 &6346472167907087693
-BoxCollider:
+--- !u!136 &1173089937873588517
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119171922965339522}
-  m_Material: {fileID: 13400000, guid: c2dfafd8c32c44422833a2f0fb236db4, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -254,8 +257,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5, y: 2.3, z: 0.5}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.3
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3540701387208685308
 GameObject:
