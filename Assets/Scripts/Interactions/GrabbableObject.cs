@@ -13,7 +13,7 @@ public class GrabbableObject : Interactable
     [SerializeField, ShowIf("canToggleEventInTriggerZone"), Tooltip("La zone où doit être l'objet")] private TriggerZoneEvent triggerZone;
     [FormerlySerializedAs("progressionToUnlockInTriggerZone")] [SerializeField, ShowIf("canToggleEventInTriggerZone"), Tooltip("La progression validée quand l'objet est dans la zone")] private Event eventToUnlockInTriggerZone;
     
-    public void ObjectIsGrabbed(bool b)
+    public virtual void ObjectIsGrabbed(bool b)
     {
         if (eventToUnlockOnGrab != null)
             eventToUnlockOnGrab.SetProgressionStatus(b);
