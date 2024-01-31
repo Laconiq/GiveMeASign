@@ -196,6 +196,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9ae7f940c5dae234f98236b79d91eb6f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45f5f64b12a17f846a6b7ad9d0baab55, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 9ae7f940c5dae234f98236b79d91eb6f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb9167d734502904e9c66d9392e7cbfe, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 9ae7f940c5dae234f98236b79d91eb6f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45f5f64b12a17f846a6b7ad9d0baab55, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 9ae7f940c5dae234f98236b79d91eb6f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c7c2324db1d1c64c806ab683b46f6b1, type: 2}
     - target: {fileID: 919132149155446097, guid: 9ae7f940c5dae234f98236b79d91eb6f,
         type: 3}
       propertyPath: m_Name
@@ -259,12 +279,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e83a67e9f36d5b439807a7e016aa673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 0
   isGrabbable: 1
-  progressionToUnlockOnGrab: {fileID: 0}
+  eventToUnlockOnGrab: {fileID: 0}
   canToggleEventInTriggerZone: 0
   triggerZone: {fileID: 0}
-  progressionToUnlockInTriggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}
 --- !u!54 &1441258894620373221
 Rigidbody:
   m_ObjectHideFlags: 0

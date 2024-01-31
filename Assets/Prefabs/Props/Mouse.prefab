@@ -78,6 +78,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7080c154845f6124fa6e5b200508093d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b60497f9a8504c4ab85447f467d9b3c, type: 2}
     - target: {fileID: 919132149155446097, guid: 7080c154845f6124fa6e5b200508093d,
         type: 3}
       propertyPath: m_Name
@@ -123,12 +128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e83a67e9f36d5b439807a7e016aa673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 0
   isGrabbable: 1
-  progressionToUnlockOnGrab: {fileID: 0}
+  eventToUnlockOnGrab: {fileID: 0}
   canToggleEventInTriggerZone: 0
   triggerZone: {fileID: 0}
-  progressionToUnlockInTriggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}
 --- !u!54 &-993345779494743406
 Rigidbody:
   m_ObjectHideFlags: 0
