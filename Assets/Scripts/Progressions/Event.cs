@@ -51,6 +51,9 @@ public class Event : MonoBehaviour
             foreach (Dialogue dialogue in dialoguesToRemove)
                 dialogue.isDialogueFinished = true;
         }
+        
+        if (canChangeAnimation)
+            animator.Play(animationToPlay);
     }
     
     public void ResetProgression()
