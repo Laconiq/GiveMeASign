@@ -123,6 +123,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7477454962548909519, guid: 8d7588328002e9b4485fa2869c20fcd4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45f5f64b12a17f846a6b7ad9d0baab55, type: 2}
+    - target: {fileID: 7477454962548909519, guid: 8d7588328002e9b4485fa2869c20fcd4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 668f89d1936a4044cbbb299212774d64, type: 2}
+    - target: {fileID: 7477454962548909519, guid: 8d7588328002e9b4485fa2869c20fcd4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45f5f64b12a17f846a6b7ad9d0baab55, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -158,12 +173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e83a67e9f36d5b439807a7e016aa673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 0
   isGrabbable: 1
-  progressionToUnlockOnGrab: {fileID: 0}
+  eventToUnlockOnGrab: {fileID: 0}
   canToggleEventInTriggerZone: 0
   triggerZone: {fileID: 0}
-  progressionToUnlockInTriggerZone: {fileID: 0}
+  eventToUnlockInTriggerZone: {fileID: 0}
 --- !u!65 &1906704473067553516
 BoxCollider:
   m_ObjectHideFlags: 0
