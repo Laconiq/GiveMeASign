@@ -154,6 +154,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1947636773318102346, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b60497f9a8504c4ab85447f467d9b3c, type: 2}
     - target: {fileID: 2310319053913741162, guid: ef5eb88653662c848823ad8262b77fcf,
         type: 3}
       propertyPath: m_IsActive
@@ -229,6 +234,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4595746539136392703, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c7c2324db1d1c64c806ab683b46f6b1, type: 2}
     - target: {fileID: 4804744757945658349, guid: ef5eb88653662c848823ad8262b77fcf,
         type: 3}
       propertyPath: m_IsActive
@@ -249,6 +259,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5371757748181273241, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 548850c9346f44747ac556ee1f2667d0, type: 2}
     - target: {fileID: 5383890562256127087, guid: ef5eb88653662c848823ad8262b77fcf,
         type: 3}
       propertyPath: m_IsActive
@@ -274,11 +289,26 @@ PrefabInstance:
       propertyPath: npcName
       value: Mark
       objectReference: {fileID: 0}
+    - target: {fileID: 6652586647495724675, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45f5f64b12a17f846a6b7ad9d0baab55, type: 2}
+    - target: {fileID: 6664570866643561466, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 548850c9346f44747ac556ee1f2667d0, type: 2}
     - target: {fileID: 6667645036957353042, guid: ef5eb88653662c848823ad8262b77fcf,
         type: 3}
       propertyPath: m_Name
       value: NPC _ Mark Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7243711293001309206, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb9167d734502904e9c66d9392e7cbfe, type: 2}
     - target: {fileID: 7902414852319941015, guid: ef5eb88653662c848823ad8262b77fcf,
         type: 3}
       propertyPath: m_IsActive

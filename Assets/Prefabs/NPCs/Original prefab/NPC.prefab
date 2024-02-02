@@ -1814,7 +1814,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6098924145076851180, guid: 11bd3a34e4bf94a42a202759445111cf, type: 3}
+  - {fileID: 2100000, guid: dc2b95282dd404b449b56fd4918bba75, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3131,7 +3131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a96f42befcde8d49b89db7a7a9b7bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 1
   npcName: 
   animationToPlay: 
   dialogueContainer: {fileID: 2466325638986012433}
@@ -3648,7 +3647,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5177034943524545138, guid: 11bd3a34e4bf94a42a202759445111cf, type: 3}
+  - {fileID: 2100000, guid: 0c7c2324db1d1c64c806ab683b46f6b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
