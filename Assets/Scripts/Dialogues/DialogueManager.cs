@@ -42,25 +42,26 @@ public class DialogueManager : MonoBehaviour
     
     public void StartDialogue(Dialogue dialogue, string npcName)
     {
+        _currentDialogue = dialogue;
+        
         dialogueContainer.SetActive(true);
         npcNameText.text = npcName;
-        _currentDialogue = dialogue;
-        LoadCurrentDialogueIndex();
         _totalDialogueItems = _currentDialogue.dialogueItems.Count;
         
         _playerController.DisableControls();
         _playerCamera.SetDialogueCamera();
-        
-        DisplayCurrentDialogue(_currentDialogue.isDialogueFinished ? _currentDialogue.repeatDialogueItem : _currentDialogue.dialogueItems[_currentDialogueIndex]);
-        _playerController.DialogueControls.Enable();
-    }
 
-    private void LoadCurrentDialogueIndex()
-    {
         if (_currentDialogue.isDialogueFinished)
-            _currentDialogueIndex = _totalDialogueItems - 1;
+        {
+            _currentDialogueIndex = _currentDialogue.dialogueItems.Count;
+            DisplayCurrentDialogue(_currentDialogue.repeatDialogueItem);
+        }
         else
+        {
             _currentDialogueIndex = 0;
+            DisplayCurrentDialogue(_currentDialogue.dialogueItems[0]);
+        }
+        _playerController.DialogueControls.Enable();
     }
 
     private void DisplayCurrentDialogue(DialogueItem dialogueItem)
