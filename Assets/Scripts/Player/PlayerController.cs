@@ -20,11 +20,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkingHeadBobSpeed = 0.05f;
     [SerializeField] private float crouchingHeadBobSpeed = 0.03f;
     
-    [Title("Other")]
-    [SerializeField] private float jumpHeight = 2.0f;
-    [SerializeField] private float slopeLimit = 45f;
-    
-    
     [HideInInspector] public float sensitivity = 300f;
     [HideInInspector] public Transform cameraTransform;
     private Rigidbody _playerRigidBody;
@@ -57,7 +52,6 @@ public class PlayerController : MonoBehaviour
         _controls = new Controls();
         _controls.Player.Move.performed += ctx => _moveInput = ctx.ReadValue<Vector2>();
         _controls.Player.Move.canceled += _ => _moveInput = Vector2.zero;
-        _controls.Player.Jump.performed += _ => TryToJump();
         _controls.Player.Crouch.performed += _ => TryCrouch();
         _controls.Player.Talk.performed += _ => GetComponent<PlayerTalkToNpc>().TryTalkingToNpc();
         _controls.Player.Interact.performed += _ => GetComponent<PlayerInteraction>().Interact(throwForce);
@@ -169,23 +163,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private float GetSlopeAngle()
-    {
-        Vector3 rayDirection = Quaternion.Euler(0, 45, 0) * cameraTransform.forward;
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, rayDirection, out hit))
-        {
-            _slopeAngle = Vector3.Angle(hit.normal, Vector3.up) > slopeLimit ? 0f : Vector3.Angle(hit.normal, Vector3.up);
-            Debug.DrawRay(transform.position, rayDirection * hit.distance, Color.yellow);
-            Debug.Log("Angle de courbure: " + Vector3.Angle(hit.normal, Vector3.up));
-            return _slopeAngle;
-        }
-        Debug.Log("Aucune collision détectée.");
-        _slopeAngle = 0f;
-        return _slopeAngle;
-    }
-    
-    
     private void GroundChecking()
     {
         Vector3 rayStart = transform.position + Vector3.up * 0.1f;
@@ -202,14 +179,6 @@ public class PlayerController : MonoBehaviour
             return;
         _nextFootStepTime = Time.time + cooldown;
         //Debug.Log("Footstep");
-    }
-
-    private bool isJumping;
-    private void TryToJump()
-    {
-        if (_isOnLadder || !_isGrounded)
-            return;
-        isJumping = true;
     }
 
     public void DisableControls()

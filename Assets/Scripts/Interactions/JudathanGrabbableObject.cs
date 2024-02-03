@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class JudathanGrabbableObject : GrabbableObject
 {
     private bool _hasBeenDropped;
-    [SerializeField] private Event _eventToUnlockOnDrop;
+    [FormerlySerializedAs("_eventToUnlockOnDrop")] [SerializeField] private Event eventToUnlockOnDrop;
     
     public override void ObjectIsGrabbed(bool b)
     {
@@ -13,6 +12,6 @@ public class JudathanGrabbableObject : GrabbableObject
         if (_hasBeenDropped || b)
             return;
         _hasBeenDropped = true;
-        _eventToUnlockOnDrop.SetProgressionStatus(true);
+        eventToUnlockOnDrop.SetProgressionStatus(true);
     }
 }

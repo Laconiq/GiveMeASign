@@ -11,7 +11,7 @@ public class BillboardText : MonoBehaviour
 
     private void Update()
     {
-        if (_player == null) 
+        if (_player is null) 
             return;
         Vector3 directionToPlayer = _player.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(directionToPlayer);

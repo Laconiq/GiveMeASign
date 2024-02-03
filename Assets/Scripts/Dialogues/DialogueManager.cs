@@ -43,6 +43,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue, string npcName)
     {
         _currentDialogue = dialogue;
+        _currentDialogueIndex = 0;
         
         dialogueContainer.SetActive(true);
         npcNameText.text = npcName;
@@ -51,16 +52,10 @@ public class DialogueManager : MonoBehaviour
         _playerController.DisableControls();
         _playerCamera.SetDialogueCamera();
 
-        if (_currentDialogue.isDialogueFinished)
-        {
-            _currentDialogueIndex = _currentDialogue.dialogueItems.Count;
-            DisplayCurrentDialogue(_currentDialogue.repeatDialogueItem);
-        }
-        else
-        {
-            _currentDialogueIndex = 0;
-            DisplayCurrentDialogue(_currentDialogue.dialogueItems[0]);
-        }
+        DisplayCurrentDialogue(_currentDialogue.isDialogueFinished
+            ? _currentDialogue.repeatDialogueItem
+            : _currentDialogue.dialogueItems[0]);
+        
         _playerController.DialogueControls.Enable();
     }
 
@@ -84,13 +79,13 @@ public class DialogueManager : MonoBehaviour
     
     public void GoToNextDialogue()
     {
-        if (_currentDialogueIndex < _totalDialogueItems - 1)
+        if (_currentDialogue.isDialogueFinished || _currentDialogueIndex == _totalDialogueItems - 1)
+            CloseDialogue();
+        else
         {
             _currentDialogueIndex++;
             DisplayCurrentDialogue(_currentDialogue.dialogueItems[_currentDialogueIndex]);
         }
-        else
-            CloseDialogue();
     }
 
     private void CloseDialogue()
