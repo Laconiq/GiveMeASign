@@ -6408,6 +6408,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3157862413416686292, guid: e1be8af21981623439c85292152df0f1,
+        type: 3}
+      propertyPath: canRemoveDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157862413416686292, guid: e1be8af21981623439c85292152df0f1,
+        type: 3}
+      propertyPath: dialoguesToRemove.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157862413416686292, guid: e1be8af21981623439c85292152df0f1,
+        type: 3}
+      propertyPath: dialoguesToRemove.Array.data[0]
+      value: 
+      objectReference: {fileID: 1637548831}
     - target: {fileID: 6631129747730843179, guid: e1be8af21981623439c85292152df0f1,
         type: 3}
       propertyPath: m_Name
@@ -12019,7 +12034,7 @@ MonoBehaviour:
     IsHidden: 0
 --- !u!4 &904786390
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -22762,6 +22777,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8008c50eeab97b4f88ec4b323e6841d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1637548831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2146272133112217201, guid: cc39626782bbe9949b7bc7ddacf0d8fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 5062497389411276335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d123fb7e06a5e95448295f7ad94a740d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1647870514
