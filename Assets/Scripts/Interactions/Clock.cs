@@ -15,7 +15,7 @@ public class Clock : MonoBehaviour
         Invoke(nameof(OnClockFinished), activationDelay);
     }
     
-    private void OnClockFinished()
+    protected virtual void OnClockFinished()
     {
         Debug.Log("Clock finished");
         if (canUnlockProgression)
