@@ -15090,7 +15090,7 @@ PrefabInstance:
     - target: {fileID: 3157862413416686292, guid: e1be8af21981623439c85292152df0f1,
         type: 3}
       propertyPath: animationToPlay
-      value: 1357 - 1358
+      value: StartClock
       objectReference: {fileID: 0}
     - target: {fileID: 3157862413416686292, guid: e1be8af21981623439c85292152df0f1,
         type: 3}
