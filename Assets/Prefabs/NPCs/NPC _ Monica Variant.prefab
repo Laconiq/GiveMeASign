@@ -42,32 +42,32 @@ PrefabInstance:
     - target: {fileID: 5254256636970863139, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: m_Name
-      value: Final Interaction
+      value: 1st Interaction
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: requireProgressionToStart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: progressionsToStart.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.npcDialogue
-      value: ...
+      value: <i>Static</i>
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: progressionsToUnlock.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -77,13 +77,13 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: unlockProgressionOnDialogueFinish
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: I never believe you could proove such a violence. Enjoy your trip in
-        hell.
+      value: "All of our services are offline until further notice, this is subject
+        to change without prior notice.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -103,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
-      value: ...
+      value: <i>Leave</i>
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -118,12 +118,12 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: What The F-
+      value: Hello ?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].playerResponses.Array.data[0]
-      value: <i>Leave<i>
+      value: <i>Leave</i>
       objectReference: {fileID: 0}
     - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -185,6 +185,200 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
     type: 3}
   m_PrefabInstance: {fileID: 2392107411868366403}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2656335942725708606
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3583010752199003174}
+    m_Modifications:
+    - target: {fileID: 5254256636970863139, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_Name
+      value: Talked to Rose abour Diploma
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: requireProgressionToStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: progressionsToStart.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: repeatDialogueItem.npcDialogue
+      value: Put Rose on the phone if you want us to help.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: progressionsToUnlock.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: unlockProgressionOnDialogueFinish
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[0].npcDialogue
+      value: Hello, Monica speaking. Catherine is it you ?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[1].npcDialogue
+      value: Oh wow, nice to meet you. Since they moved the phone it's became rare
+        to have new fellows on the line. Yet, I'm not sure I catch the entirety of
+        your problem and how does it concern me so far.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[2].npcDialogue
+      value: Hmm yeah...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[3].npcDialogue
+      value: Okay, I see what this is about. I told them there was a flaw in the
+        system like centuries ago, but procedures take ages to change.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[4].npcDialogue
+      value: Hmm maybe, but I can't do it from here. Take the phone to Rose, we'll
+        figure something out.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: repeatDialogueItem.playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
+      value: <i>Leave</i>
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[0].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[1].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[2].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[3].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[4].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
+      value: It's not Catherine. I'm just dead and I seeking through my Proof of
+        Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[1].playerResponses.Array.data[0]
+      value: I need A Did Undoudebtly Die Diploma to get my Proof of Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
+      value: But it seems I need my Proof of Death to get the Diploma
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[3].playerResponses.Array.data[0]
+      value: So, are you able to help me with that ?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[4].playerResponses.Array.data[0]
+      value: I'm so tired of this
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9332bcb63dca3354dbbf18290e079b4c, type: 3}
+--- !u!4 &6294707087252265190 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2656335942725708606}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6320822717679993912
 PrefabInstance:
@@ -382,7 +576,7 @@ PrefabInstance:
     - target: {fileID: 6058002751113978758, guid: ef5eb88653662c848823ad8262b77fcf,
         type: 3}
       propertyPath: npcName
-      value: God
+      value: Monica
       objectReference: {fileID: 0}
     - target: {fileID: 6667645036957353042, guid: ef5eb88653662c848823ad8262b77fcf,
         type: 3}
@@ -430,6 +624,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5959389089910523291}
+    - targetCorrespondingSourceObject: {fileID: 7350291918283278366, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6294707087252265190}
+    - targetCorrespondingSourceObject: {fileID: 7350291918283278366, guid: ef5eb88653662c848823ad8262b77fcf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1130882156178248203}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef5eb88653662c848823ad8262b77fcf, type: 3}
 --- !u!4 &3583010752199003174 stripped
@@ -443,4 +645,197 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2708768716536795289, guid: ef5eb88653662c848823ad8262b77fcf,
     type: 3}
   m_PrefabInstance: {fileID: 6320822717679993912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8950845562821779923
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3583010752199003174}
+    m_Modifications:
+    - target: {fileID: 5254256636970863139, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_Name
+      value: Give the phone to Rose
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: requireProgressionToStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: progressionsToStart.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: repeatDialogueItem.npcDialogue
+      value: <i>Static</i>
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: progressionsToUnlock.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: unlockProgressionOnDialogueFinish
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[0].npcDialogue
+      value: Be an angel and put the phone back, please.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[1].npcDialogue
+      value: Hmm maybe, but I can't do it from here. Take the phone to Rose, we'll
+        figure something out.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[2].npcDialogue
+      value: Hmm maybe, but I can't do it from here. Take the phone to Rose, we'll
+        figure something out.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[3].npcDialogue
+      value: Hmm maybe, but I can't do it from here. Take the phone to Rose, we'll
+        figure something out.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[4].npcDialogue
+      value: Hmm maybe, but I can't do it from here. Take the phone to Rose, we'll
+        figure something out.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: repeatDialogueItem.playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
+      value: <i>Leave</i>
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[0].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[1].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[2].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[3].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[4].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
+      value: <i>Leave</i>
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[1].playerResponses.Array.data[0]
+      value: I'm so tired of this
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
+      value: I'm so tired of this
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[3].playerResponses.Array.data[0]
+      value: I'm so tired of this
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[4].playerResponses.Array.data[0]
+      value: I'm so tired of this
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9332bcb63dca3354dbbf18290e079b4c, type: 3}
+--- !u!4 &1130882156178248203 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8950845562821779923}
   m_PrefabAsset: {fileID: 0}
