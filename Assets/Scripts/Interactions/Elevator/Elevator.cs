@@ -39,9 +39,14 @@ public class Elevator : MonoBehaviour
     {
         _isMoving = true;
         CloseElevator();
-        float delay = 10f;
-        Invoke(nameof(OpenElevator), delay);
-        Invoke(nameof(PlayDingSound), delay);
+        Invoke(nameof(MoveFakeElevator), 10f);
+    }
+
+    private void MoveFakeElevator()
+    {
+        OpenElevator();
+        PlayDingSound();
+        _isMoving = false;
     }
     
     private IEnumerator MoveElevator()
