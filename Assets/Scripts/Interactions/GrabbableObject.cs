@@ -1,3 +1,4 @@
+using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -19,16 +20,20 @@ public class GrabbableObject : Interactable
             eventToUnlockOnGrab.SetProgressionStatus(b);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (!canToggleEventInTriggerZone)
             return;
         var currentTriggerZone = other.gameObject.GetComponent<TriggerZoneEvent>();
+        Debug.Log("CurrentTriggerZone is: " + currentTriggerZone + " and triggerZone is: " + triggerZone);
         if (currentTriggerZone != null && currentTriggerZone == triggerZone)
+        {
             eventToUnlockInTriggerZone.SetProgressionStatus(true);
+            Debug.Log("Object is in trigger zone");
+        }
     }
 
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collider other)
     {
         if (!canToggleEventInTriggerZone)
             return;
