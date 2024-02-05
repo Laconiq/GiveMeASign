@@ -284,23 +284,26 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: What a pleasure to see you again so soon !
+      value: Ahah ! I knew you could do it, a fully fulled HAOL ! I hope it wasn't
+        too much trouble.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
-      value: Haven't we? ?
+      value: Well thank you for your feedback, I'll personally make sure it goes
+        directly to the executives.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].npcDialogue
-      value: It seems to be a very full H.A.O.L.. How is good old Peter?
+      value: Oh my, this really is a well written HAOL... How is good old Pete doing
+        ?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[3].npcDialogue
-      value: Yes, everything seems to be in order. You can now settle in at your
-        brand new desk over there.
+      value: Absolutely, everything in is perfect order. You can now settle in at
+        your brand new desk over there. Congratulations.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -355,17 +358,17 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: We've never met.
+      value: It was awful.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].playerResponses.Array.data[0]
-      value: I'm supposed to give this H.A.O.L. to you?
+      value: Aren't you one of them ?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
-      value: Is fine. Can I get rid of this ?
+      value: He's still awkard. Can you please get me rid of this now ?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -449,12 +452,12 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.npcDialogue
-      value: Enjoying your office ?
+      value: I can't see your HAOL.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -464,17 +467,19 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: What a pleasure to see you again so soon !
+      value: Behold everyone, a new arrival ! I was expecting you.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
-      value: Haven't we? ?
+      value: "We have cameras setup around the whole place.\u2008So, what brings
+        you here, young soul\u2008?"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].npcDialogue
-      value: It seems to be a very full H.A.O.L.. How is good old Peter?
+      value: "Good, good...\u2008Well, aren't you supposed to bring me something
+        ?"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -535,17 +540,17 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: We've never met.
+      value: How so ?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].playerResponses.Array.data[0]
-      value: I'm supposed to give this H.A.O.L. to you?
+      value: I'm dead, officialy this time.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
-      value: Is fine. Can I get rid of this ?
+      value: Oh shit.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}

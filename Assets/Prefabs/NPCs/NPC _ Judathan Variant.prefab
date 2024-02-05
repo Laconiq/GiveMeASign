@@ -48,15 +48,15 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
-      value: Not to tarnish the fun we've been having but I've got things to actually
-        do now, meaning, fuck off.
+      value: "How sad.\u2008Not to tarnish the fun we've been having, but I've got
+        things to actually do now, meaning, fuck off."
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].npcDialogue
-      value: What were you imagining, that we became some kind of sworn enemies or
-        something ? You give yourself way too much credit, sweet cheeks, now get
-        your filthy hands off my brand new desk.
+      value: What exactly did you have in mind, that we became some kind of sworn
+        enemies or something ? You give yourself way too much credit, sweet cheeks,
+        now get your filthy hands off my brand new desk.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -96,7 +96,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: You have become my sole source of hatred.
+      value: You're lucky I can't kill you anymore.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -189,14 +189,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
+      propertyPath: repeatDialogueItem.npcDialogue
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
       value: God, this chair really is uncomfortable.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
-      value: You'd think they'd get rid of physical pain in here, but it's just too
-        good of a means to get at you, I suppose.
+      value: Hey now, mind the big words. I've been nothing but the most charitable
+        soul since you arrived.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -208,6 +213,11 @@ PrefabInstance:
       propertyPath: dialogueItems.Array.data[1].lookAtTarget
       value: 
       objectReference: {fileID: 6437371633831371469}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
+      value: ...
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.size
@@ -310,7 +320,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.npcDialogue
-      value: 'Can''t you see I''m busy ? '
+      value: Stick to your right, you can't go wrong.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -351,9 +361,11 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[4].npcDialogue
-      value: Technically yes, but it's just a formality really, I'm not the one in
-        charge for those, go ask Michael or something, he should be in his office
-        somewhere around.
+      value: "Allow me to explain.\u2008First, we have to make sure you're allowed
+        to be allowed to be given the HAOL, which then allows you to cross the big
+        door, it's just a formality really. Thing is, I'm not allowed to be in charge
+        of those, go ask Michael or something, he should be in his office somewhere
+        around."
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -809,7 +821,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.npcDialogue
-      value: <i>whistles</i>
+      value: If you ever need anything else you know where to find me.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -840,7 +852,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].npcDialogue
-      value: Pleasure is mine, now get to it.
+      value: Pinky promise, now get to it.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -885,12 +897,12 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: Fuck you.
+      value: You god damn-
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].playerResponses.Array.data[0]
-      value: Fuck you.
+      value: Fine, no more games.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -978,8 +990,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
+      propertyPath: repeatDialogueItem.npcDialogue
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: 'I literally just found this chair, how crazy is that ? '
+      value: "You know what, I think we started off on the wrong foot you and\u2008I,
+        don't you agree ? "
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -999,6 +1017,11 @@ PrefabInstance:
       objectReference: {fileID: 6437371633831371469}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
+      propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1010,7 +1033,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: I hate you.
+      value: Go away.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -1400,6 +1423,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
+      propertyPath: repeatDialogueItem.npcDialogue
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
       value: "What is it you want this time ?\u2008You already took all my keycards,
         so bugger off."
@@ -1420,6 +1448,11 @@ PrefabInstance:
       propertyPath: dialogueItems.Array.data[1].lookAtTarget
       value: 
       objectReference: {fileID: 6437371633831371469}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
+      value: ...
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.size
