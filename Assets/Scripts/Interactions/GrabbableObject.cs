@@ -19,16 +19,14 @@ public class GrabbableObject : Interactable
             eventToUnlockOnGrab.SetProgressionStatus(b);
     }
 
-    protected virtual void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerStay(Collider other)
     {
         if (!canToggleEventInTriggerZone)
             return;
         var currentTriggerZone = other.gameObject.GetComponent<TriggerZoneEvent>();
-        Debug.Log("CurrentTriggerZone is: " + currentTriggerZone + " and triggerZone is: " + triggerZone);
         if (currentTriggerZone != null && currentTriggerZone == triggerZone && eventToUnlockInTriggerZone is not null)
         {
             eventToUnlockInTriggerZone.SetProgressionStatus(true);
-            Debug.Log("Object is in trigger zone");
         }
     }
 
