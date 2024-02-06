@@ -9,8 +9,8 @@ public class InteractableObject : Interactable
     [SerializeField] private float delayBeforeTriggeringAnimation;
     [SerializeField] private bool canUnlockProgression;
     [FormerlySerializedAs("progressionToUnlock")] [SerializeField, ShowIf("canUnlockProgression")] private Event eventToUnlock;
-    [SerializeField] private bool canInteract = true;
-    [FormerlySerializedAs("progressionToCheck")] [SerializeField, HideIf("canInteract")] private Event eventToCheck;
+    [SerializeField] protected bool canInteract = true;
+    [FormerlySerializedAs("progressionToCheck")] [SerializeField, HideIf("canInteract")] protected Event eventToCheck;
     [SerializeField] private AK.Wwise.Event interactSound;
 
     public override void OnPlayerInteract()
