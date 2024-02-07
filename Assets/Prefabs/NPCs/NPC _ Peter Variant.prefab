@@ -222,7 +222,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: eb9167d734502904e9c66d9392e7cbfe, type: 2}
+      objectReference: {fileID: 2100000, guid: dc2b95282dd404b449b56fd4918bba75, type: 2}
     - target: {fileID: 7902414852319941015, guid: ef5eb88653662c848823ad8262b77fcf,
         type: 3}
       propertyPath: m_IsActive
@@ -303,7 +303,7 @@ PrefabInstance:
         type: 3}
       propertyPath: repeatDialogueItem.lookAtTarget
       value: 
-      objectReference: {fileID: 4190442357280545658}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: unlockProgressionOnDialogueFinish
@@ -312,7 +312,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: "Greetings young soul, please allow me to welcome thee to : HEAVEN!...
+      value: "Greetings young soul, please allow me to welcome thee to : HEAVEN !...
         I mean...\u2008Almost...\u2008So hum, what's cooking ?"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
@@ -382,7 +382,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[2].lookAtTarget
       value: 
-      objectReference: {fileID: 4190442357280545658}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[3].lookAtTarget
@@ -417,7 +417,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[9].lookAtTarget
       value: 
-      objectReference: {fileID: 4190442357280545658}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.size
@@ -689,7 +689,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[4].lookAtTarget
       value: 
-      objectReference: {fileID: 4190442357280545658}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.size
@@ -842,7 +842,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.npcDialogue
-      value: Do you find Gabriel ?
+      value: Did you find Gabriel ?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -862,39 +862,40 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: Wow, your P.O.D ! So, it looks like you really are dead after all !
+      value: Fantastic, your P.O.D ! Looks like you really are dead after all !
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
-      value: Well, you were acting suspiciously weird last time I saw you, but I'm
-        glad your death is effective. Not that I'm happy about your expiring but...
-        You know what I mean.
+      value: Well, I had my reasons, but I'm glad your death is effective... I mean,
+        not that I get a particular kick out of you kicking the bucket, but more
+        like-
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].npcDialogue
-      value: So, now with this Proof of Death of yours, I can deliver to you the
-        holy H.O.A.L. Cherish it, for it probably be your very best friends out there
+      value: Of course. With this Proof of Death of yours, I may finally deliver
+        you the holy HAOL ! Cherish it, for it is the key to your next big adventure
         !
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[3].npcDialogue
-      value: With the H.O.A.L in your hands, you can now enjoy your visit to heaven.
-        I've opened up the door behind me, and now it's time you live a life of serenity
-        and love. Isn't it beautiful ?
+      value: "Well I've just unlocked the door behind me, which means you can now
+        enjoy your visit to the real Heaven, and enjoy a new life of serenity and
+        love, or something like that.\u2008Aren't you rapturous ?"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[4].npcDialogue
-      value: Yep, before you leave, you have to give this H.O.A.L to Gabriel behind
-        this door. Say hello to him for me.
+      value: Why off Earth would you want such a thing ? Anyway, once there, you
+        have to give the HOAL to Gabriel, tell him I said hi.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[5].npcDialogue
-      value: Go on now. Enjoy what you well deserved by dying in particular.
+      value: Yes. Go on now, and be blessed with the very best that death has to
+        offer.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -910,12 +911,12 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[2].lookAtTarget
       value: 
-      objectReference: {fileID: 4190442357280545658}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[3].lookAtTarget
       value: 
-      objectReference: {fileID: 4190442357280545658}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[4].lookAtTarget
@@ -969,27 +970,27 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: Did you really have any doubts about that ?
+      value: Did you actually have doubts ?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].playerResponses.Array.data[0]
-      value: I'm not and I don't care.
+      value: Get to the point.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
-      value: Hope you're teasing me again.
+      value: What are you talking about ?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[3].playerResponses.Array.data[0]
-      value: You really should choose your words better.
+      value: "Do I\u2008have a choice ?"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[4].playerResponses.Array.data[0]
-      value: What ?
+      value: Will it be over then ?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -1177,7 +1178,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[6].lookAtTarget
       value: 
-      objectReference: {fileID: 4190442357280545658}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.size

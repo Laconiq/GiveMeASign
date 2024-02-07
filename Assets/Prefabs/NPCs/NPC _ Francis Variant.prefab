@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -31,8 +31,18 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: "Your Certificate is waiting right here on my desk, you'll probably
-        want to take it to Peter.\u2008Now if you'll excuse me."
+      value: You're late for the meeting. What's your excuse ?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[1].npcDialogue
+      value: Doesn't matter. Your Certificate is waiting right here on my desk, you'll
+        probably want to take it to Peter.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[2].npcDialogue
+      value: Now if you'll excuse me.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -56,8 +66,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
+      propertyPath: dialogueItems.Array.data[2].playerResponses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: Finally someone reasonable.
+      value: I huh...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[1].playerResponses.Array.data[0]
+      value: Thanks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
+        type: 3}
+      propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
+      value: Sure...
       objectReference: {fileID: 0}
     - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -332,7 +357,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3bfccb2391918b54690be9615884764d, type: 2}
+      objectReference: {fileID: 2100000, guid: dc2b95282dd404b449b56fd4918bba75, type: 2}
     - target: {fileID: 7553496867870308708, guid: ef5eb88653662c848823ad8262b77fcf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
