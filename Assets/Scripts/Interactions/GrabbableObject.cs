@@ -6,6 +6,7 @@ public class GrabbableObject : Interactable
 {
     [Title("Global Settings")]
     public bool isGrabbable = true;
+    private bool isGrabbed;
     [FormerlySerializedAs("progressionToUnlockOnGrab")] [ShowIf("isGrabbable"), Tooltip("La progression validée quand l'objest est en main")] public Event eventToUnlockOnGrab;
     
     [Title("Trigger Zone Settings")]
@@ -15,6 +16,7 @@ public class GrabbableObject : Interactable
     
     public virtual void ObjectIsGrabbed(bool b)
     {
+        isGrabbed = b;
         if (eventToUnlockOnGrab != null)
             eventToUnlockOnGrab.SetProgressionStatus(b);
     }
@@ -37,5 +39,7 @@ public class GrabbableObject : Interactable
         var currentTriggerZone = other.gameObject.GetComponent<TriggerZoneEvent>();
         if (currentTriggerZone != null && currentTriggerZone == triggerZone && eventToUnlockInTriggerZone is not null)
             eventToUnlockInTriggerZone.SetProgressionStatus(false);
+        if (eventToUnlockInTriggerZone != null && eventToUnlockInTriggerZone == eventToUnlockOnGrab && isGrabbed)
+            eventToUnlockInTriggerZone.SetProgressionStatus(true);
     }
 }
