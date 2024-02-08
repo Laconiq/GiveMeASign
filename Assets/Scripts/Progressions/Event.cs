@@ -20,7 +20,22 @@ public class Event : MonoBehaviour
     [SerializeField] private bool canChangeAnimation;
     [SerializeField, ShowIf("canChangeAnimation")] private Animator animator;
     [SerializeField, ShowIf("canChangeAnimation")] private string animationToPlay;
+
+    [Title("Debug")]
+    [Button("Valide l'évènement", ButtonSizes.Medium)]
+    private void SetProgressionStatusButtonTrue()
+    {
+        SetProgressionStatus(true);
+        Debug.Log("<color=green>Progression validée : </color>" + gameObject.name);
+    }
     
+    [Button("Annule l'évènement", ButtonSizes.Medium)]
+    private void SetProgressionStatusButtonFalse()
+    {
+        SetProgressionStatus(false);
+        Debug.Log("<color=red>Progression annulée : </color>" + gameObject.name);
+    }
+
     public bool GetProgressionStatus()
     {
         return isProgressionFinished;
