@@ -38,8 +38,6 @@ public class PlayerController : MonoBehaviour
     private bool _isCrouching;
     private float _currentSpeed;
     
-    
-
     public void Initialize()
     {
         _feedbacks = GetComponent<PlayerFeedbacks>();

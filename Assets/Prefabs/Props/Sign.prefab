@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7726752433808006797}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 7969984093548770225}
   - component: {fileID: 542406353028275748}
   - component: {fileID: 8833032822407739669}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 410927880710091722}
   - component: {fileID: 4799335803185127588}
   - component: {fileID: 3514262859260462978}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 3099411114918270138}
   - component: {fileID: 4329471282476031950}
   - component: {fileID: 5764658808352082970}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 8455734906238252330}
   - component: {fileID: 6133343633123425514}
   - component: {fileID: 7647817827162583872}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

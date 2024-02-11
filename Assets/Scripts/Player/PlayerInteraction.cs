@@ -33,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
         }
         else
         {
-            if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out RaycastHit hit, 2f)) 
+            if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out RaycastHit hit, 2f, LayerMask.GetMask("Interactable"))) 
                 return;
             if (IsObjectGrabbable(hit))
             {
@@ -57,7 +57,7 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
         var ray = new Ray(_cameraTransform.position, _cameraTransform.forward);
-        if (Physics.Raycast(ray, out var hit, 2f) && IsObjectGrabbable(hit))
+        if (Physics.Raycast(ray, out var hit, 2f, LayerMask.GetMask("Interactable")) && IsObjectGrabbable(hit))
         {
             _handleCursor.DisplayGrabCursor();
             _handleCursor.SetGrabCursorColor(new Color(1, 1, 1, 1f));

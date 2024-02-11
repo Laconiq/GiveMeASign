@@ -190,6 +190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3d73e588440ad9f4e9e02f02ab51d6cc,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d73e588440ad9f4e9e02f02ab51d6cc,
+        type: 3}
       propertyPath: m_TagString
       value: Grabbable
       objectReference: {fileID: 0}
@@ -200,8 +205,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: eb9167d734502904e9c66d9392e7cbfe, type: 2}
     - target: {fileID: 6135644240077752694, guid: 3d73e588440ad9f4e9e02f02ab51d6cc,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135644240077752694, guid: 3d73e588440ad9f4e9e02f02ab51d6cc,
+        type: 3}
       propertyPath: m_TagString
       value: Grabbable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473090551969482254, guid: 3d73e588440ad9f4e9e02f02ab51d6cc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7473090551969482254, guid: 3d73e588440ad9f4e9e02f02ab51d6cc,
         type: 3}
