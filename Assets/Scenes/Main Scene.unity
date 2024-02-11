@@ -8474,6 +8474,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9024659126868150286, guid: 2027e032c9f69374bb97479619bd66a2,
         type: 3}
+      propertyPath: eventToCheck
+      value: 
+      objectReference: {fileID: 1072664985}
+    - target: {fileID: 9024659126868150286, guid: 2027e032c9f69374bb97479619bd66a2,
+        type: 3}
       propertyPath: progressionToCheck
       value: 
       objectReference: {fileID: 1072664985}
@@ -9360,6 +9365,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ladder
       objectReference: {fileID: 0}
+    - target: {fileID: 3858314430336920959, guid: 7b55a479cf95e334dab0b03e035e2efd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4437802901091021537, guid: 7b55a479cf95e334dab0b03e035e2efd,
         type: 3}
       propertyPath: m_Size.x
@@ -9454,6 +9464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802154907695302785, guid: 7b55a479cf95e334dab0b03e035e2efd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11370,7 +11385,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 731403744}
+      objectReference: {fileID: 73881388}
     - target: {fileID: 7327849273637487836, guid: 2027e032c9f69374bb97479619bd66a2,
         type: 3}
       propertyPath: m_Mesh
@@ -11435,12 +11450,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1142276355}
+      objectReference: {fileID: 405302198}
     - target: {fileID: 8954995807121067431, guid: 2027e032c9f69374bb97479619bd66a2,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 453463129}
+      objectReference: {fileID: 2046744002}
     - target: {fileID: 9024659126868150286, guid: 2027e032c9f69374bb97479619bd66a2,
         type: 3}
       propertyPath: canInteract
@@ -30303,6 +30318,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7228574588996758062, guid: 5eaf0b4bbb02ba24b897ec861b280ebc,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228574588996758062, guid: 5eaf0b4bbb02ba24b897ec861b280ebc,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -34082,6 +34102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CornerMobius | Take TP Mobius Stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867439163785902362, guid: 468371422b31dcd4b9bada722c35d353,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7784931902770893855, guid: 468371422b31dcd4b9bada722c35d353,
         type: 3}

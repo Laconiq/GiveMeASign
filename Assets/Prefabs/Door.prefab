@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3491388475004870869}
   - component: {fileID: 472565793835562472}
   - component: {fileID: 1925695243663943313}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HandleFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1584656388949807108}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DoorHandle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 846848827960387525}
   - component: {fileID: 7891214575990385258}
   - component: {fileID: 9010966364802305024}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 7559407997138726903}
   - component: {fileID: 7159243704188591210}
   - component: {fileID: 7000943381431708364}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 8539994860855507284}
   - component: {fileID: 1209090369673131259}
   - component: {fileID: 20783773439496849}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 7959389892182218281}
   - component: {fileID: 675004519157254685}
   - component: {fileID: 9024659126868150286}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Door
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -728,12 +728,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f379a5dc88d7b174ba520a3506852ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 2
   doorIsOpen: 0
   animator: {fileID: 7000943381431708364}
   delayBeforeTriggeringAnimation: 0
   canInteract: 1
-  progressionToCheck: {fileID: 0}
+  eventToCheck: {fileID: 0}
   openDoorSound:
     idInternal: 0
     valueGuidInternal: 
@@ -753,7 +752,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7546168233608662677}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DoorHandle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -791,7 +790,7 @@ GameObject:
   - component: {fileID: 5568945957938865190}
   - component: {fileID: 6042926598666598257}
   - component: {fileID: 8954995807121067431}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2295,7 +2294,7 @@ GameObject:
   - component: {fileID: 4775222244811345492}
   - component: {fileID: 518371143120054744}
   - component: {fileID: 8114187353808933793}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3796,7 +3795,7 @@ GameObject:
   - component: {fileID: 5564007949014285892}
   - component: {fileID: 8920030539884096377}
   - component: {fileID: 7493362022722271232}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HandleFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
