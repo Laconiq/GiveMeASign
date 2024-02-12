@@ -252,12 +252,6 @@ PrefabInstance:
       addedObject: {fileID: 3714516315596135356}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef5eb88653662c848823ad8262b77fcf, type: 3}
---- !u!4 &8635680677824073469 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7536014045121047026, guid: ef5eb88653662c848823ad8262b77fcf,
-    type: 3}
-  m_PrefabInstance: {fileID: 2255552490603013903}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8740412122599583505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7350291918283278366, guid: ef5eb88653662c848823ad8262b77fcf,
@@ -291,7 +285,7 @@ PrefabInstance:
         type: 3}
       propertyPath: repeatDialogueItem.lookAtTarget
       value: 
-      objectReference: {fileID: 8635680677824073469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
@@ -301,7 +295,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[0].lookAtTarget
       value: 
-      objectReference: {fileID: 8635680677824073469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.size
@@ -310,7 +304,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
-      value: So you wounds will not heal ?
+      value: "Is this real?\u2008I'm confused."
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -320,7 +314,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: So you wounds will not heal ?
+      value: Will your wounds ever heal?
       objectReference: {fileID: 0}
     - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}

@@ -41,9 +41,9 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: "Can you believe that ?\u2008I\u2008just got promoted ! Told me they
-        had one last position to fill, so I came as fast as I\u2008could.\u2008You
-        wouldn't want to miss such an opportunity, would you ?"
+      value: "Can you believe that?\u2008I\u2008just got promoted! Told me they had
+        one last position to fill, so I came as fast as I\u2008could.\u2008You wouldn't
+        want to miss such an opportunity, would you?"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -55,7 +55,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[2].npcDialogue
       value: What exactly did you have in mind, that we became some kind of sworn
-        enemies or something ? You give yourself way too much credit, sweet cheeks,
+        enemies or something? You give yourself way too much credit, sweet cheeks,
         now get your filthy hands off my brand new desk.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
-      value: <i>Leave ?</i>
+      value: <i>Leave?</i>
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -101,12 +101,12 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].playerResponses.Array.data[0]
-      value: Is that it ?
+      value: Is that it?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
-      value: Is that so ?
+      value: Is that so?
       objectReference: {fileID: 0}
     - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -207,12 +207,12 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[0].lookAtTarget
       value: 
-      objectReference: {fileID: 6437371633831371469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].lookAtTarget
       value: 
-      objectReference: {fileID: 6437371633831371469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
@@ -340,12 +340,12 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: Hi there, are you lost ?
+      value: Hi there, are you lost?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
-      value: Figures, you here for the HAOL ?
+      value: Figures, you here for the HAOL?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -440,12 +440,12 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
-      value: Okay ?
+      value: Okay?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[3].playerResponses.Array.data[0]
-      value: Did you just make that up ?
+      value: Did you just make that up?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -841,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: Hey there chap, looking for something ?
+      value: Hey there chap, looking for something?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -997,24 +997,24 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
       value: "You know what, I think we started off on the wrong foot you and\u2008I,
-        don't you agree ? "
+        don't you agree? "
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
-      value: Did you know chairs were reserved only to the higher ups ? Makes me
-        wonder why Peter seems to like standing idle like a moron so much.
+      value: Did you know chairs were reserved only to the higher ups? Makes me wonder
+        why Peter seems to like standing idle like a moron so much.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].lookAtTarget
       value: 
-      objectReference: {fileID: 6437371633831371469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].lookAtTarget
       value: 
-      objectReference: {fileID: 6437371633831371469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
@@ -1143,7 +1143,7 @@ PrefabInstance:
         type: 3}
       propertyPath: repeatDialogueItem.lookAtTarget
       value: 
-      objectReference: {fileID: 6437371633831371469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: unlockProgressionOnDialogueFinish
@@ -1152,18 +1152,18 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: Can't get enough of me, can you ?
+      value: Can't get enough of me, can you?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
       value: Tsk tsk tsk, that's not how it works babe, not anymore, can't get one
-        without a Tolerance Proof Award
+        without a Tolerance Proof Award.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].npcDialogue
-      value: The stupidest thing you've heard today for now.
+      value: The stupidest thing you've heard today so far.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -1216,7 +1216,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[3].lookAtTarget
       value: 
-      objectReference: {fileID: 6437371633831371469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[4].lookAtTarget
@@ -1310,12 +1310,12 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
-      value: "How do I\u2008get one ?"
+      value: "How do I\u2008get one?"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[3].playerResponses.Array.data[0]
-      value: Why ?
+      value: Why?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -1335,7 +1335,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[7].playerResponses.Array.data[0]
-      value: Are you intentionally making this difficult ?
+      value: Are you intentionally making this difficult?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -1429,7 +1429,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: "What is it you want this time ?\u2008You already took all my keycards,
+      value: "What is it you want this time?\u2008You already took all my keycards,
         so bugger off."
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
@@ -1442,12 +1442,12 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[0].lookAtTarget
       value: 
-      objectReference: {fileID: 6437371633831371469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].lookAtTarget
       value: 
-      objectReference: {fileID: 6437371633831371469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
@@ -1466,7 +1466,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: Why are you doing this ?
+      value: Why are you doing this?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -1561,12 +1561,12 @@ PrefabInstance:
         type: 3}
       propertyPath: repeatDialogueItem.lookAtTarget
       value: 
-      objectReference: {fileID: 6437371633831371469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: Don't you have anything better to do ? Other documents to retrieve,
-        doors to get across or people to inconvenience ?
+      value: Don't you have anything better to do? Other documents to retrieve, doors
+        to get across or people to inconvenience?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -1577,12 +1577,12 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[0].lookAtTarget
       value: 
-      objectReference: {fileID: 6437371633831371469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].lookAtTarget
       value: 
-      objectReference: {fileID: 6437371633831371469}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.size

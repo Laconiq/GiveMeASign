@@ -270,7 +270,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: Ahoy mate !
+      value: Ahoy mate!
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -401,7 +401,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: Who the hell are you supposed to be ?
+      value: Who the hell are you supposed to be?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -411,12 +411,12 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
-      value: Where's Judathan ?
+      value: Where's Judathan?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[3].playerResponses.Array.data[0]
-      value: Right, would you happen to know where ?
+      value: Right, would you happen to know where?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}

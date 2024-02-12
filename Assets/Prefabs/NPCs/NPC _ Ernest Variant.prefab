@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.npcDialogue
-      value: Don't forget to come to my bar !
+      value: Don't forget to come to my bar!
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: Looking for something to drink ?
+      value: Looking for something to drink?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}

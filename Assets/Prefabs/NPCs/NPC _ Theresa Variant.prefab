@@ -27,7 +27,7 @@ PrefabInstance:
         type: 3}
       propertyPath: repeatDialogueItem.lookAtTarget
       value: 
-      objectReference: {fileID: 3865336060144657910}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
@@ -37,7 +37,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[0].lookAtTarget
       value: 
-      objectReference: {fileID: 3865336060144657910}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.size
@@ -46,7 +46,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.data[0]
-      value: No comment.
+      value: What a gloomy refrain.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -56,7 +56,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: No comment.
+      value: That must be a horrendous feeling.
       objectReference: {fileID: 0}
     - target: {fileID: 8324474869505504216, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -356,12 +356,6 @@ PrefabInstance:
       addedObject: {fileID: 7401946003999246127}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef5eb88653662c848823ad8262b77fcf, type: 3}
---- !u!4 &3865336060144657910 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7536014045121047026, guid: ef5eb88653662c848823ad8262b77fcf,
-    type: 3}
-  m_PrefabInstance: {fileID: 6715186394146622468}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4265007786105390106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7350291918283278366, guid: ef5eb88653662c848823ad8262b77fcf,

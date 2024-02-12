@@ -51,18 +51,18 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: "So ?\u2008How'd it go ? *she giggles*"
+      value: "So?\u2008How'd it go? *she giggles*"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
-      value: "Moni- ?... DAMN... She been working for so long here I thought they
-        woulda put her back to Earth at some point, you know what I mean\u2008?"
+      value: Moni-?... DAMN... She been working for so long here I thought they woulda
+        put her back to Earth at some point, you know what I mean?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].npcDialogue
-      value: "You do ? Okay, great. Now...\u2008Hum...\u2008Oh yeah, right.\u2008*she
+      value: "You do? Okay, great. Now...\u2008Hum...\u2008Oh yeah, right.\u2008*she
         smiles* Last thing I\u2008need is a Most Likely Lived Peer Review."
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
@@ -164,7 +164,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
-      value: Are any of these actually real ?
+      value: Are any of these actually real?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -174,7 +174,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[4].playerResponses.Array.data[0]
-      value: "How does any of this work\u2008?"
+      value: How does any of this work?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -298,13 +298,13 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
-      value: "What even got you here, dumbass, some kinda brain injury\u2008? Get
-        outta here."
+      value: What even got you here, dumbass, some kinda brain injury? Get outta
+        here.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].npcDialogue
-      value: "You kiddin ?... Man, I know a desperate face when I see one, okay lemme
+      value: "You kiddin?... Man, I know a desperate face when I see one, okay lemme
         have a look... Proof of fucking Death, there it is, now lemme see...\u2008Oh
         man this is so fucking stupid I'm so sorry."
       objectReference: {fileID: 0}
@@ -425,7 +425,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].playerResponses.Array.data[0]
-      value: What is it ?
+      value: What is it?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -435,12 +435,12 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[4].playerResponses.Array.data[0]
-      value: A what now ?
+      value: A what now?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[5].playerResponses.Array.data[0]
-      value: Downstairs ?
+      value: Downstairs?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -648,7 +648,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: Is that a Peer Review I see ?
+      value: Is that a Peer Review I see?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -659,8 +659,9 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[2].npcDialogue
       value: "<i>Her smiles fades for a second</i> Leave, stay, matter of perspective.\u2008Take
-        this to Peter, you earned it, he'll show you the way, as he does. Godspeed
-        out there, tell em old Liz... Tell them she's still kickin."
+        this to Peter, you earned it, he'll show you the way, as he does.  Godspeed
+        out there, and if they ever try to screw you over again, please come bothering
+        me."
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -755,7 +756,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].playerResponses.Array.data[0]
-      value: "So I can leave now\u2008?"
+      value: So I can leave now?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
