@@ -43,6 +43,12 @@ public class Event : MonoBehaviour
     
     public void SetProgressionStatus(bool status)
     {
+        if (canRemoveDialogue)
+        {
+            foreach (Dialogue dialogue in dialoguesToRemove)
+                dialogue.isDialogueFinished = status;
+        }
+
         isProgressionFinished = status;
         if (!isProgressionFinished) 
             return;
@@ -61,12 +67,6 @@ public class Event : MonoBehaviour
             objectToMove.transform.rotation = destination.rotation;
         }
 
-        if (canRemoveDialogue)
-        {
-            foreach (Dialogue dialogue in dialoguesToRemove)
-                dialogue.isDialogueFinished = true;
-        }
-        
         if (canChangeAnimation)
             animator.Play(animationToPlay);
     }

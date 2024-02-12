@@ -23,7 +23,7 @@ public class GrabbableObject : Interactable
 
     protected virtual void OnTriggerStay(Collider other)
     {
-        if (!canToggleEventInTriggerZone)
+        if (!canToggleEventInTriggerZone || eventToUnlockInTriggerZone.GetProgressionStatus())
             return;
         var currentTriggerZone = other.gameObject.GetComponent<TriggerZoneEvent>();
         if (currentTriggerZone != null && currentTriggerZone == triggerZone && eventToUnlockInTriggerZone is not null)
