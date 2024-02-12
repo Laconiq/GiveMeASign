@@ -46,7 +46,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
-      value: In the meantime, why don't you have a sit ?
+      value: In the meantime, why don't you have a sit?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -111,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: What ?
+      value: What?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -499,13 +499,13 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
       value: "Oh hiii, how <i>nice</i> it is to see a new face around, how may I\u2008help
-        you\u2008?"
+        you?"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
-      value: "Of course ! I have it right here...\u2008Aaand there you go, anything
-        else I could assist you with\u2008?"
+      value: "Of course! I have it right here...\u2008Aaand there you go, anything
+        else I could assist you with?"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}

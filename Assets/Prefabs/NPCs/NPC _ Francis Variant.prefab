@@ -27,11 +27,11 @@ PrefabInstance:
         type: 3}
       propertyPath: repeatDialogueItem.lookAtTarget
       value: 
-      objectReference: {fileID: 1950318694805987765}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: You're late for the meeting. What's your excuse ?
+      value: You're late for the meeting. What's your excuse?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -48,7 +48,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogueItems.Array.data[0].lookAtTarget
       value: 
-      objectReference: {fileID: 1950318694805987765}
+      objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: repeatDialogueItem.playerResponses.Array.size
@@ -395,12 +395,6 @@ PrefabInstance:
 --- !u!4 &1550605874761728089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7350291918283278366, guid: ef5eb88653662c848823ad8262b77fcf,
-    type: 3}
-  m_PrefabInstance: {fileID: 8324235810769307719}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1950318694805987765 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7536014045121047026, guid: ef5eb88653662c848823ad8262b77fcf,
     type: 3}
   m_PrefabInstance: {fileID: 8324235810769307719}
   m_PrefabAsset: {fileID: 0}

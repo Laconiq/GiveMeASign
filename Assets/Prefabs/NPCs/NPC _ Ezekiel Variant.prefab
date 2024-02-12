@@ -295,29 +295,28 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: "Mornin' chum.\u2008How may old Zeke help you out ?"
+      value: "Mornin' chum.\u2008How may old Zeke help you out?"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[1].npcDialogue
-      value: "Oh this ? It's nothing, really.\u2008I bought it during one my travels
-        to France at a small hatter we came across. Me and me wife used to go there
-        every other year, we would rent a trailer for a few weeks and go wherever
-        the heck we pleased, would it be mountains, beaches, forests, anything...
-        everything, and all within a few hours of driving once you knew your way
-        around.\u2008It seemed like there was still so much to be seen everytime
-        we left...\u2008<i>he sighs</i> It was simpler times."
+      value: "Oh this? It's nothing, really.\u2008I bought it during one my travels
+        to France at a small hatter. Me and me wife used to go there every other
+        year, we would rent a trailer for a few weeks and go wherever the heck we
+        pleased, would it be mountains, beaches, forests, anything... and all within
+        a few hours of driving once you knew your way around.\u2008It seemed like
+        there was still so much to be seen everytime we left...\u2008<i>he sighs</i>
+        It was simpler times."
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[2].npcDialogue
-      value: "You see, back then, we didn't have any of your GPS\u2008watchamacallit,
-        nope, just good old and reliable paper maps, sounds crazy I know.\u2008There
-        was no one to tell us where to go except for ourselves, and you're telling
-        me that nowadays you have to follow some silly little voice of some kind
-        ordering you around to get there ? Now lemme ask you this, when exactly in
-        our three hundred thousand year old History did we collectively stop dreaming
-        about adventure as a species ?"
+      value: "Back then, we didn't have any of your GPS\u2008watchamacallit, nope,
+        just good old paper maps, sounds crazy I know.\u2008There was no one to tell
+        us where to go except for ourselves, and you're telling me that nowadays
+        you have to follow a silly voice of some kind ordering you around to get
+        there? Now lemme ask you this, when exactly in our three hundred thousand
+        year old History did we collectively stop dreaming about adventure as a species?"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -332,12 +331,12 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[4].npcDialogue
-      value: "Did I tell you about one of our recent lake trips ? You should have
+      value: "Did I tell you about one of our recent lake trips? You should have
         seen the weather, beautiful, the spot not too crowded... we even had our
         trusty ice box for the drinks, when I\u2008tell you everything was perfect.
         And THEN out of nowhere you have these... savages blasting music all over,
         bellowing with NO RESPECT AT ALL for us vacationers. I swear, they were basically
-        askin for someone to put em back in their place ! Anyway, we went back home."
+        askin for someone to put em back in their place! Anyway, we went back home."
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -347,30 +346,30 @@ PrefabInstance:
         See, how it works is that in the beginning, you've only got these tiny little
         streams, but then they connect with each other and... and now they're all
         dried up.\u2008How weird is it that everything starts falling apart just
-        when your generation arrives ? And even then you still don't care, always
+        when your generation arrives? And even then you still don't care, always
         chatting online with you-"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[6].npcDialogue
-      value: WHAT ?
+      value: WHAT?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[7].npcDialogue
-      value: The what now ?
+      value: The what now?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[8].npcDialogue
-      value: 'A tuberous hoof ? Why''d''you need an award for that you fuckin weirdo
-        ? Only thing I give here are Drowsy Histories, you want yours ? '
+      value: A tuberous hoof? Why'd'you need an award for that you fuckin weirdo?
+        Only thing I give here are Drowsy Histories, you want yours?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[9].npcDialogue
       value: "I mean, I've got these thingamajigs lying around, so here you go, you
-        sure that's what you need ?\u2008What did they even tell you ?"
+        sure that's what you need?\u2008What did they even tell you?"
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -380,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[10].npcDialogue
-      value: You mean this hat ? Well, it's quite the long story actually, but first
+      value: You mean this hat? Well, it's quite the long story actually, but first
         I have to tell you about my...
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
@@ -501,7 +500,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: Where did you get your hat ?
+      value: Where did you get your hat?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -541,7 +540,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[8].playerResponses.Array.data[0]
-      value: Browser History ? Wait, please don't tell me you're the one they picked
+      value: Browser History? Wait, please don't tell me you're the one they picked
         to take care of that.
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
@@ -646,7 +645,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].npcDialogue
-      value: "How d'you get in here\u2008?"
+      value: How d'you get in here?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
@@ -716,7 +715,7 @@ PrefabInstance:
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
       propertyPath: dialogueItems.Array.data[0].playerResponses.Array.data[0]
-      value: What is this place ?
+      value: What is this place?
       objectReference: {fileID: 0}
     - target: {fileID: 7785313450625192165, guid: 9332bcb63dca3354dbbf18290e079b4c,
         type: 3}
