@@ -3372,7 +3372,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 10
-  m_Range: 10
+  m_Range: 4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4870,7 +4870,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 10
-  m_Range: 10
+  m_Range: 4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -6189,7 +6189,7 @@ Transform:
   m_GameObject: {fileID: 7119802971694664824}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7999992, y: 1.85, z: 10}
+  m_LocalPosition: {x: 2.7999992, y: 2.7000003, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8241,6 +8241,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8339,6 +8344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256884171619474694, guid: 88abc3dd70a1c4e448632e722f755805,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6102337126542402356, guid: 88abc3dd70a1c4e448632e722f755805,
         type: 3}
@@ -8780,6 +8790,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 3256884171619474694, guid: 88abc3dd70a1c4e448632e722f755805,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6102337126542402356, guid: 88abc3dd70a1c4e448632e722f755805,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -9240,6 +9255,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: -5468638092628736477, guid: c67c1eec5a2121e4cba04c48b40df2e8,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3474111032075226101, guid: c67c1eec5a2121e4cba04c48b40df2e8,
         type: 3}
       propertyPath: m_Name
@@ -9373,6 +9393,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.3710022
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071474910411849768, guid: 22028def6a65b2d429c0425fbc09db1f,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9705,6 +9730,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8555442648481516527, guid: 445c6ba092459fa4e9787c5f38d5f894,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9986,6 +10016,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 3787723207231807119, guid: 5c7d0f96b75e2db43a1142f1ee1a7912,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5158082400801597095, guid: 5c7d0f96b75e2db43a1142f1ee1a7912,
         type: 3}
       propertyPath: m_Name
@@ -10386,6 +10421,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 2729848202350520214, guid: b09c5c9d37af43c40b9772ed05cdfdb9,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4012827482693760253, guid: b09c5c9d37af43c40b9772ed05cdfdb9,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -10870,6 +10910,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 3787723207231807119, guid: 5c7d0f96b75e2db43a1142f1ee1a7912,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5158082400801597095, guid: 5c7d0f96b75e2db43a1142f1ee1a7912,
         type: 3}
       propertyPath: m_Name
@@ -11222,6 +11267,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6539730118687099578, guid: 1d069623b2c95e04189dedea0598f62f,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6685191122712439943, guid: 1d069623b2c95e04189dedea0598f62f,
         type: 3}
       propertyPath: m_Name
@@ -11394,6 +11444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071474910411849768, guid: 22028def6a65b2d429c0425fbc09db1f,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12067,6 +12122,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9071474910411849768, guid: 22028def6a65b2d429c0425fbc09db1f,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12086,6 +12146,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -12373,6 +12438,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -13911,6 +13981,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 2729848202350520214, guid: b09c5c9d37af43c40b9772ed05cdfdb9,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2880968443417137042, guid: b09c5c9d37af43c40b9772ed05cdfdb9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -14465,6 +14540,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -14910,6 +14990,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 2729848202350520214, guid: b09c5c9d37af43c40b9772ed05cdfdb9,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2880968443417137042, guid: b09c5c9d37af43c40b9772ed05cdfdb9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -15484,6 +15569,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bin (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8555442648481516527, guid: 445c6ba092459fa4e9787c5f38d5f894,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15657,6 +15747,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keyborard (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5104491910311260977, guid: 3464ab1f4ac98614fbffd5d93f3b3016,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15730,6 +15825,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071474910411849768, guid: 22028def6a65b2d429c0425fbc09db1f,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16342,6 +16442,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 3256884171619474694, guid: 88abc3dd70a1c4e448632e722f755805,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6102337126542402356, guid: 88abc3dd70a1c4e448632e722f755805,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -16590,6 +16695,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mouse (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5200215294161715094, guid: 038b9e6608944f74bbc8e7f4f2541989,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16663,6 +16773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bin (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555442648481516527, guid: 445c6ba092459fa4e9787c5f38d5f894,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16847,6 +16962,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mouse (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5200215294161715094, guid: 038b9e6608944f74bbc8e7f4f2541989,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16935,6 +17055,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200215294161715094, guid: 038b9e6608944f74bbc8e7f4f2541989,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17138,11 +17263,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1401849018926739228, guid: 88abc3dd70a1c4e448632e722f755805,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1926091631747349519, guid: 88abc3dd70a1c4e448632e722f755805,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0c7c2324db1d1c64c806ab683b46f6b1, type: 2}
+    - target: {fileID: 3256884171619474694, guid: 88abc3dd70a1c4e448632e722f755805,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6102337126542402356, guid: 88abc3dd70a1c4e448632e722f755805,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -17386,6 +17521,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -182.648
       objectReference: {fileID: 0}
+    - target: {fileID: 9071474910411849768, guid: 22028def6a65b2d429c0425fbc09db1f,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17553,6 +17693,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bin (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555442648481516527, guid: 445c6ba092459fa4e9787c5f38d5f894,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17746,6 +17891,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -18008,6 +18158,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 3256884171619474694, guid: 88abc3dd70a1c4e448632e722f755805,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6102337126542402356, guid: 88abc3dd70a1c4e448632e722f755805,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -18102,6 +18257,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -18374,6 +18534,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -18705,6 +18870,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Keyborard (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104491910311260977, guid: 3464ab1f4ac98614fbffd5d93f3b3016,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19254,6 +19424,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -19492,6 +19667,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2907609221432072481, guid: 1177be9309fed8049a150cd7702f6c6a,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19511,6 +19691,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: -2250364783337663238, guid: fd3c0ff9e7059ab41a4f10f51eec839c,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 123208543296898587, guid: fd3c0ff9e7059ab41a4f10f51eec839c,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -19956,6 +20141,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 3787723207231807119, guid: 5c7d0f96b75e2db43a1142f1ee1a7912,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5158082400801597095, guid: 5c7d0f96b75e2db43a1142f1ee1a7912,
         type: 3}
       propertyPath: m_Name
@@ -20049,6 +20239,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256884171619474694, guid: 88abc3dd70a1c4e448632e722f755805,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6102337126542402356, guid: 88abc3dd70a1c4e448632e722f755805,
         type: 3}
@@ -20238,6 +20433,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -20742,6 +20942,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -21252,6 +21457,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bin (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8555442648481516527, guid: 445c6ba092459fa4e9787c5f38d5f894,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21271,6 +21481,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -21716,6 +21931,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -21949,6 +22169,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 51.796005
       objectReference: {fileID: 0}
+    - target: {fileID: 9071474910411849768, guid: 22028def6a65b2d429c0425fbc09db1f,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22102,6 +22327,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -182.648
       objectReference: {fileID: 0}
+    - target: {fileID: 9071474910411849768, guid: 22028def6a65b2d429c0425fbc09db1f,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22121,6 +22351,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -22215,6 +22450,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 2729848202350520214, guid: b09c5c9d37af43c40b9772ed05cdfdb9,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4012827482693760253, guid: b09c5c9d37af43c40b9772ed05cdfdb9,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -22388,6 +22628,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -23056,6 +23301,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bin
       objectReference: {fileID: 0}
+    - target: {fileID: 8555442648481516527, guid: 445c6ba092459fa4e9787c5f38d5f894,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23145,6 +23395,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mouse (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5200215294161715094, guid: 038b9e6608944f74bbc8e7f4f2541989,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23164,6 +23419,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: -5468638092628736477, guid: c67c1eec5a2121e4cba04c48b40df2e8,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3113810210648730144, guid: c67c1eec5a2121e4cba04c48b40df2e8,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -23322,6 +23582,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Keyborard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104491910311260977, guid: 3464ab1f4ac98614fbffd5d93f3b3016,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24087,6 +24352,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 3787723207231807119, guid: 5c7d0f96b75e2db43a1142f1ee1a7912,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5158082400801597095, guid: 5c7d0f96b75e2db43a1142f1ee1a7912,
         type: 3}
       propertyPath: m_Name
@@ -24245,6 +24515,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mouse (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200215294161715094, guid: 038b9e6608944f74bbc8e7f4f2541989,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24453,6 +24728,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 2729848202350520214, guid: b09c5c9d37af43c40b9772ed05cdfdb9,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2880968443417137042, guid: b09c5c9d37af43c40b9772ed05cdfdb9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -24537,6 +24817,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 3787723207231807119, guid: 5c7d0f96b75e2db43a1142f1ee1a7912,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5158082400801597095, guid: 5c7d0f96b75e2db43a1142f1ee1a7912,
         type: 3}
       propertyPath: m_Name
@@ -25002,6 +25287,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 51.796005
       objectReference: {fileID: 0}
+    - target: {fileID: 9071474910411849768, guid: 22028def6a65b2d429c0425fbc09db1f,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25228,6 +25518,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pen 02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092353539968252647, guid: 4ff2d257898a79d43b824bdb6f1234d2,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2121195889862598554, guid: 4ff2d257898a79d43b824bdb6f1234d2,
         type: 3}
@@ -26040,6 +26335,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: -2250364783337663238, guid: fd3c0ff9e7059ab41a4f10f51eec839c,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 123208543296898587, guid: fd3c0ff9e7059ab41a4f10f51eec839c,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -26672,6 +26972,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -26845,6 +27150,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -27088,6 +27398,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bin (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8555442648481516527, guid: 445c6ba092459fa4e9787c5f38d5f894,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27167,6 +27482,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keyborard (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5104491910311260977, guid: 3464ab1f4ac98614fbffd5d93f3b3016,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27190,6 +27510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pen 02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092353539968252647, guid: 4ff2d257898a79d43b824bdb6f1234d2,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2121195889862598554, guid: 4ff2d257898a79d43b824bdb6f1234d2,
         type: 3}
@@ -27404,6 +27729,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keyborard (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5104491910311260977, guid: 3464ab1f4ac98614fbffd5d93f3b3016,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27572,6 +27902,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bin (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8555442648481516527, guid: 445c6ba092459fa4e9787c5f38d5f894,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27680,6 +28015,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -27828,6 +28168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bin (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555442648481516527, guid: 445c6ba092459fa4e9787c5f38d5f894,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29080,6 +29425,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bin
       objectReference: {fileID: 0}
+    - target: {fileID: 8555442648481516527, guid: 445c6ba092459fa4e9787c5f38d5f894,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29238,6 +29588,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Highlighter
       objectReference: {fileID: 0}
+    - target: {fileID: 8772977250201832955, guid: 13c17a148ad1d384d8be2e268784979b,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29346,6 +29701,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -29588,6 +29948,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907609221432072481, guid: 1177be9309fed8049a150cd7702f6c6a,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30206,6 +30571,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 1852418053447819656, guid: a6d638a91ee161a4d92bbafd300fad84,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953048757751141706, guid: a6d638a91ee161a4d92bbafd300fad84,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -30473,6 +30843,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3904769469635454489}
     m_Modifications:
+    - target: {fileID: 2729848202350520214, guid: b09c5c9d37af43c40b9772ed05cdfdb9,
+        type: 3}
+      propertyPath: canToggleEventInTriggerZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4012827482693760253, guid: b09c5c9d37af43c40b9772ed05cdfdb9,
         type: 3}
       propertyPath: m_LocalScale.z
